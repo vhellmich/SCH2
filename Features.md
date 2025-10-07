@@ -29,8 +29,10 @@ Jakožto učitel, definovat časovou a prostorovou náročnost předmětu a čas
 Jakožto komise, potřebuju dostat upozornění, pokud bude jeden učitel vyučovat v jednom slotu vícekrát, abych zabránil nemožnost vyučovat.
 
 ## Managers
-
-
+###
+Potřebuji statistická data o vytíženosti učitelů, učeben, množství přesunů mezi budovami u studnetů, abych věděl kde dochází k problémům a na co se zaměřovat.
+###
+Potřebuji informaci o tom jak studenti plní doporučený studijní plán, aby odpovídal nejsnažšímu průchodu studiem.
 
 ## Features Breakdown
 ### Zobrazení rozvrhu
