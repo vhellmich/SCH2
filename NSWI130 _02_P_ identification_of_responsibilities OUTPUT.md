@@ -19,10 +19,10 @@ Jakožto student potřebuju přehledně zobrazit týdenní rozvrh, abych si mohl
 
 **Feature breakdown**
 
-- Student otevře zobrazení rozvrhu.
-- Systém zjistí, zda je student přihlášený.
-- Systém načte správná data z databáze.
-- Systém zobrazí data graficky.
+ 1. Student otevře zobrazení rozvrhu.
+ 2. Systém zjistí, zda je student přihlášený.
+ 3. Systém načte správná data z databáze.
+ 4. Systém zobrazí data graficky.
 
 **Responsibilities**
 
@@ -125,10 +125,10 @@ Jakožto učitel potřebuju přehledně zobrazit týdenní rozvrh, abych si mohl
 
 **Feature breakdown**
 
-- Učitel otevře zobrazení rozvrhu.
-- Systém zjistí, zda je učitel přihlášený.
-- Systém načte správná data z databáze (jeho předměty, konzultace, zkoušky).
-- Systém zobrazí data graficky.
+ 1. Učitel otevře zobrazení rozvrhu.
+ 2. Systém zjistí, zda je učitel přihlášený.
+ 3. Systém načte správná data z databáze (jeho předměty, konzultace, zkoušky).
+ 4. Systém zobrazí data graficky.
 
 **Responsibilities**
 
@@ -191,6 +191,87 @@ Jakožto učitel, definovat časovou a prostorovou náročnost předmětu a čas
 
 ---
 
+### Feature: Schválení předmětu (Manager)
+
+**User story**  
+Jakožto manažer potřebuji schválit předmět navržený učitelem, aby mohl učitel vypsat časové možnosti a Scheduling committee předmět rozvrhnout.
+
+**Feature breakdown**
+
+1. Manager otevře detail žádosti o vypsání předmětu
+2. Systém ověří přihlášení managera.
+3. Manager schválí nebo zamítne předmět.
+4. Učitel je upozorněn na schválení nebo zamítnutí předmětu.
+
+**Responsibilities**
+
+- **Autorizace a role**
+  - Ověřit roli „manager“ a přístup k dané žádosti.
+- **Zpracování schválení**
+  - Ověřit schválení, zda zpracovává existující předmět, který ještě nebyl schválen
+  - Propsat do databáze
+- **Notifikace**
+  - Informovat učitele a další role o výsledku rozhodnutí.
+- **Historie a dohledatelnost**
+  - Uložit rozhodnutí, změny stavů a uživatele, který akci provedl.
+
+
+---
+
+### Feature: Zobrazení grafického rozhraní pro rozvrhování předmětů a uložení změn (Scheduling committee)
+
+**User story**  
+Jakožto Scheduling committee potřebuji zobrazit grafické rozhraní na rozvrhování předmětů, abych postavil předmět, a useři si mohli zobrazit rozvrhy.
+
+**Feature breakdown**
+
+1. Scheduling otevře rozhraní pro rozvrhování předmětů.
+2. Systém ověří přihlášení Scheduling committee.
+3. Scheduling committee má zobrazené předměty a jejich časové a prostorové nároky a časové možnosti učeben.
+4. Pomocí grafického rozhraní Scheduling committee rozvrhne předmět.
+5. Uloží rozvržení předmětu.
+
+**Responsibilities**
+
+- **Oprávnění a přístup**
+  - Ověřit členství v Scheduling committee a příslušná práva.
+- **Načtení dat**
+  - Načíst požadavky předmětů, dostupnost učeben, kapacity a stávající kolize.
+- **Interaktivní plánování**
+  - Poskytnout drag & drop rozhraní, zoom, mřížku a přichytávání ke slotům.
+  - Inline validace kolizí a kapacit v reálném čase.
+- **Uložení, verze a audit**
+  - Uložit návrh i publikovanou verzi; verzování a možnost revertu.
+  - Auditovat změny (kdo/kdy/co) s komentáři.
+
+---
+
+### Feature: Přihlášení pomocí grafického rozhraní (User)
+
+**User story**  
+Jakožto uživatel se potřebuji přihlásit ke svému účtu, aby mi systém zobrazil správná data, která potřebuju. (A nezobrazil data, která nejsou pro mě)
+
+**Feature breakdown**
+
+1. Uživatel otevře formulář pro přihlášení.
+2. Zadá přihlašovací údaje.
+3. Systém ověří přihlašovací údaje, pokud jsou platné, potvrdí a redirektuje na správnou stránku.
+
+**Responsibilities**
+
+- **Autentizace**
+  - Zpracovat přihlášení (formulář/SSO), bezpečně ověřit uživatele.
+- **Validace a chybové stavy**
+  - Validovat formát vstupů; zobrazit srozumitelné chyby bez prozrazení detailů.
+- **UX a navigace**
+  - Podporovat „zapamatovat si mě“, přesměrování dle role/kontextu.
+- **Logování a audit**
+  - Logovat přihlášení/odhlášení, neúspěšné pokusy, zamykání účtu.
+- **Spojení dat s uživatelem a přesměrování na stránku**
+  - Podle role uživatele přesměrovat na správnou stránku.
+
+---
+
 ### Feature: Zobrazení rozvrhů předmětů (Student)
 
 **User story**  
@@ -198,10 +279,10 @@ Jakožto student potřebuju být schopný najít rozvrh konkrétních předmět�
 
 **Feature breakdown**
 
-- Vyhledání předmětu podle názvu/kódu/fakulty.
-- Zobrazení dostupných skupin a jejich časů/místností/kapacit.
-- Možnost porovnat skupiny mezi sebou.
-- Přidání vybraných skupin do Košíku.
+1. Vyhledání předmětu podle názvu/kódu/fakulty.
+2. Zobrazení dostupných skupin a jejich časů/místností/kapacit.
+3. Možnost porovnat skupiny mezi sebou.
+4. Přidání vybraných skupin do Košíku.
 
 **Responsibilities**
 
@@ -221,9 +302,9 @@ Jako student potřebuji exportovat svůj rozvrh do PDF, abych si ho mohl vytiskn
 
 **Feature breakdown**
 
-- Generovat tisknutelný týdenní přehled (PDF).
-- Volby vzhledu (barvy předmětů, skrytí detailů, velikost písma).
-- Možnost exportu rozvrhu z Košíku nebo finálního zápisu.
+1. Generovat tisknutelný týdenní přehled (PDF).
+2. Volby vzhledu (barvy předmětů, skrytí detailů, velikost písma).
+3. Možnost exportu rozvrhu z Košíku nebo finálního zápisu.
 
 **Responsibilities**
 
@@ -243,9 +324,9 @@ Jako student potřebuji zobrazit rozvrh jednotlivých učeben na fakultě, abych
 
 **Feature breakdown**
 
-- Vyhledání učebny podle budovy/čísla/kapacity/výbavy.
-- Zobrazení týdenního obsazení a volných slotů.
-- Indikace, kdy je místnost volná pro samostudium.
+1. Vyhledání učebny podle budovy/čísla/kapacity/výbavy.
+2. Zobrazení týdenního obsazení a volných slotů.
+3. Indikace, kdy je místnost volná pro samostudium.
 
 **Responsibilities**
 
@@ -265,9 +346,9 @@ Jako učitel potřebuji zobrazit rozvrh učeben, abych mohl přizpůsobit pláno
 
 **Feature breakdown**
 
-- Vyhledání a filtrování místností dle kapacity/výbavy/budovy.
-- Přehled kolizí s plánovanou výukou.
-- Návrh alternativních místností.
+1. Vyhledání a filtrování místností dle kapacity/výbavy/budovy.
+2. Přehled kolizí s plánovanou výukou.
+3. Návrh alternativních místností.
 
 **Responsibilities**
 
@@ -287,10 +368,10 @@ Jakožto komise, potřebuju dostat upozornění, pokud bude jeden učitel vyučo
 
 **Feature breakdown**
 
-- Pravidelný i ad-hoc běh detekce kolizí (učitel, učebna, čas).
-- Agregace nalezených kolizí do přehledů a priorit.
-- Notifikace komise s odkazy na konfliktní záznamy.
-- Návrh automatických alternativ (jiný čas/učebna/skupina).
+1. Pravidelný i ad-hoc běh detekce kolizí (učitel, učebna, čas).
+2. Agregace nalezených kolizí do přehledů a priorit.
+3. Notifikace komise s odkazy na konfliktní záznamy.
+4. Návrh automatických alternativ (jiný čas/učebna/skupina).
 
 **Responsibilities**
 
@@ -310,9 +391,9 @@ Jako manažer potřebuji vidět, kolik studentů se přihlásilo do jednotlivýc
 
 **Feature breakdown**
 
-- Přehled registrací vs. kapacity po předmětech/skupinách.
-- Trendy v čase (nápor registrací, čekací listiny).
-- Doporučení na otevření/sloučení/zavření skupin.
+1. Přehled registrací vs. kapacity po předmětech/skupinách.
+2. Trendy v čase (nápor registrací, čekací listiny).
+3. Doporučení na otevření/sloučení/zavření skupin.
 
 **Responsibilities**
 
