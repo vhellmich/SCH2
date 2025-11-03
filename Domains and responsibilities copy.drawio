@@ -182,13 +182,13 @@
           <mxGeometry x="1840" y="50" width="80" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2dq0gYbfpGrgbmDW32KL-67" value="fill subj. form with concept data" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="385" y="170" width="100" height="60" as="geometry" />
+          <mxGeometry x="363" y="169.12" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2dq0gYbfpGrgbmDW32KL-68" value="Validate subject creation form" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="501.5" y="170" width="100" height="60" as="geometry" />
+          <mxGeometry x="465" y="169.12" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2dq0gYbfpGrgbmDW32KL-69" value="send validation request notification" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="610" y="170" width="100" height="60" as="geometry" />
+          <mxGeometry x="569" y="169.12" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2dq0gYbfpGrgbmDW32KL-70" value="display send validation request action bar" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="355" y="50" width="100" height="60" as="geometry" />
@@ -500,13 +500,13 @@
           <mxGeometry x="160" y="635" width="3690" height="80" as="geometry" />
         </mxCell>
         <mxCell id="2dq0gYbfpGrgbmDW32KL-177" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#FF8000);strokeColor=light-dark(#000000,#FF0606);" parent="1" vertex="1">
-          <mxGeometry x="372" y="614.75" width="320" height="105.5" as="geometry" />
+          <mxGeometry x="340" y="615.87" width="320" height="105.5" as="geometry" />
         </mxCell>
         <mxCell id="2dq0gYbfpGrgbmDW32KL-178" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#FF8000);strokeColor=light-dark(#000000,#FF0606);" parent="1" vertex="1">
-          <mxGeometry x="744" y="615" width="230" height="105" as="geometry" />
+          <mxGeometry x="780" y="613.62" width="215" height="105" as="geometry" />
         </mxCell>
         <mxCell id="2dq0gYbfpGrgbmDW32KL-179" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#FF8000);strokeColor=light-dark(#000000,#FF0606);" parent="1" vertex="1">
-          <mxGeometry x="190" y="615" width="150" height="110" as="geometry" />
+          <mxGeometry x="190" y="615" width="140" height="110" as="geometry" />
         </mxCell>
         <mxCell id="2dq0gYbfpGrgbmDW32KL-180" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#FF8000);strokeColor=light-dark(#000000,#FF0606);" parent="1" vertex="1">
           <mxGeometry x="2310" y="610" width="220" height="120" as="geometry" />
@@ -589,9 +589,6 @@
         <mxCell id="2dq0gYbfpGrgbmDW32KL-271" value="Teacher/Student authorization" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1660" y="645" width="100" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="2dq0gYbfpGrgbmDW32KL-272" value="User authorization" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1030" y="647.5" width="100" height="60" as="geometry" />
-        </mxCell>
         <mxCell id="2dq0gYbfpGrgbmDW32KL-277" value="Load a subject" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1968" y="765" width="100" height="60" as="geometry" />
         </mxCell>
@@ -620,13 +617,13 @@
           <mxGeometry x="1970" y="646.25" width="80" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2dq0gYbfpGrgbmDW32KL-292" value="fill subj. form with concept data" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="380" y="642.5" width="100" height="60" as="geometry" />
+          <mxGeometry x="348" y="643.62" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2dq0gYbfpGrgbmDW32KL-295" value="display send validation request action bar" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="345" y="525" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2dq0gYbfpGrgbmDW32KL-296" value="send validation complete notification" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="748" y="645" width="100" height="60" as="geometry" />
+          <mxGeometry x="790" y="641" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2dq0gYbfpGrgbmDW32KL-298" value="display validation process history" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="627" y="535" width="100" height="60" as="geometry" />
@@ -691,7 +688,7 @@
         <mxCell id="2dq0gYbfpGrgbmDW32KL-324" value="Basket collision validator" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1830" y="612.5" width="170" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="2dq0gYbfpGrgbmDW32KL-325" value="Schedule data controller" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
+        <mxCell id="2dq0gYbfpGrgbmDW32KL-325" value="Schedule data loader" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="2104.75" y="612.5" width="150" height="30" as="geometry" />
         </mxCell>
         <mxCell id="2dq0gYbfpGrgbmDW32KL-326" value="Schedule user authorizer" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
@@ -707,13 +704,13 @@
           <mxGeometry x="2335" y="610" width="170" height="30" as="geometry" />
         </mxCell>
         <mxCell id="2dq0gYbfpGrgbmDW32KL-330" value="Subjects user authorizer" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="195" y="612.5" width="150" height="30" as="geometry" />
+          <mxGeometry x="190" y="613.62" width="150" height="30" as="geometry" />
         </mxCell>
         <mxCell id="2dq0gYbfpGrgbmDW32KL-331" value="Suject validator" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="768" y="615" width="170" height="30" as="geometry" />
+          <mxGeometry x="809" y="613.62" width="170" height="30" as="geometry" />
         </mxCell>
         <mxCell id="2dq0gYbfpGrgbmDW32KL-332" value="Subject creator" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="465" y="612.5" width="130" height="30" as="geometry" />
+          <mxGeometry x="433" y="613.62" width="130" height="30" as="geometry" />
         </mxCell>
         <mxCell id="2dq0gYbfpGrgbmDW32KL-333" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="2dq0gYbfpGrgbmDW32KL-337" target="2dq0gYbfpGrgbmDW32KL-346" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -1012,10 +1009,10 @@
           <mxGeometry x="200" y="642.5" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="oKQ9wNgd7Ok7wEZONRtd-5" value="Validate subject creation form" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="485" y="642.5" width="100" height="60" as="geometry" />
+          <mxGeometry x="453" y="643.62" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="oKQ9wNgd7Ok7wEZONRtd-6" value="send validation request notification" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="590" y="642.5" width="100" height="60" as="geometry" />
+          <mxGeometry x="558" y="643.62" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="oKQ9wNgd7Ok7wEZONRtd-8" value="Load of validation history" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="630" y="770" width="100" height="60" as="geometry" />
@@ -1087,7 +1084,7 @@
           <mxGeometry x="1500" y="647.5" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="oKQ9wNgd7Ok7wEZONRtd-35" value="Validate subject confirmation form" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="860" y="642.5" width="100" height="60" as="geometry" />
+          <mxGeometry x="890" y="640" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="oKQ9wNgd7Ok7wEZONRtd-36" value="Connect user with role" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="2780" y="645" width="100" height="60" as="geometry" />
@@ -1169,6 +1166,21 @@
         </mxCell>
         <mxCell id="oKQ9wNgd7Ok7wEZONRtd-65" value="Students/teachers" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="2150" y="492.5" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oKQ9wNgd7Ok7wEZONRtd-67" value="Teacher/Comittee authorization" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="650" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oKQ9wNgd7Ok7wEZONRtd-69" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#FF8000);strokeColor=light-dark(#000000,#FF0606);" vertex="1" parent="1">
+          <mxGeometry x="666.5" y="614.75" width="110" height="105.5" as="geometry" />
+        </mxCell>
+        <mxCell id="oKQ9wNgd7Ok7wEZONRtd-70" value="Load history data" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="669" y="169.12" width="81" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oKQ9wNgd7Ok7wEZONRtd-71" value="Load history data" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="681" y="650" width="81" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oKQ9wNgd7Ok7wEZONRtd-73" value="Validation history data loader" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="671.5" y="620" width="100" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
