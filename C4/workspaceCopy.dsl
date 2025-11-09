@@ -146,6 +146,100 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
         sch.authBusiness.userValidator -> idp "OIDC/JWT validation"
         sch.subjectsBusiness.subjectValidator -> notif "Send validation notifications"
         calendars -> sch.scheduleBusiness.scheduleExporter "Fetch iCal"
+        
+        // --- Deployment model: Development ---
+        deploymentEnvironment "Development" {
+        
+          deploymentNode "Dev Laptop" "Developer machine" "Windows/macOS/Linux" {
+            deploymentNode "Docker Desktop" "Local container runtime" "Docker" {
+        
+              // UI containers
+              deploymentNode "web" "Static/dev servers" "Node/Nginx" {
+                containerInstance sch.subjectsHtml
+                containerInstance sch.schedulingHtml
+                containerInstance sch.scheduleHtml
+                containerInstance sch.loginHtml
+                containerInstance sch.reportHtml
+              }
+        
+              // Backend containers
+              deploymentNode "app" "Backend services" ".NET/Java/Python" {
+                containerInstance sch.subjectsBusiness
+                containerInstance sch.schedulingBusiness
+                containerInstance sch.scheduleBusiness
+                containerInstance sch.authBusiness
+                containerInstance sch.reportingBusiness
+                containerInstance sch.authorizer
+              }
+        
+              // Databases (local Postgres schemas/instances)
+              deploymentNode "db" "Local database" "PostgreSQL" {
+                containerInstance sch.dbSubjects
+                containerInstance sch.dbSchedules
+                containerInstance sch.dbUsers
+                containerInstance sch.dbReports
+              }
+            }
+          }
+        
+          // Externals (test/stub)
+          deploymentNode "External - University SSO (Test)" "Test IdP / sandbox" "OIDC Provider" {
+            softwareSystemInstance idp
+          }
+          deploymentNode "External - Notification Service (Stub)" "MailHog/mock" "SMTP/HTTP" {
+            softwareSystemInstance notif
+          }
+          deploymentNode "External - Calendar Client" "Apple/Outlook/Thunderbird" "iCal Client" {
+            softwareSystemInstance calendars
+          }
+        }
+        
+        // --- Deployment model: Production ---
+        deploymentEnvironment "Production" {
+        
+          deploymentNode "EU Region" "Primary production region" "Cloud" {
+            deploymentNode "Kubernetes Cluster" "Container orchestration" "Kubernetes" {
+        
+              // Static web front-ends
+              deploymentNode "web" "Static front-ends" "Nginx/SPA" {
+                containerInstance sch.subjectsHtml
+                containerInstance sch.schedulingHtml
+                containerInstance sch.scheduleHtml
+                containerInstance sch.loginHtml
+                containerInstance sch.reportHtml
+              }
+        
+              // Backend services
+              deploymentNode "app" "Backend services" ".NET/Java/Python" {
+                containerInstance sch.subjectsBusiness
+                containerInstance sch.schedulingBusiness
+                containerInstance sch.scheduleBusiness
+                containerInstance sch.authBusiness
+                containerInstance sch.reportingBusiness
+                containerInstance sch.authorizer
+              }
+        
+              // Databases
+              deploymentNode "db" "Managed database cluster" "PostgreSQL" {
+                containerInstance sch.dbSubjects
+                containerInstance sch.dbSchedules
+                containerInstance sch.dbUsers
+                containerInstance sch.dbReports
+              }
+            }
+          }
+        
+          // Externals (production)
+          deploymentNode "External - University SSO" "University IdP (production)" "OIDC Provider" {
+            softwareSystemInstance idp
+          }
+          deploymentNode "External - Notification Service" "Email/workflow (production)" "SMTP/HTTP" {
+            softwareSystemInstance notif
+          }
+          deploymentNode "External - Calendar Clients" "End-user calendar apps" "iCal Clients" {
+            softwareSystemInstance calendars
+          }
+        }
     }
 
     views {
@@ -221,7 +315,128 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             include sch.reportingBusiness.reportExporter
             autolayout lr 600 320 220
         }
-
+        
+        deployment sch "Development" {
+            title "D1-Dev-Local"
+            include *
+            autolayout lr 800 480 280
+        }
+        
+        deployment sch "Production" {
+            title "D2-Production"
+            include *
+            autolayout lr 900 520 300
+        }
+        
+        dynamic sch "F1-Student-ViewSchedule" {
+            title "Zobrazení rozvrhu (Student)"
+            
+            student -> user                 "Plays role"
+            user    -> sch.scheduleHtml     "Open Schedule"
+            
+            user    -> sch.loginHtml        "If not signed in: Sign in"
+            sch.loginHtml -> sch.authBusiness "Authenticate"
+            
+            sch.scheduleHtml -> sch.scheduleBusiness "Load timetable"
+            sch.scheduleBusiness -> sch.dbSchedules  "Read"
+            
+            sch.scheduleHtml -> sch.scheduleBusiness "Render/refresh UI"
+            
+            autolayout lr 700 360 240
+        }
+        
+        dynamic sch "F2-Student-Basket" {
+            title "Košík (Student)"
+            
+            student -> user                   "Plays role"
+            user    -> sch.scheduleHtml       "Open Basket"
+            
+            user    -> sch.loginHtml          "If not signed in: Sign in"
+            sch.loginHtml -> sch.authBusiness "Authenticate / check session"
+            
+            sch.scheduleHtml -> sch.scheduleBusiness "Load page"
+            sch.scheduleBusiness -> sch.dbSchedules  "Read subjects + slots (projection)"
+            
+            user -> sch.scheduleHtml          "Select subjects"
+            sch.scheduleHtml -> sch.scheduleBusiness "Add to basket"
+            sch.scheduleBusiness -> sch.dbSchedules  "Write basket"
+            
+            sch.scheduleBusiness -> sch.schedulingBusiness "Check collisions"
+            sch.schedulingBusiness -> sch.dbSchedules      "Read"
+            sch.scheduleBusiness -> sch.schedulingBusiness "Request alternatives on conflict"
+            
+            sch.scheduleHtml -> sch.scheduleBusiness "Refresh timetable"
+            
+            autolayout lr 700 360 240
+        }
+        
+        dynamic sch "F3-Teacher-Subjects" {
+            title "Vypsání předmětu (Teacher)"
+            
+            teacher -> sch.subjectsHtml "Open Subject form"
+            
+            teacher -> user                 "Plays role"
+            user    -> sch.loginHtml        "If not signed in: Sign in"
+            sch.loginHtml -> sch.authBusiness "Authenticate"
+            
+            sch.subjectsHtml -> sch.subjectsBusiness "Submit subject"
+            
+            sch.subjectsHtml -> sch.subjectsBusiness "Validate data"
+            sch.subjectsBusiness -> sch.authorizer   "Authorize"
+            
+            autolayout lr 700 360 240
+        }
+        
+        dynamic sch "F4-Teacher-ViewSchedule" {
+            title "Zobrazení rozvrhu (Teacher)"
+            
+            teacher -> user                 "Plays role"
+            user    -> sch.scheduleHtml     "Open Schedule"
+            
+            user    -> sch.loginHtml        "If not signed in: Sign in"
+            sch.loginHtml -> sch.authBusiness "Authenticate"
+            
+            sch.scheduleHtml -> sch.scheduleBusiness "Load timetable"
+            sch.scheduleBusiness -> sch.dbSchedules  "Read"
+            
+            sch.scheduleHtml -> sch.scheduleBusiness "Render/refresh UI"
+            
+            autolayout lr 700 360 240
+        }
+        
+        dynamic sch "F5-Teacher-Reqs" {
+            title "Vypsání časových a prostorových požadavků (Teacher)"
+            
+            teacher -> sch.schedulingHtml            "Open requirements form"
+            
+            teacher -> user                           "Plays role"
+            user    -> sch.loginHtml                  "If not signed in: Sign in"
+            sch.loginHtml -> sch.authBusiness         "Authenticate"
+            
+            sch.schedulingHtml -> sch.schedulingBusiness  "Load subject list"
+            sch.schedulingBusiness -> sch.subjectsBusiness "Fetch teacher's subjects & policies"
+            
+            teacher -> sch.schedulingHtml                 "Enter time/day/length/frequency"
+            sch.schedulingHtml -> sch.schedulingBusiness  "Submit time preferences"
+            
+            teacher -> sch.schedulingHtml                 "Enter room type & capacity"
+            sch.schedulingHtml -> sch.schedulingBusiness  "Submit room requirements"
+            
+            teacher -> sch.schedulingHtml                 "Add special requirements"
+            sch.schedulingHtml -> sch.schedulingBusiness  "Submit special requirements"
+            
+            sch.schedulingHtml -> sch.schedulingBusiness  "Validate availability & realism"
+            sch.schedulingBusiness -> sch.subjectsBusiness "Policy checks"
+            
+            sch.schedulingHtml -> sch.schedulingBusiness  "Check collisions; request alternatives"
+            
+            sch.schedulingHtml -> sch.schedulingBusiness  "Confirm & submit"
+            sch.schedulingBusiness -> sch.authorizer      "Authorize / record submission"
+            committee -> sch.schedulingHtml               "Review submitted requirements"
+            
+            autolayout lr 700 360 240
+        }
+        
         styles {
             element "Person" {
                 shape person
