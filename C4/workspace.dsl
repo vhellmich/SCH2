@@ -10,19 +10,28 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
         user = person "SCH User" "Aggregated actor for shared web UX (Student/Teacher/Committee/Manager)."
 
         sch = softwareSystem "Schedules (SCH)" "Course management, scheduling, preferences, viewing, and reports." {
+            !docs docs/schedules.md
 
             group "Subjects" {
-                subjectsHtml = container "Subjects HTML" "Subjects UI in the browser." "HTML/JS" "HTML"
+                subjectsHtml = container "Subjects HTML" "Subjects UI in the browser." "HTML/JS" "HTML" {
+                    !docs docs/subjects-html.md
+                }
                 subjectsBusiness = container "Subjects Business" "Create/modify subjects; request validation." "Business" {
                     subjectCreator = component "Subject Creator" "Creates and updates subject data and concepts."
                     subjectValidator = component "Subject Validator" "Runs subject validation workflow."
                     subjectRepository = component "Subject Repository" "CRUD for subjects and validation history."
+                    
+                    !docs docs/subjects-business.md
+                    
                 }
             }
 
             group "Scheduling" {
-                schedulingHtml = container "Scheduling HTML" "Scheduling UI in the browser." "HTML/JS" "HTML"
+                schedulingHtml = container "Scheduling HTML" "Scheduling UI in the browser." "HTML/JS" "HTML" {
+                    !docs docs/scheduling-html.md
+                }
                 schedulingBusiness = container "Scheduling Business" "Plan schedules." "Business" {
+                    !docs docs/scheduling-business.md
                     schedulePlanner = component "Schedule Planner" "Creates and adjusts plans."
                     scheduleValidator = component "Schedule Validator" "Validates scheduling constraints."
                     schedulingRepository = component "Scheduling Repository" "CRUD for planning data and prefs."
@@ -30,8 +39,11 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             }
 
             group "Schedules" {
-                scheduleHtml = container "Schedule HTML" "Timetable/Basket UI in the browser." "HTML/JS" "HTML"
+                scheduleHtml = container "Schedule HTML" "Timetable/Basket UI in the browser." "HTML/JS" "HTML" {
+                    !docs docs/schedule-html.md
+                }
                 scheduleBusiness = container "Schedule Business" "Timetable view, basket, collisions." "Business" {
+                    !docs docs/schedule-business.md
                     scheduleViewer = component "Schedule Viewer" "Read-only queries & projections for timetable/basket UI."
                     scheduleTransformer = component "Schedule Transformer" "Builds ScheduleSnapshot (canonical DTO)."
                     scheduleExporter = component "Schedule Exporter" "Renders ScheduleSnapshot to requested format (ics/pdf/csv)."
@@ -41,8 +53,11 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             }
 
             group "Authentication" {
-                loginHtml = container "Login HTML" "Sign-in UI in the browser." "HTML/JS" "HTML"
+                loginHtml = container "Login HTML" "Sign-in UI in the browser." "HTML/JS" "HTML" {
+                    !docs docs/login-html.md
+                }
                 authBusiness = container "Authentication Business" "Login logic." "Business" {
+                    !docs docs/authentication-business.md
                     userValidator = component "User Validator" "Validates user identity and tokens."
                     sessionManager = component "Session Manager" "Manages sessions and tokens."
                     userRepository = component "User Repository" "CRUD for users and credentials."
@@ -50,8 +65,11 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             }
 
             group "Reporting" {
-                reportHtml = container "Report HTML" "Reports UI in the browser." "HTML/JS" "HTML"
+                reportHtml = container "Report HTML" "Reports UI in the browser." "HTML/JS" "HTML" {
+                    !docs docs/report-html.md
+                }
                 reportingBusiness = container "Reporting Business" "Generate and export reports." "Business" {
+                    !docs docs/reporting-business.md
                     reportGenerator = component "Report Generator" "Computes statistics and analytics."
                     reportExporter = component "Report Exporter" "Generates downloadable report files."
                     reportRepository = component "Report Repository" "CRUD for reports and aggregates."
@@ -59,13 +77,23 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             }
 
             group "Datastores" {
-                dbSubjects = container "Subjects DB" "Subjects and validation history." "Relational DB" "Database"
-                dbSchedules = container "Schedules DB" "Schedules, basket, preferences." "Relational DB" "Database"
-                dbUsers = container "Users DB" "Users and credentials." "Relational DB" "Database"
-                dbReports = container "Reports DB" "Reports and analytics data." "Relational DB" "Database"
+                dbSubjects = container "Subjects DB" "Subjects and validation history." "Relational DB" "Database" {
+                    !docs docs/subjects-db.md
+                }
+                dbSchedules = container "Schedules DB" "Schedules, basket, preferences." "Relational DB" "Database" {
+                    !docs docs/schedules-db.md
+                }
+                dbUsers = container "Users DB" "Users and credentials." "Relational DB" "Database" {
+                    !docs docs/users-db.md
+                }
+                dbReports = container "Reports DB" "Reports and analytics data." "Relational DB" "Database" {
+                    !docs docs/reports-db.md
+                }
             }
 
-            authorizer = container "Authorizer"
+            authorizer = container "Authorizer" {
+                !docs docs/authorizer.md
+            }
 
             student -> user "Is a" {
                 tags "Is a"
@@ -88,7 +116,7 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
 
             teacher -> sch.subjectsHtml "Course management; Management of schedule preferences"
             teacher -> sch.schedulingHtml "Scheduling"
-            committee -> sch.subjectsHtml "Validate subjects"
+            manager -> sch.subjectsHtml "Validate subjects"
             committee -> sch.schedulingHtml "Scheduling"
             manager -> sch.reportHtml "Review reports & analytics"
             
@@ -115,7 +143,7 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             schedulingHtml -> schedulingBusiness.schedulePlanner "Plan schedules"
             schedulingHtml -> schedulingBusiness.scheduleValidator "Validate schedules"
             scheduleHtml -> scheduleBusiness.scheduleUpdater "Modify timetable; basket"
-            scheduleHtml -> scheduleBusiness.scheduleViewer   "Load timetable; basket"
+            scheduleHtml -> scheduleBusiness.scheduleViewer "Load timetable; basket"
             scheduleHtml -> scheduleBusiness.scheduleExporter "Export (format param)"
             loginHtml -> authBusiness.userValidator "Authenticate"
             reportHtml -> reportingBusiness.reportGenerator "Request analytics"
@@ -125,6 +153,8 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             schedulingBusiness -> authorizer "Authorize"
             reportingBusiness -> authorizer "Authorize"
 
+            authorizer -> sch.dbUsers "Read/Write"
+
             subjectsBusiness.subjectCreator -> subjectsBusiness.subjectRepository "Read/Write"
             subjectsBusiness.subjectValidator -> subjectsBusiness.subjectRepository "Read/Write"
 
@@ -133,8 +163,8 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             schedulingBusiness.scheduleValidator -> subjectsBusiness.subjectValidator "Subject invariants"
 
             scheduleBusiness.scheduleUpdater -> scheduleBusiness.scheduleRepository "Read/Write"
-            scheduleBusiness.scheduleExporter  -> scheduleBusiness.scheduleTransformer "Build snapshot"
-            scheduleBusiness.scheduleViewer     -> scheduleBusiness.scheduleRepository "Read"
+            scheduleBusiness.scheduleExporter -> scheduleBusiness.scheduleTransformer "Build snapshot"
+            scheduleBusiness.scheduleViewer -> scheduleBusiness.scheduleRepository "Read"
             scheduleBusiness.scheduleTransformer -> scheduleBusiness.scheduleRepository "Read"
             scheduleBusiness.scheduleViewer -> schedulingBusiness.scheduleValidator "Collisions/availability (read)"
 
@@ -143,6 +173,7 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
 
             authBusiness.userValidator -> authBusiness.userRepository "Read/Write"
             authBusiness.sessionManager -> authBusiness.userRepository "Read/Write"
+
         }
 
         idp = softwareSystem "University SSO" "OIDC provider for authentication." "External"
@@ -159,95 +190,95 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
         // --- Deployment model: Development ---
         deploymentEnvironment "Development" {
         
-          deploymentNode "Dev Laptop" "Developer machine" "Windows/macOS/Linux" {
-            deploymentNode "Docker Desktop" "Local container runtime" "Docker" {
+            deploymentNode "Dev Laptop" "Developer machine" "Windows/macOS/Linux" {
+                deploymentNode "Docker Desktop" "Local container runtime" "Docker" {
         
-              // UI containers
-              deploymentNode "web" "Static/dev servers" "Node/Nginx" {
-                containerInstance sch.subjectsHtml
-                containerInstance sch.schedulingHtml
-                containerInstance sch.scheduleHtml
-                containerInstance sch.loginHtml
-                containerInstance sch.reportHtml
-              }
+                    // UI containers
+                    deploymentNode "web" "Static/dev servers" "Node/Nginx" {
+                        containerInstance sch.subjectsHtml
+                        containerInstance sch.schedulingHtml
+                        containerInstance sch.scheduleHtml
+                        containerInstance sch.loginHtml
+                        containerInstance sch.reportHtml
+                    }
         
-              // Backend containers
-              deploymentNode "app" "Backend services" ".NET/Java/Python" {
-                containerInstance sch.subjectsBusiness
-                containerInstance sch.schedulingBusiness
-                containerInstance sch.scheduleBusiness
-                containerInstance sch.authBusiness
-                containerInstance sch.reportingBusiness
-                containerInstance sch.authorizer
-              }
+                    // Backend containers
+                    deploymentNode "app" "Backend services" ".NET/Java/Python" {
+                        containerInstance sch.subjectsBusiness
+                        containerInstance sch.schedulingBusiness
+                        containerInstance sch.scheduleBusiness
+                        containerInstance sch.authBusiness
+                        containerInstance sch.reportingBusiness
+                        containerInstance sch.authorizer
+                    }
         
-              // Databases (local Postgres schemas/instances)
-              deploymentNode "db" "Local database" "PostgreSQL" {
-                containerInstance sch.dbSubjects
-                containerInstance sch.dbSchedules
-                containerInstance sch.dbUsers
-                containerInstance sch.dbReports
-              }
+                    // Databases (local Postgres schemas/instances)
+                    deploymentNode "db" "Local database" "PostgreSQL" {
+                        containerInstance sch.dbSubjects
+                        containerInstance sch.dbSchedules
+                        containerInstance sch.dbUsers
+                        containerInstance sch.dbReports
+                    }
+                }
             }
-          }
         
-          // Externals (test/stub)
-          deploymentNode "External - University SSO (Test)" "Test IdP / sandbox" "OIDC Provider" {
-            softwareSystemInstance idp
-          }
-          deploymentNode "External - Notification Service (Stub)" "MailHog/mock" "SMTP/HTTP" {
-            softwareSystemInstance notif
-          }
-          deploymentNode "External - Calendar Client" "Apple/Outlook/Thunderbird" "iCal Client" {
-            softwareSystemInstance calendars
-          }
+            // Externals (test/stub)
+            deploymentNode "External - University SSO (Test)" "Test IdP / sandbox" "OIDC Provider" {
+                softwareSystemInstance idp
+            }
+            deploymentNode "External - Notification Service (Stub)" "MailHog/mock" "SMTP/HTTP" {
+                softwareSystemInstance notif
+            }
+            deploymentNode "External - Calendar Client" "Apple/Outlook/Thunderbird" "iCal Client" {
+                softwareSystemInstance calendars
+            }
         }
         
         // --- Deployment model: Production ---
         deploymentEnvironment "Production" {
         
-          deploymentNode "EU Region" "Primary production region" "Cloud" {
-            deploymentNode "Kubernetes Cluster" "Container orchestration" "Kubernetes" {
+            deploymentNode "EU Region" "Primary production region" "Cloud" {
+                deploymentNode "Kubernetes Cluster" "Container orchestration" "Kubernetes" {
         
-              // Static web front-ends
-              deploymentNode "web" "Static front-ends" "Nginx/SPA" {
-                containerInstance sch.subjectsHtml
-                containerInstance sch.schedulingHtml
-                containerInstance sch.scheduleHtml
-                containerInstance sch.loginHtml
-                containerInstance sch.reportHtml
-              }
+                    // Static web front-ends
+                    deploymentNode "web" "Static front-ends" "Nginx/SPA" {
+                        containerInstance sch.subjectsHtml
+                        containerInstance sch.schedulingHtml
+                        containerInstance sch.scheduleHtml
+                        containerInstance sch.loginHtml
+                        containerInstance sch.reportHtml
+                    }
         
-              // Backend services
-              deploymentNode "app" "Backend services" ".NET/Java/Python" {
-                containerInstance sch.subjectsBusiness
-                containerInstance sch.schedulingBusiness
-                containerInstance sch.scheduleBusiness
-                containerInstance sch.authBusiness
-                containerInstance sch.reportingBusiness
-                containerInstance sch.authorizer
-              }
+                    // Backend services
+                    deploymentNode "app" "Backend services" ".NET/Java/Python" {
+                        containerInstance sch.subjectsBusiness
+                        containerInstance sch.schedulingBusiness
+                        containerInstance sch.scheduleBusiness
+                        containerInstance sch.authBusiness
+                        containerInstance sch.reportingBusiness
+                        containerInstance sch.authorizer
+                    }
         
-              // Databases
-              deploymentNode "db" "Managed database cluster" "PostgreSQL" {
-                containerInstance sch.dbSubjects
-                containerInstance sch.dbSchedules
-                containerInstance sch.dbUsers
-                containerInstance sch.dbReports
-              }
+                    // Databases
+                    deploymentNode "db" "Managed database cluster" "PostgreSQL" {
+                        containerInstance sch.dbSubjects
+                        containerInstance sch.dbSchedules
+                        containerInstance sch.dbUsers
+                        containerInstance sch.dbReports
+                    }
+                }
             }
-          }
         
-          // Externals (production)
-          deploymentNode "External - University SSO" "University IdP (production)" "OIDC Provider" {
-            softwareSystemInstance idp
-          }
-          deploymentNode "External - Notification Service" "Email/workflow (production)" "SMTP/HTTP" {
-            softwareSystemInstance notif
-          }
-          deploymentNode "External - Calendar Clients" "End-user calendar apps" "iCal Clients" {
-            softwareSystemInstance calendars
-          }
+            // Externals (production)
+            deploymentNode "External - University SSO" "University IdP (production)" "OIDC Provider" {
+                softwareSystemInstance idp
+            }
+            deploymentNode "External - Notification Service" "Email/workflow (production)" "SMTP/HTTP" {
+                softwareSystemInstance notif
+            }
+            deploymentNode "External - Calendar Clients" "End-user calendar apps" "iCal Clients" {
+                softwareSystemInstance calendars
+            }
         }
     }
 
@@ -340,13 +371,13 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             title "Zobrazení rozvrhu (Student)"
             
             student -> user "Is a"
-            user    -> sch.scheduleHtml     "Open Schedule"
+            user -> sch.scheduleHtml "Open Schedule"
             
-            user    -> sch.loginHtml        "If not signed in: Sign in"
+            user -> sch.loginHtml "If not signed in: Sign in"
             sch.loginHtml -> sch.authBusiness "Authenticate"
             
             sch.scheduleHtml -> sch.scheduleBusiness "Load timetable"
-            sch.scheduleBusiness -> sch.dbSchedules  "Read"
+            sch.scheduleBusiness -> sch.dbSchedules "Read"
             
             sch.scheduleHtml -> sch.scheduleBusiness "Render/refresh UI"
             
@@ -357,20 +388,20 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             title "Košík (Student)"
             
             student -> user "Is a"
-            user    -> sch.scheduleHtml       "Open Basket"
+            user -> sch.scheduleHtml "Open Basket"
             
-            user    -> sch.loginHtml          "If not signed in: Sign in"
+            user -> sch.loginHtml "If not signed in: Sign in"
             sch.loginHtml -> sch.authBusiness "Authenticate / check session"
             
             sch.scheduleHtml -> sch.scheduleBusiness "Load page"
-            sch.scheduleBusiness -> sch.dbSchedules  "Read subjects + slots (projection)"
+            sch.scheduleBusiness -> sch.dbSchedules "Read subjects + slots (projection)"
             
-            user -> sch.scheduleHtml          "Select subjects"
+            user -> sch.scheduleHtml "Select subjects"
             sch.scheduleHtml -> sch.scheduleBusiness "Add to basket"
-            sch.scheduleBusiness -> sch.dbSchedules  "Write basket"
+            sch.scheduleBusiness -> sch.dbSchedules "Write basket"
             
             sch.scheduleBusiness -> sch.schedulingBusiness "Check collisions"
-            sch.schedulingBusiness -> sch.dbSchedules      "Read"
+            sch.schedulingBusiness -> sch.dbSchedules "Read"
             sch.scheduleBusiness -> sch.schedulingBusiness "Request alternatives on conflict"
             
             sch.scheduleHtml -> sch.scheduleBusiness "Refresh timetable"
@@ -384,13 +415,13 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             teacher -> sch.subjectsHtml "Open Subject form"
             
             teacher -> user "Is a"
-            user    -> sch.loginHtml        "If not signed in: Sign in"
+            user -> sch.loginHtml "If not signed in: Sign in"
             sch.loginHtml -> sch.authBusiness "Authenticate"
             
             sch.subjectsHtml -> sch.subjectsBusiness "Submit subject"
             
             sch.subjectsHtml -> sch.subjectsBusiness "Validate data"
-            sch.subjectsBusiness -> sch.authorizer   "Authorize"
+            sch.subjectsBusiness -> sch.authorizer "Authorize"
             
             autolayout lr 700 360 240
         }
@@ -399,13 +430,13 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             title "Zobrazení rozvrhu (Teacher)"
             
             teacher -> user "Is a"
-            user    -> sch.scheduleHtml     "Open Schedule"
+            user -> sch.scheduleHtml "Open Schedule"
             
-            user    -> sch.loginHtml        "If not signed in: Sign in"
+            user -> sch.loginHtml "If not signed in: Sign in"
             sch.loginHtml -> sch.authBusiness "Authenticate"
             
             sch.scheduleHtml -> sch.scheduleBusiness "Load timetable"
-            sch.scheduleBusiness -> sch.dbSchedules  "Read"
+            sch.scheduleBusiness -> sch.dbSchedules "Read"
             
             sch.scheduleHtml -> sch.scheduleBusiness "Render/refresh UI"
             
@@ -415,32 +446,32 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
         dynamic sch "F5-Teacher-Reqs" {
             title "Vypsání časových a prostorových požadavků (Teacher)"
             
-            teacher -> sch.schedulingHtml            "Open requirements form"
+            teacher -> sch.schedulingHtml "Open requirements form"
             
             teacher -> user "Is a"
-            user    -> sch.loginHtml                  "If not signed in: Sign in"
-            sch.loginHtml -> sch.authBusiness         "Authenticate"
+            user -> sch.loginHtml "If not signed in: Sign in"
+            sch.loginHtml -> sch.authBusiness "Authenticate"
             
-            sch.schedulingHtml -> sch.schedulingBusiness  "Load subject list"
+            sch.schedulingHtml -> sch.schedulingBusiness "Load subject list"
             sch.schedulingBusiness -> sch.subjectsBusiness "Fetch teacher's subjects & policies"
             
-            teacher -> sch.schedulingHtml                 "Enter time/day/length/frequency"
-            sch.schedulingHtml -> sch.schedulingBusiness  "Submit time preferences"
+            teacher -> sch.schedulingHtml "Enter time/day/length/frequency"
+            sch.schedulingHtml -> sch.schedulingBusiness "Submit time preferences"
             
-            teacher -> sch.schedulingHtml                 "Enter room type & capacity"
-            sch.schedulingHtml -> sch.schedulingBusiness  "Submit room requirements"
+            teacher -> sch.schedulingHtml "Enter room type & capacity"
+            sch.schedulingHtml -> sch.schedulingBusiness "Submit room requirements"
             
-            teacher -> sch.schedulingHtml                 "Add special requirements"
-            sch.schedulingHtml -> sch.schedulingBusiness  "Submit special requirements"
+            teacher -> sch.schedulingHtml "Add special requirements"
+            sch.schedulingHtml -> sch.schedulingBusiness "Submit special requirements"
             
-            sch.schedulingHtml -> sch.schedulingBusiness  "Validate availability & realism"
+            sch.schedulingHtml -> sch.schedulingBusiness "Validate availability & realism"
             sch.schedulingBusiness -> sch.subjectsBusiness "Policy checks"
             
-            sch.schedulingHtml -> sch.schedulingBusiness  "Check collisions; request alternatives"
+            sch.schedulingHtml -> sch.schedulingBusiness "Check collisions; request alternatives"
             
-            sch.schedulingHtml -> sch.schedulingBusiness  "Confirm & submit"
-            sch.schedulingBusiness -> sch.authorizer      "Authorize / record submission"
-            committee -> sch.schedulingHtml               "Review submitted requirements"
+            sch.schedulingHtml -> sch.schedulingBusiness "Confirm & submit"
+            sch.schedulingBusiness -> sch.authorizer "Authorize / record submission"
+            committee -> sch.schedulingHtml "Review submitted requirements"
             
             autolayout lr 700 360 240
         }
