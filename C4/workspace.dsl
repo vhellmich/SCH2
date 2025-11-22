@@ -422,6 +422,8 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             
             sch.subjectsHtml -> sch.subjectsBusiness "Validate data"
             sch.subjectsBusiness -> sch.authorizer "Authorize"
+
+            sch.subjectsBusiness -> notif "Send validation notifications"
             
             autolayout lr 700 360 240
         }
@@ -454,7 +456,8 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             
             sch.schedulingHtml -> sch.schedulingBusiness "Load subject list"
             sch.schedulingBusiness -> sch.subjectsBusiness "Fetch teacher's subjects & policies"
-            
+            sch.subjectsBusiness -> sch.dbSubjects "Read subjects" 
+
             teacher -> sch.schedulingHtml "Enter time/day/length/frequency"
             sch.schedulingHtml -> sch.schedulingBusiness "Submit time preferences"
             
