@@ -5,7 +5,8 @@
   "description" : "Scheduling software system by team SCH2",
   "documentation" : { },
   "id" : 1,
-  "lastModifiedDate" : "2025-11-11T19:03:19Z",
+  "lastModifiedAgent" : "structurizr-ui",
+  "lastModifiedDate" : "2025-11-23T11:23:08Z",
   "model" : {
     "deploymentNodes" : [ {
       "children" : [ {
@@ -14,352 +15,382 @@
             "containerId" : "7",
             "deploymentGroups" : [ "Default" ],
             "environment" : "Development",
-            "id" : "121",
+            "id" : "160",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.73ca6d78-b6d4-4998-8fb6-e95f231ce33d.70e219de-d68e-4d3e-a435-705bc27e2c7b.1326378b-0d8a-42b4-950f-2ed2fe1e9681.87d1718b-4261-4ead-a254-93607f6aa6da"
+              "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.7a0238c4-da3c-4f4e-9146-2be95045308f.bad93848-68c5-4c81-989e-e5b53f3c699b.937afc5d-d986-4d84-8fa2-700b96bf4d72.9d28f455-920f-4e28-aa56-ada10fd6835d"
             },
             "relationships" : [ {
-              "description" : "Requests",
-              "destinationId" : "127",
-              "id" : "128",
-              "linkedRelationshipId" : "55",
-              "sourceId" : "121"
+              "description" : "Create/modify subjects",
+              "destinationId" : "166",
+              "id" : "168",
+              "linkedRelationshipId" : "79",
+              "sourceId" : "160"
             } ],
             "tags" : "Container Instance"
           }, {
-            "containerId" : "12",
+            "containerId" : "14",
             "deploymentGroups" : [ "Default" ],
             "environment" : "Development",
-            "id" : "122",
+            "id" : "161",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.73ca6d78-b6d4-4998-8fb6-e95f231ce33d.70e219de-d68e-4d3e-a435-705bc27e2c7b.1326378b-0d8a-42b4-950f-2ed2fe1e9681.b112dbc3-ff5d-4f46-b83b-3f817b26bf13"
+              "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.7a0238c4-da3c-4f4e-9146-2be95045308f.bad93848-68c5-4c81-989e-e5b53f3c699b.937afc5d-d986-4d84-8fa2-700b96bf4d72.0f0c526b-ec79-4e25-b35e-c39c0ed48d38"
             },
             "relationships" : [ {
-              "description" : "Requests",
-              "destinationId" : "129",
-              "id" : "130",
-              "linkedRelationshipId" : "56",
-              "sourceId" : "122"
+              "description" : "Plan schedules",
+              "destinationId" : "169",
+              "id" : "171",
+              "linkedRelationshipId" : "82",
+              "sourceId" : "161"
+            } ],
+            "tags" : "Container Instance"
+          }, {
+            "containerId" : "21",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Development",
+            "id" : "162",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.7a0238c4-da3c-4f4e-9146-2be95045308f.bad93848-68c5-4c81-989e-e5b53f3c699b.937afc5d-d986-4d84-8fa2-700b96bf4d72.010016ac-7d5e-4998-bf07-155a7e39142b"
+            },
+            "relationships" : [ {
+              "description" : "Load timetable",
+              "destinationId" : "173",
+              "id" : "175",
+              "linkedRelationshipId" : "85",
+              "sourceId" : "162"
+            } ],
+            "tags" : "Container Instance"
+          }, {
+            "containerId" : "31",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Development",
+            "id" : "163",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.7a0238c4-da3c-4f4e-9146-2be95045308f.bad93848-68c5-4c81-989e-e5b53f3c699b.937afc5d-d986-4d84-8fa2-700b96bf4d72.3e584624-9266-4933-81d6-a8b2e018cd37"
+            },
+            "relationships" : [ {
+              "description" : "Authenticate",
+              "destinationId" : "177",
+              "id" : "179",
+              "linkedRelationshipId" : "90",
+              "sourceId" : "163"
+            } ],
+            "tags" : "Container Instance"
+          }, {
+            "containerId" : "37",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Development",
+            "id" : "164",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.7a0238c4-da3c-4f4e-9146-2be95045308f.bad93848-68c5-4c81-989e-e5b53f3c699b.937afc5d-d986-4d84-8fa2-700b96bf4d72.cd7a1afa-67f8-44a6-bd34-bf3180d92e89"
+            },
+            "relationships" : [ {
+              "description" : "Request analytics",
+              "destinationId" : "180",
+              "id" : "182",
+              "linkedRelationshipId" : "92",
+              "sourceId" : "164"
+            } ],
+            "tags" : "Container Instance"
+          } ],
+          "description" : "Static/dev servers",
+          "environment" : "Development",
+          "id" : "159",
+          "instances" : "1",
+          "name" : "web",
+          "properties" : {
+            "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.7a0238c4-da3c-4f4e-9146-2be95045308f.bad93848-68c5-4c81-989e-e5b53f3c699b.937afc5d-d986-4d84-8fa2-700b96bf4d72"
+          },
+          "tags" : "Element,Deployment Node",
+          "technology" : "Node/Nginx"
+        }, {
+          "containerInstances" : [ {
+            "containerId" : "10",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Development",
+            "id" : "166",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.7a0238c4-da3c-4f4e-9146-2be95045308f.bad93848-68c5-4c81-989e-e5b53f3c699b.bd8e8ce7-97ae-4db9-95c8-6fdf4f20f25e.d89ac3d4-5050-40e3-a7d1-0a4d9de6cbfa"
+            },
+            "relationships" : [ {
+              "description" : "Subject data response",
+              "destinationId" : "160",
+              "id" : "167",
+              "linkedRelationshipId" : "95",
+              "sourceId" : "166"
+            }, {
+              "description" : "Authorize",
+              "destinationId" : "183",
+              "id" : "184",
+              "linkedRelationshipId" : "122",
+              "sourceId" : "166"
+            }, {
+              "description" : "Read/Write",
+              "destinationId" : "188",
+              "id" : "189",
+              "linkedRelationshipId" : "111",
+              "sourceId" : "166"
+            }, {
+              "description" : "Send validation notifications",
+              "destinationId" : "203",
+              "id" : "204",
+              "linkedRelationshipId" : "153",
+              "sourceId" : "166"
             } ],
             "tags" : "Container Instance"
           }, {
             "containerId" : "17",
             "deploymentGroups" : [ "Default" ],
             "environment" : "Development",
-            "id" : "123",
+            "id" : "169",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.73ca6d78-b6d4-4998-8fb6-e95f231ce33d.70e219de-d68e-4d3e-a435-705bc27e2c7b.1326378b-0d8a-42b4-950f-2ed2fe1e9681.ff5d5737-ab9c-4084-969e-af38e7e968d1"
+              "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.7a0238c4-da3c-4f4e-9146-2be95045308f.bad93848-68c5-4c81-989e-e5b53f3c699b.bd8e8ce7-97ae-4db9-95c8-6fdf4f20f25e.d4c2d826-2f05-4ddf-a4ef-973b1f773a23"
             },
             "relationships" : [ {
-              "description" : "Requests",
-              "destinationId" : "132",
-              "id" : "133",
-              "linkedRelationshipId" : "57",
-              "sourceId" : "123"
-            } ],
-            "tags" : "Container Instance"
-          }, {
-            "containerId" : "24",
-            "deploymentGroups" : [ "Default" ],
-            "environment" : "Development",
-            "id" : "124",
-            "instanceId" : 1,
-            "properties" : {
-              "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.73ca6d78-b6d4-4998-8fb6-e95f231ce33d.70e219de-d68e-4d3e-a435-705bc27e2c7b.1326378b-0d8a-42b4-950f-2ed2fe1e9681.43568565-81da-4978-913b-199b9aebbdf2"
-            },
-            "relationships" : [ {
-              "description" : "Requests",
-              "destinationId" : "135",
-              "id" : "136",
-              "linkedRelationshipId" : "58",
-              "sourceId" : "124"
-            } ],
-            "tags" : "Container Instance"
-          }, {
-            "containerId" : "29",
-            "deploymentGroups" : [ "Default" ],
-            "environment" : "Development",
-            "id" : "125",
-            "instanceId" : 1,
-            "properties" : {
-              "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.73ca6d78-b6d4-4998-8fb6-e95f231ce33d.70e219de-d68e-4d3e-a435-705bc27e2c7b.1326378b-0d8a-42b4-950f-2ed2fe1e9681.91f7ce5e-df10-4830-a23f-6eb97ed6a1d5"
-            },
-            "relationships" : [ {
-              "description" : "Requests",
-              "destinationId" : "137",
-              "id" : "138",
-              "linkedRelationshipId" : "59",
-              "sourceId" : "125"
-            } ],
-            "tags" : "Container Instance"
-          } ],
-          "description" : "Static/dev servers",
-          "environment" : "Development",
-          "id" : "120",
-          "instances" : "1",
-          "name" : "web",
-          "properties" : {
-            "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.73ca6d78-b6d4-4998-8fb6-e95f231ce33d.70e219de-d68e-4d3e-a435-705bc27e2c7b.1326378b-0d8a-42b4-950f-2ed2fe1e9681"
-          },
-          "tags" : "Element,Deployment Node",
-          "technology" : "Node/Nginx"
-        }, {
-          "containerInstances" : [ {
-            "containerId" : "8",
-            "deploymentGroups" : [ "Default" ],
-            "environment" : "Development",
-            "id" : "127",
-            "instanceId" : 1,
-            "properties" : {
-              "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.73ca6d78-b6d4-4998-8fb6-e95f231ce33d.70e219de-d68e-4d3e-a435-705bc27e2c7b.98da919e-d66e-433a-a991-a34b71cfb55d.b084ece8-6284-470d-91b8-9079ff228f10"
-            },
-            "relationships" : [ {
-              "description" : "Authorize",
-              "destinationId" : "139",
-              "id" : "140",
-              "linkedRelationshipId" : "83",
-              "sourceId" : "127"
+              "description" : "Schedule plan response",
+              "destinationId" : "161",
+              "id" : "170",
+              "linkedRelationshipId" : "98",
+              "sourceId" : "169"
             }, {
-              "description" : "Read/Write",
-              "destinationId" : "144",
-              "id" : "145",
-              "linkedRelationshipId" : "62",
-              "sourceId" : "127"
-            }, {
-              "description" : "Send validation notifications",
-              "destinationId" : "159",
-              "id" : "160",
-              "linkedRelationshipId" : "114",
-              "sourceId" : "127"
-            } ],
-            "tags" : "Container Instance"
-          }, {
-            "containerId" : "13",
-            "deploymentGroups" : [ "Default" ],
-            "environment" : "Development",
-            "id" : "129",
-            "instanceId" : 1,
-            "properties" : {
-              "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.73ca6d78-b6d4-4998-8fb6-e95f231ce33d.70e219de-d68e-4d3e-a435-705bc27e2c7b.98da919e-d66e-433a-a991-a34b71cfb55d.5194c7d8-0cbb-4f2f-be78-551066d79414"
-            },
-            "relationships" : [ {
               "description" : "Read subject catalog; evaluate subject policies",
-              "destinationId" : "127",
-              "id" : "131",
-              "linkedRelationshipId" : "60",
-              "sourceId" : "129"
+              "destinationId" : "166",
+              "id" : "172",
+              "linkedRelationshipId" : "109",
+              "sourceId" : "169"
             }, {
               "description" : "Authorize",
-              "destinationId" : "139",
-              "id" : "141",
-              "linkedRelationshipId" : "84",
-              "sourceId" : "129"
+              "destinationId" : "183",
+              "id" : "185",
+              "linkedRelationshipId" : "123",
+              "sourceId" : "169"
             }, {
               "description" : "Read/Write",
-              "destinationId" : "146",
-              "id" : "147",
-              "linkedRelationshipId" : "64",
-              "sourceId" : "129"
-            } ],
-            "tags" : "Container Instance"
-          }, {
-            "containerId" : "18",
-            "deploymentGroups" : [ "Default" ],
-            "environment" : "Development",
-            "id" : "132",
-            "instanceId" : 1,
-            "properties" : {
-              "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.73ca6d78-b6d4-4998-8fb6-e95f231ce33d.70e219de-d68e-4d3e-a435-705bc27e2c7b.98da919e-d66e-433a-a991-a34b71cfb55d.576ad84e-8111-4d58-8545-8a50b71e2263"
-            },
-            "relationships" : [ {
-              "description" : "Collisions/availability (read)",
-              "destinationId" : "129",
-              "id" : "134",
-              "linkedRelationshipId" : "101",
-              "sourceId" : "132"
-            }, {
-              "description" : "Read/Write",
-              "destinationId" : "146",
-              "id" : "148",
-              "linkedRelationshipId" : "66",
-              "sourceId" : "132"
+              "destinationId" : "190",
+              "id" : "191",
+              "linkedRelationshipId" : "113",
+              "sourceId" : "169"
             } ],
             "tags" : "Container Instance"
           }, {
             "containerId" : "25",
             "deploymentGroups" : [ "Default" ],
             "environment" : "Development",
-            "id" : "135",
+            "id" : "173",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.73ca6d78-b6d4-4998-8fb6-e95f231ce33d.70e219de-d68e-4d3e-a435-705bc27e2c7b.98da919e-d66e-433a-a991-a34b71cfb55d.6f426ab5-e8f7-46b1-8cf8-761c49bb2ce2"
+              "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.7a0238c4-da3c-4f4e-9146-2be95045308f.bad93848-68c5-4c81-989e-e5b53f3c699b.bd8e8ce7-97ae-4db9-95c8-6fdf4f20f25e.747b9a03-3ad3-4b4d-bcfb-729e3747fbe0"
             },
             "relationships" : [ {
+              "description" : "Timetable data",
+              "destinationId" : "162",
+              "id" : "174",
+              "linkedRelationshipId" : "101",
+              "sourceId" : "173"
+            }, {
+              "description" : "Collisions/availability (read)",
+              "destinationId" : "169",
+              "id" : "176",
+              "linkedRelationshipId" : "140",
+              "sourceId" : "173"
+            }, {
               "description" : "Read/Write",
-              "destinationId" : "150",
-              "id" : "151",
-              "linkedRelationshipId" : "68",
-              "sourceId" : "135"
+              "destinationId" : "190",
+              "id" : "192",
+              "linkedRelationshipId" : "115",
+              "sourceId" : "173"
+            } ],
+            "tags" : "Container Instance"
+          }, {
+            "containerId" : "33",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Development",
+            "id" : "177",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.7a0238c4-da3c-4f4e-9146-2be95045308f.bad93848-68c5-4c81-989e-e5b53f3c699b.bd8e8ce7-97ae-4db9-95c8-6fdf4f20f25e.ffcd2bd9-90dd-4980-92c7-5d53a317a63c"
+            },
+            "relationships" : [ {
+              "description" : "Authentication result",
+              "destinationId" : "163",
+              "id" : "178",
+              "linkedRelationshipId" : "105",
+              "sourceId" : "177"
+            }, {
+              "description" : "Read/Write",
+              "destinationId" : "194",
+              "id" : "195",
+              "linkedRelationshipId" : "117",
+              "sourceId" : "177"
             }, {
               "description" : "OIDC/JWT validation",
-              "destinationId" : "156",
-              "id" : "157",
-              "linkedRelationshipId" : "112",
-              "sourceId" : "135"
+              "destinationId" : "200",
+              "id" : "201",
+              "linkedRelationshipId" : "151",
+              "sourceId" : "177"
             } ],
             "tags" : "Container Instance"
           }, {
-            "containerId" : "30",
+            "containerId" : "40",
             "deploymentGroups" : [ "Default" ],
             "environment" : "Development",
-            "id" : "137",
+            "id" : "180",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.73ca6d78-b6d4-4998-8fb6-e95f231ce33d.70e219de-d68e-4d3e-a435-705bc27e2c7b.98da919e-d66e-433a-a991-a34b71cfb55d.a1c49244-f91e-41c7-889c-fe7b52f77e26"
+              "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.7a0238c4-da3c-4f4e-9146-2be95045308f.bad93848-68c5-4c81-989e-e5b53f3c699b.bd8e8ce7-97ae-4db9-95c8-6fdf4f20f25e.93090beb-1b13-4dc1-bb80-44b0d5e5f6b7"
             },
             "relationships" : [ {
+              "description" : "Analytics data",
+              "destinationId" : "164",
+              "id" : "181",
+              "linkedRelationshipId" : "107",
+              "sourceId" : "180"
+            }, {
               "description" : "Authorize",
-              "destinationId" : "139",
-              "id" : "142",
-              "linkedRelationshipId" : "85",
-              "sourceId" : "137"
+              "destinationId" : "183",
+              "id" : "186",
+              "linkedRelationshipId" : "124",
+              "sourceId" : "180"
             }, {
               "description" : "Read",
-              "destinationId" : "146",
-              "id" : "149",
-              "linkedRelationshipId" : "72",
-              "sourceId" : "137"
+              "destinationId" : "190",
+              "id" : "193",
+              "linkedRelationshipId" : "121",
+              "sourceId" : "180"
             }, {
               "description" : "Read/Write",
-              "destinationId" : "153",
-              "id" : "154",
-              "linkedRelationshipId" : "70",
-              "sourceId" : "137"
+              "destinationId" : "197",
+              "id" : "198",
+              "linkedRelationshipId" : "119",
+              "sourceId" : "180"
             } ],
             "tags" : "Container Instance"
           }, {
-            "containerId" : "38",
+            "containerId" : "48",
             "deploymentGroups" : [ "Default" ],
             "environment" : "Development",
-            "id" : "139",
+            "id" : "183",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.73ca6d78-b6d4-4998-8fb6-e95f231ce33d.70e219de-d68e-4d3e-a435-705bc27e2c7b.98da919e-d66e-433a-a991-a34b71cfb55d.a32a39fa-14d0-40bb-bddf-6d7514638816"
+              "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.7a0238c4-da3c-4f4e-9146-2be95045308f.bad93848-68c5-4c81-989e-e5b53f3c699b.bd8e8ce7-97ae-4db9-95c8-6fdf4f20f25e.d801cde3-a8d1-4105-85b0-7e58c1b45fcb"
             },
             "relationships" : [ {
               "description" : "Read/Write",
-              "destinationId" : "150",
-              "id" : "152",
-              "linkedRelationshipId" : "86",
-              "sourceId" : "139"
+              "destinationId" : "194",
+              "id" : "196",
+              "linkedRelationshipId" : "125",
+              "sourceId" : "183"
             } ],
             "tags" : "Container Instance"
           } ],
           "description" : "Backend services",
           "environment" : "Development",
-          "id" : "126",
+          "id" : "165",
           "instances" : "1",
           "name" : "app",
           "properties" : {
-            "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.73ca6d78-b6d4-4998-8fb6-e95f231ce33d.70e219de-d68e-4d3e-a435-705bc27e2c7b.98da919e-d66e-433a-a991-a34b71cfb55d"
+            "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.7a0238c4-da3c-4f4e-9146-2be95045308f.bad93848-68c5-4c81-989e-e5b53f3c699b.bd8e8ce7-97ae-4db9-95c8-6fdf4f20f25e"
           },
           "tags" : "Element,Deployment Node",
           "technology" : ".NET/Java/Python"
         }, {
           "containerInstances" : [ {
-            "containerId" : "34",
+            "containerId" : "44",
             "deploymentGroups" : [ "Default" ],
             "environment" : "Development",
-            "id" : "144",
+            "id" : "188",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.73ca6d78-b6d4-4998-8fb6-e95f231ce33d.70e219de-d68e-4d3e-a435-705bc27e2c7b.a592768f-c871-4e7a-9749-374934848a3e.288175de-3b43-46f4-a76a-82ddee8d145b"
+              "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.7a0238c4-da3c-4f4e-9146-2be95045308f.bad93848-68c5-4c81-989e-e5b53f3c699b.912cb89e-9a5e-44ea-829b-6b7a2c59c4a2.3abb10fb-adfd-4c93-bcba-9f7445168ec4"
             },
             "tags" : "Container Instance"
           }, {
-            "containerId" : "35",
+            "containerId" : "45",
             "deploymentGroups" : [ "Default" ],
             "environment" : "Development",
-            "id" : "146",
+            "id" : "190",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.73ca6d78-b6d4-4998-8fb6-e95f231ce33d.70e219de-d68e-4d3e-a435-705bc27e2c7b.a592768f-c871-4e7a-9749-374934848a3e.a5361350-c449-4298-8020-3636aeaaf786"
+              "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.7a0238c4-da3c-4f4e-9146-2be95045308f.bad93848-68c5-4c81-989e-e5b53f3c699b.912cb89e-9a5e-44ea-829b-6b7a2c59c4a2.3e4508b5-66d6-4c3c-8d65-bbae1ed59a37"
             },
             "tags" : "Container Instance"
           }, {
-            "containerId" : "36",
+            "containerId" : "46",
             "deploymentGroups" : [ "Default" ],
             "environment" : "Development",
-            "id" : "150",
+            "id" : "194",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.73ca6d78-b6d4-4998-8fb6-e95f231ce33d.70e219de-d68e-4d3e-a435-705bc27e2c7b.a592768f-c871-4e7a-9749-374934848a3e.b8c3a009-5ae6-45bf-a96d-ba9279f918da"
+              "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.7a0238c4-da3c-4f4e-9146-2be95045308f.bad93848-68c5-4c81-989e-e5b53f3c699b.912cb89e-9a5e-44ea-829b-6b7a2c59c4a2.3ab8a17d-0bb5-464b-9288-950e65709d3b"
             },
             "tags" : "Container Instance"
           }, {
-            "containerId" : "37",
+            "containerId" : "47",
             "deploymentGroups" : [ "Default" ],
             "environment" : "Development",
-            "id" : "153",
+            "id" : "197",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.73ca6d78-b6d4-4998-8fb6-e95f231ce33d.70e219de-d68e-4d3e-a435-705bc27e2c7b.a592768f-c871-4e7a-9749-374934848a3e.28ea33fe-33b4-4220-8f1d-4fc101097d10"
+              "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.7a0238c4-da3c-4f4e-9146-2be95045308f.bad93848-68c5-4c81-989e-e5b53f3c699b.912cb89e-9a5e-44ea-829b-6b7a2c59c4a2.4df56f5a-74df-405f-a9b4-a24c1dee9009"
             },
             "tags" : "Container Instance"
           } ],
           "description" : "Local database",
           "environment" : "Development",
-          "id" : "143",
+          "id" : "187",
           "instances" : "1",
           "name" : "db",
           "properties" : {
-            "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.73ca6d78-b6d4-4998-8fb6-e95f231ce33d.70e219de-d68e-4d3e-a435-705bc27e2c7b.a592768f-c871-4e7a-9749-374934848a3e"
+            "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.7a0238c4-da3c-4f4e-9146-2be95045308f.bad93848-68c5-4c81-989e-e5b53f3c699b.912cb89e-9a5e-44ea-829b-6b7a2c59c4a2"
           },
           "tags" : "Element,Deployment Node",
           "technology" : "PostgreSQL"
         } ],
         "description" : "Local container runtime",
         "environment" : "Development",
-        "id" : "119",
+        "id" : "158",
         "instances" : "1",
         "name" : "Docker Desktop",
         "properties" : {
-          "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.73ca6d78-b6d4-4998-8fb6-e95f231ce33d.70e219de-d68e-4d3e-a435-705bc27e2c7b"
+          "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.7a0238c4-da3c-4f4e-9146-2be95045308f.bad93848-68c5-4c81-989e-e5b53f3c699b"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "Docker"
       } ],
       "description" : "Developer machine",
       "environment" : "Development",
-      "id" : "118",
+      "id" : "157",
       "instances" : "1",
       "name" : "Dev Laptop",
       "properties" : {
-        "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.73ca6d78-b6d4-4998-8fb6-e95f231ce33d"
+        "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.7a0238c4-da3c-4f4e-9146-2be95045308f"
       },
       "tags" : "Element,Deployment Node",
       "technology" : "Windows/macOS/Linux"
     }, {
       "description" : "Test IdP / sandbox",
       "environment" : "Development",
-      "id" : "155",
+      "id" : "199",
       "instances" : "1",
       "name" : "External - University SSO (Test)",
       "properties" : {
-        "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.d5030a70-3f16-4f36-84cd-82dbbd053d84"
+        "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.3e983aad-3413-4d74-be11-a0ea8b991e1e"
       },
       "softwareSystemInstances" : [ {
         "deploymentGroups" : [ "Default" ],
         "environment" : "Development",
-        "id" : "156",
+        "id" : "200",
         "instanceId" : 1,
         "properties" : {
-          "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.d5030a70-3f16-4f36-84cd-82dbbd053d84.fcd5c47f-3ea6-494c-a483-dfb1b50b852f"
+          "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.3e983aad-3413-4d74-be11-a0ea8b991e1e.f0ce742c-0396-445e-9753-62ffcff27bd8"
         },
-        "softwareSystemId" : "106",
+        "softwareSystemId" : "145",
         "tags" : "Software System Instance"
       } ],
       "tags" : "Element,Deployment Node",
@@ -367,21 +398,21 @@
     }, {
       "description" : "MailHog/mock",
       "environment" : "Development",
-      "id" : "158",
+      "id" : "202",
       "instances" : "1",
       "name" : "External - Notification Service (Stub)",
       "properties" : {
-        "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.485beb79-b681-4294-8aa2-36eefead67df"
+        "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.e61d850d-76dd-4b48-b584-1b55a2999c0a"
       },
       "softwareSystemInstances" : [ {
         "deploymentGroups" : [ "Default" ],
         "environment" : "Development",
-        "id" : "159",
+        "id" : "203",
         "instanceId" : 1,
         "properties" : {
-          "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.485beb79-b681-4294-8aa2-36eefead67df.8d54b646-2c7c-4dcb-8319-2aca14121357"
+          "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.e61d850d-76dd-4b48-b584-1b55a2999c0a.d31f65ae-8b03-4e7a-b518-7cb36299dfd3"
         },
-        "softwareSystemId" : "107",
+        "softwareSystemId" : "146",
         "tags" : "Software System Instance"
       } ],
       "tags" : "Element,Deployment Node",
@@ -389,28 +420,28 @@
     }, {
       "description" : "Apple/Outlook/Thunderbird",
       "environment" : "Development",
-      "id" : "161",
+      "id" : "205",
       "instances" : "1",
       "name" : "External - Calendar Client",
       "properties" : {
-        "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.80a1963c-88a8-4135-a3da-f5e832a41f65"
+        "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.fb0347ec-9d98-4bc3-a9c2-aa26fa3e46a6"
       },
       "softwareSystemInstances" : [ {
         "deploymentGroups" : [ "Default" ],
         "environment" : "Development",
-        "id" : "162",
+        "id" : "206",
         "instanceId" : 1,
         "properties" : {
-          "structurizr.dsl.identifier" : "20c12b70-3c44-429b-98a2-eb8c319122f2.80a1963c-88a8-4135-a3da-f5e832a41f65.436b4e89-53be-40ac-bbfa-9a48eb7745f8"
+          "structurizr.dsl.identifier" : "7497cb60-6d2a-44c3-bef8-8505b91927b9.fb0347ec-9d98-4bc3-a9c2-aa26fa3e46a6.124be32d-057d-4874-9b51-cab328182aa9"
         },
         "relationships" : [ {
           "description" : "Fetch iCal",
-          "destinationId" : "132",
-          "id" : "163",
-          "linkedRelationshipId" : "116",
-          "sourceId" : "162"
+          "destinationId" : "173",
+          "id" : "207",
+          "linkedRelationshipId" : "155",
+          "sourceId" : "206"
         } ],
-        "softwareSystemId" : "108",
+        "softwareSystemId" : "147",
         "tags" : "Software System Instance"
       } ],
       "tags" : "Element,Deployment Node",
@@ -422,352 +453,382 @@
             "containerId" : "7",
             "deploymentGroups" : [ "Default" ],
             "environment" : "Production",
-            "id" : "167",
+            "id" : "211",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.801389e2-3bfc-4ea0-883b-b844dcf2319f.0748341a-5bc4-49cb-b163-0e795efe7337.dc7fd632-841b-4651-bb5f-190c9bc1a7b1.5625b80d-47f3-4195-b11a-acf872a735ee"
+              "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.c2a99693-97f1-452e-9913-4edc40254659.d9f65142-bfa5-42d5-8cb0-a28eb99b8771.d93ef7e3-bf5d-4f03-a31b-ebd8596a096a.abd682ba-1c33-40bc-8864-bfe4e0696089"
             },
             "relationships" : [ {
-              "description" : "Requests",
-              "destinationId" : "173",
-              "id" : "174",
-              "linkedRelationshipId" : "55",
-              "sourceId" : "167"
+              "description" : "Create/modify subjects",
+              "destinationId" : "217",
+              "id" : "219",
+              "linkedRelationshipId" : "79",
+              "sourceId" : "211"
             } ],
             "tags" : "Container Instance"
           }, {
-            "containerId" : "12",
+            "containerId" : "14",
             "deploymentGroups" : [ "Default" ],
             "environment" : "Production",
-            "id" : "168",
+            "id" : "212",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.801389e2-3bfc-4ea0-883b-b844dcf2319f.0748341a-5bc4-49cb-b163-0e795efe7337.dc7fd632-841b-4651-bb5f-190c9bc1a7b1.da56a768-5fa5-4724-a280-9de8ee854977"
+              "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.c2a99693-97f1-452e-9913-4edc40254659.d9f65142-bfa5-42d5-8cb0-a28eb99b8771.d93ef7e3-bf5d-4f03-a31b-ebd8596a096a.dcc8879f-66cf-40e8-a991-f523de1aa44c"
             },
             "relationships" : [ {
-              "description" : "Requests",
-              "destinationId" : "175",
-              "id" : "176",
-              "linkedRelationshipId" : "56",
-              "sourceId" : "168"
+              "description" : "Plan schedules",
+              "destinationId" : "220",
+              "id" : "222",
+              "linkedRelationshipId" : "82",
+              "sourceId" : "212"
+            } ],
+            "tags" : "Container Instance"
+          }, {
+            "containerId" : "21",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Production",
+            "id" : "213",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.c2a99693-97f1-452e-9913-4edc40254659.d9f65142-bfa5-42d5-8cb0-a28eb99b8771.d93ef7e3-bf5d-4f03-a31b-ebd8596a096a.c665b098-e52d-4c32-bc63-4b8bb000ec0b"
+            },
+            "relationships" : [ {
+              "description" : "Load timetable",
+              "destinationId" : "224",
+              "id" : "226",
+              "linkedRelationshipId" : "85",
+              "sourceId" : "213"
+            } ],
+            "tags" : "Container Instance"
+          }, {
+            "containerId" : "31",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Production",
+            "id" : "214",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.c2a99693-97f1-452e-9913-4edc40254659.d9f65142-bfa5-42d5-8cb0-a28eb99b8771.d93ef7e3-bf5d-4f03-a31b-ebd8596a096a.cd1094d1-760e-44ec-832e-2de6e998c951"
+            },
+            "relationships" : [ {
+              "description" : "Authenticate",
+              "destinationId" : "228",
+              "id" : "230",
+              "linkedRelationshipId" : "90",
+              "sourceId" : "214"
+            } ],
+            "tags" : "Container Instance"
+          }, {
+            "containerId" : "37",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Production",
+            "id" : "215",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.c2a99693-97f1-452e-9913-4edc40254659.d9f65142-bfa5-42d5-8cb0-a28eb99b8771.d93ef7e3-bf5d-4f03-a31b-ebd8596a096a.97737ee2-e7f0-40a3-b2eb-164ff25b6240"
+            },
+            "relationships" : [ {
+              "description" : "Request analytics",
+              "destinationId" : "231",
+              "id" : "233",
+              "linkedRelationshipId" : "92",
+              "sourceId" : "215"
+            } ],
+            "tags" : "Container Instance"
+          } ],
+          "description" : "Static front-ends",
+          "environment" : "Production",
+          "id" : "210",
+          "instances" : "1",
+          "name" : "web",
+          "properties" : {
+            "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.c2a99693-97f1-452e-9913-4edc40254659.d9f65142-bfa5-42d5-8cb0-a28eb99b8771.d93ef7e3-bf5d-4f03-a31b-ebd8596a096a"
+          },
+          "tags" : "Element,Deployment Node",
+          "technology" : "Nginx/SPA"
+        }, {
+          "containerInstances" : [ {
+            "containerId" : "10",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Production",
+            "id" : "217",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.c2a99693-97f1-452e-9913-4edc40254659.d9f65142-bfa5-42d5-8cb0-a28eb99b8771.008d477f-3114-481c-ab21-2929b0ee37c0.0644bbe2-f826-4ede-8504-f6b8dbb45fd6"
+            },
+            "relationships" : [ {
+              "description" : "Subject data response",
+              "destinationId" : "211",
+              "id" : "218",
+              "linkedRelationshipId" : "95",
+              "sourceId" : "217"
+            }, {
+              "description" : "Authorize",
+              "destinationId" : "234",
+              "id" : "235",
+              "linkedRelationshipId" : "122",
+              "sourceId" : "217"
+            }, {
+              "description" : "Read/Write",
+              "destinationId" : "239",
+              "id" : "240",
+              "linkedRelationshipId" : "111",
+              "sourceId" : "217"
+            }, {
+              "description" : "Send validation notifications",
+              "destinationId" : "254",
+              "id" : "255",
+              "linkedRelationshipId" : "153",
+              "sourceId" : "217"
             } ],
             "tags" : "Container Instance"
           }, {
             "containerId" : "17",
             "deploymentGroups" : [ "Default" ],
             "environment" : "Production",
-            "id" : "169",
+            "id" : "220",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.801389e2-3bfc-4ea0-883b-b844dcf2319f.0748341a-5bc4-49cb-b163-0e795efe7337.dc7fd632-841b-4651-bb5f-190c9bc1a7b1.bebb7249-0de3-4f3e-9715-3993b4e28d93"
+              "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.c2a99693-97f1-452e-9913-4edc40254659.d9f65142-bfa5-42d5-8cb0-a28eb99b8771.008d477f-3114-481c-ab21-2929b0ee37c0.5e253ff1-b262-4609-b3d2-e3215f156864"
             },
             "relationships" : [ {
-              "description" : "Requests",
-              "destinationId" : "178",
-              "id" : "179",
-              "linkedRelationshipId" : "57",
-              "sourceId" : "169"
-            } ],
-            "tags" : "Container Instance"
-          }, {
-            "containerId" : "24",
-            "deploymentGroups" : [ "Default" ],
-            "environment" : "Production",
-            "id" : "170",
-            "instanceId" : 1,
-            "properties" : {
-              "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.801389e2-3bfc-4ea0-883b-b844dcf2319f.0748341a-5bc4-49cb-b163-0e795efe7337.dc7fd632-841b-4651-bb5f-190c9bc1a7b1.5fbab33c-a2da-4e8b-86f7-ed70cc2bf2e0"
-            },
-            "relationships" : [ {
-              "description" : "Requests",
-              "destinationId" : "181",
-              "id" : "182",
-              "linkedRelationshipId" : "58",
-              "sourceId" : "170"
-            } ],
-            "tags" : "Container Instance"
-          }, {
-            "containerId" : "29",
-            "deploymentGroups" : [ "Default" ],
-            "environment" : "Production",
-            "id" : "171",
-            "instanceId" : 1,
-            "properties" : {
-              "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.801389e2-3bfc-4ea0-883b-b844dcf2319f.0748341a-5bc4-49cb-b163-0e795efe7337.dc7fd632-841b-4651-bb5f-190c9bc1a7b1.94be84f3-8fe0-4e37-9cb4-e10679826a3a"
-            },
-            "relationships" : [ {
-              "description" : "Requests",
-              "destinationId" : "183",
-              "id" : "184",
-              "linkedRelationshipId" : "59",
-              "sourceId" : "171"
-            } ],
-            "tags" : "Container Instance"
-          } ],
-          "description" : "Static front-ends",
-          "environment" : "Production",
-          "id" : "166",
-          "instances" : "1",
-          "name" : "web",
-          "properties" : {
-            "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.801389e2-3bfc-4ea0-883b-b844dcf2319f.0748341a-5bc4-49cb-b163-0e795efe7337.dc7fd632-841b-4651-bb5f-190c9bc1a7b1"
-          },
-          "tags" : "Element,Deployment Node",
-          "technology" : "Nginx/SPA"
-        }, {
-          "containerInstances" : [ {
-            "containerId" : "8",
-            "deploymentGroups" : [ "Default" ],
-            "environment" : "Production",
-            "id" : "173",
-            "instanceId" : 1,
-            "properties" : {
-              "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.801389e2-3bfc-4ea0-883b-b844dcf2319f.0748341a-5bc4-49cb-b163-0e795efe7337.d9a29cfd-24ae-4c6f-a728-4505f01b2220.39e3ef96-eda1-4720-a8ac-613263ee8cd1"
-            },
-            "relationships" : [ {
-              "description" : "Authorize",
-              "destinationId" : "185",
-              "id" : "186",
-              "linkedRelationshipId" : "83",
-              "sourceId" : "173"
+              "description" : "Schedule plan response",
+              "destinationId" : "212",
+              "id" : "221",
+              "linkedRelationshipId" : "98",
+              "sourceId" : "220"
             }, {
-              "description" : "Read/Write",
-              "destinationId" : "190",
-              "id" : "191",
-              "linkedRelationshipId" : "62",
-              "sourceId" : "173"
-            }, {
-              "description" : "Send validation notifications",
-              "destinationId" : "205",
-              "id" : "206",
-              "linkedRelationshipId" : "114",
-              "sourceId" : "173"
-            } ],
-            "tags" : "Container Instance"
-          }, {
-            "containerId" : "13",
-            "deploymentGroups" : [ "Default" ],
-            "environment" : "Production",
-            "id" : "175",
-            "instanceId" : 1,
-            "properties" : {
-              "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.801389e2-3bfc-4ea0-883b-b844dcf2319f.0748341a-5bc4-49cb-b163-0e795efe7337.d9a29cfd-24ae-4c6f-a728-4505f01b2220.2430e731-f8c6-4b19-98b9-e747441a4232"
-            },
-            "relationships" : [ {
               "description" : "Read subject catalog; evaluate subject policies",
-              "destinationId" : "173",
-              "id" : "177",
-              "linkedRelationshipId" : "60",
-              "sourceId" : "175"
+              "destinationId" : "217",
+              "id" : "223",
+              "linkedRelationshipId" : "109",
+              "sourceId" : "220"
             }, {
               "description" : "Authorize",
-              "destinationId" : "185",
-              "id" : "187",
-              "linkedRelationshipId" : "84",
-              "sourceId" : "175"
+              "destinationId" : "234",
+              "id" : "236",
+              "linkedRelationshipId" : "123",
+              "sourceId" : "220"
             }, {
               "description" : "Read/Write",
-              "destinationId" : "192",
-              "id" : "193",
-              "linkedRelationshipId" : "64",
-              "sourceId" : "175"
-            } ],
-            "tags" : "Container Instance"
-          }, {
-            "containerId" : "18",
-            "deploymentGroups" : [ "Default" ],
-            "environment" : "Production",
-            "id" : "178",
-            "instanceId" : 1,
-            "properties" : {
-              "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.801389e2-3bfc-4ea0-883b-b844dcf2319f.0748341a-5bc4-49cb-b163-0e795efe7337.d9a29cfd-24ae-4c6f-a728-4505f01b2220.4d7fb7d1-383c-4509-ac8f-98969be8c99f"
-            },
-            "relationships" : [ {
-              "description" : "Collisions/availability (read)",
-              "destinationId" : "175",
-              "id" : "180",
-              "linkedRelationshipId" : "101",
-              "sourceId" : "178"
-            }, {
-              "description" : "Read/Write",
-              "destinationId" : "192",
-              "id" : "194",
-              "linkedRelationshipId" : "66",
-              "sourceId" : "178"
+              "destinationId" : "241",
+              "id" : "242",
+              "linkedRelationshipId" : "113",
+              "sourceId" : "220"
             } ],
             "tags" : "Container Instance"
           }, {
             "containerId" : "25",
             "deploymentGroups" : [ "Default" ],
             "environment" : "Production",
-            "id" : "181",
+            "id" : "224",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.801389e2-3bfc-4ea0-883b-b844dcf2319f.0748341a-5bc4-49cb-b163-0e795efe7337.d9a29cfd-24ae-4c6f-a728-4505f01b2220.7b315676-f457-47d1-b126-e79c1f298bbd"
+              "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.c2a99693-97f1-452e-9913-4edc40254659.d9f65142-bfa5-42d5-8cb0-a28eb99b8771.008d477f-3114-481c-ab21-2929b0ee37c0.00d21024-fd4a-4cc0-8122-36bb249c7657"
             },
             "relationships" : [ {
+              "description" : "Timetable data",
+              "destinationId" : "213",
+              "id" : "225",
+              "linkedRelationshipId" : "101",
+              "sourceId" : "224"
+            }, {
+              "description" : "Collisions/availability (read)",
+              "destinationId" : "220",
+              "id" : "227",
+              "linkedRelationshipId" : "140",
+              "sourceId" : "224"
+            }, {
               "description" : "Read/Write",
-              "destinationId" : "196",
-              "id" : "197",
-              "linkedRelationshipId" : "68",
-              "sourceId" : "181"
+              "destinationId" : "241",
+              "id" : "243",
+              "linkedRelationshipId" : "115",
+              "sourceId" : "224"
+            } ],
+            "tags" : "Container Instance"
+          }, {
+            "containerId" : "33",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Production",
+            "id" : "228",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.c2a99693-97f1-452e-9913-4edc40254659.d9f65142-bfa5-42d5-8cb0-a28eb99b8771.008d477f-3114-481c-ab21-2929b0ee37c0.b8d0a25a-af8b-458a-addc-a78834cb6df6"
+            },
+            "relationships" : [ {
+              "description" : "Authentication result",
+              "destinationId" : "214",
+              "id" : "229",
+              "linkedRelationshipId" : "105",
+              "sourceId" : "228"
+            }, {
+              "description" : "Read/Write",
+              "destinationId" : "245",
+              "id" : "246",
+              "linkedRelationshipId" : "117",
+              "sourceId" : "228"
             }, {
               "description" : "OIDC/JWT validation",
-              "destinationId" : "202",
-              "id" : "203",
-              "linkedRelationshipId" : "112",
-              "sourceId" : "181"
+              "destinationId" : "251",
+              "id" : "252",
+              "linkedRelationshipId" : "151",
+              "sourceId" : "228"
             } ],
             "tags" : "Container Instance"
           }, {
-            "containerId" : "30",
+            "containerId" : "40",
             "deploymentGroups" : [ "Default" ],
             "environment" : "Production",
-            "id" : "183",
+            "id" : "231",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.801389e2-3bfc-4ea0-883b-b844dcf2319f.0748341a-5bc4-49cb-b163-0e795efe7337.d9a29cfd-24ae-4c6f-a728-4505f01b2220.1d1bbe0c-fe51-4f62-87b0-9348ca52eb68"
+              "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.c2a99693-97f1-452e-9913-4edc40254659.d9f65142-bfa5-42d5-8cb0-a28eb99b8771.008d477f-3114-481c-ab21-2929b0ee37c0.6100ab2b-5a49-4c0d-afcf-15daa857ea91"
             },
             "relationships" : [ {
+              "description" : "Analytics data",
+              "destinationId" : "215",
+              "id" : "232",
+              "linkedRelationshipId" : "107",
+              "sourceId" : "231"
+            }, {
               "description" : "Authorize",
-              "destinationId" : "185",
-              "id" : "188",
-              "linkedRelationshipId" : "85",
-              "sourceId" : "183"
+              "destinationId" : "234",
+              "id" : "237",
+              "linkedRelationshipId" : "124",
+              "sourceId" : "231"
             }, {
               "description" : "Read",
-              "destinationId" : "192",
-              "id" : "195",
-              "linkedRelationshipId" : "72",
-              "sourceId" : "183"
+              "destinationId" : "241",
+              "id" : "244",
+              "linkedRelationshipId" : "121",
+              "sourceId" : "231"
             }, {
               "description" : "Read/Write",
-              "destinationId" : "199",
-              "id" : "200",
-              "linkedRelationshipId" : "70",
-              "sourceId" : "183"
+              "destinationId" : "248",
+              "id" : "249",
+              "linkedRelationshipId" : "119",
+              "sourceId" : "231"
             } ],
             "tags" : "Container Instance"
           }, {
-            "containerId" : "38",
+            "containerId" : "48",
             "deploymentGroups" : [ "Default" ],
             "environment" : "Production",
-            "id" : "185",
+            "id" : "234",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.801389e2-3bfc-4ea0-883b-b844dcf2319f.0748341a-5bc4-49cb-b163-0e795efe7337.d9a29cfd-24ae-4c6f-a728-4505f01b2220.44ad190b-9b69-4a16-84d2-d6c8842c01f3"
+              "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.c2a99693-97f1-452e-9913-4edc40254659.d9f65142-bfa5-42d5-8cb0-a28eb99b8771.008d477f-3114-481c-ab21-2929b0ee37c0.d3ef9c9c-de5f-41a6-94e4-b9f618fdac40"
             },
             "relationships" : [ {
               "description" : "Read/Write",
-              "destinationId" : "196",
-              "id" : "198",
-              "linkedRelationshipId" : "86",
-              "sourceId" : "185"
+              "destinationId" : "245",
+              "id" : "247",
+              "linkedRelationshipId" : "125",
+              "sourceId" : "234"
             } ],
             "tags" : "Container Instance"
           } ],
           "description" : "Backend services",
           "environment" : "Production",
-          "id" : "172",
+          "id" : "216",
           "instances" : "1",
           "name" : "app",
           "properties" : {
-            "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.801389e2-3bfc-4ea0-883b-b844dcf2319f.0748341a-5bc4-49cb-b163-0e795efe7337.d9a29cfd-24ae-4c6f-a728-4505f01b2220"
+            "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.c2a99693-97f1-452e-9913-4edc40254659.d9f65142-bfa5-42d5-8cb0-a28eb99b8771.008d477f-3114-481c-ab21-2929b0ee37c0"
           },
           "tags" : "Element,Deployment Node",
           "technology" : ".NET/Java/Python"
         }, {
           "containerInstances" : [ {
-            "containerId" : "34",
+            "containerId" : "44",
             "deploymentGroups" : [ "Default" ],
             "environment" : "Production",
-            "id" : "190",
+            "id" : "239",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.801389e2-3bfc-4ea0-883b-b844dcf2319f.0748341a-5bc4-49cb-b163-0e795efe7337.243ac7c5-1f6b-45ad-a4e5-a2f05f2811f2.9b736bc7-aab6-43ea-91a8-5b34a53fc48c"
+              "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.c2a99693-97f1-452e-9913-4edc40254659.d9f65142-bfa5-42d5-8cb0-a28eb99b8771.d1643dfd-26eb-4ef8-b2ff-66c950f0cef1.f9e8d3e9-5cef-4c5b-9739-c62fb9c2a4e9"
             },
             "tags" : "Container Instance"
           }, {
-            "containerId" : "35",
+            "containerId" : "45",
             "deploymentGroups" : [ "Default" ],
             "environment" : "Production",
-            "id" : "192",
+            "id" : "241",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.801389e2-3bfc-4ea0-883b-b844dcf2319f.0748341a-5bc4-49cb-b163-0e795efe7337.243ac7c5-1f6b-45ad-a4e5-a2f05f2811f2.c241c3e4-9d33-4c61-8d8e-3934965d07be"
+              "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.c2a99693-97f1-452e-9913-4edc40254659.d9f65142-bfa5-42d5-8cb0-a28eb99b8771.d1643dfd-26eb-4ef8-b2ff-66c950f0cef1.e4028a89-7a64-4b99-aef7-7344b5d80815"
             },
             "tags" : "Container Instance"
           }, {
-            "containerId" : "36",
+            "containerId" : "46",
             "deploymentGroups" : [ "Default" ],
             "environment" : "Production",
-            "id" : "196",
+            "id" : "245",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.801389e2-3bfc-4ea0-883b-b844dcf2319f.0748341a-5bc4-49cb-b163-0e795efe7337.243ac7c5-1f6b-45ad-a4e5-a2f05f2811f2.2ebc979f-64f7-43ca-97fd-ec6b7d9809c7"
+              "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.c2a99693-97f1-452e-9913-4edc40254659.d9f65142-bfa5-42d5-8cb0-a28eb99b8771.d1643dfd-26eb-4ef8-b2ff-66c950f0cef1.671a252d-61a5-426a-aabb-2d215674e70e"
             },
             "tags" : "Container Instance"
           }, {
-            "containerId" : "37",
+            "containerId" : "47",
             "deploymentGroups" : [ "Default" ],
             "environment" : "Production",
-            "id" : "199",
+            "id" : "248",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.801389e2-3bfc-4ea0-883b-b844dcf2319f.0748341a-5bc4-49cb-b163-0e795efe7337.243ac7c5-1f6b-45ad-a4e5-a2f05f2811f2.c591ad6e-4b81-4798-8000-e2dc9eaccb1e"
+              "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.c2a99693-97f1-452e-9913-4edc40254659.d9f65142-bfa5-42d5-8cb0-a28eb99b8771.d1643dfd-26eb-4ef8-b2ff-66c950f0cef1.5cc528d8-10b3-49b9-a266-50716cd02a25"
             },
             "tags" : "Container Instance"
           } ],
           "description" : "Managed database cluster",
           "environment" : "Production",
-          "id" : "189",
+          "id" : "238",
           "instances" : "1",
           "name" : "db",
           "properties" : {
-            "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.801389e2-3bfc-4ea0-883b-b844dcf2319f.0748341a-5bc4-49cb-b163-0e795efe7337.243ac7c5-1f6b-45ad-a4e5-a2f05f2811f2"
+            "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.c2a99693-97f1-452e-9913-4edc40254659.d9f65142-bfa5-42d5-8cb0-a28eb99b8771.d1643dfd-26eb-4ef8-b2ff-66c950f0cef1"
           },
           "tags" : "Element,Deployment Node",
           "technology" : "PostgreSQL"
         } ],
         "description" : "Container orchestration",
         "environment" : "Production",
-        "id" : "165",
+        "id" : "209",
         "instances" : "1",
         "name" : "Kubernetes Cluster",
         "properties" : {
-          "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.801389e2-3bfc-4ea0-883b-b844dcf2319f.0748341a-5bc4-49cb-b163-0e795efe7337"
+          "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.c2a99693-97f1-452e-9913-4edc40254659.d9f65142-bfa5-42d5-8cb0-a28eb99b8771"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "Kubernetes"
       } ],
       "description" : "Primary production region",
       "environment" : "Production",
-      "id" : "164",
+      "id" : "208",
       "instances" : "1",
       "name" : "EU Region",
       "properties" : {
-        "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.801389e2-3bfc-4ea0-883b-b844dcf2319f"
+        "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.c2a99693-97f1-452e-9913-4edc40254659"
       },
       "tags" : "Element,Deployment Node",
       "technology" : "Cloud"
     }, {
       "description" : "University IdP (production)",
       "environment" : "Production",
-      "id" : "201",
+      "id" : "250",
       "instances" : "1",
       "name" : "External - University SSO",
       "properties" : {
-        "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.ec6551e9-a891-4c93-b089-2bba3fe62bdf"
+        "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.5b7ea57a-ceba-47c6-81bc-978585b50f8e"
       },
       "softwareSystemInstances" : [ {
         "deploymentGroups" : [ "Default" ],
         "environment" : "Production",
-        "id" : "202",
+        "id" : "251",
         "instanceId" : 1,
         "properties" : {
-          "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.ec6551e9-a891-4c93-b089-2bba3fe62bdf.dd187451-b820-45bf-a9c6-97cbc4232f2d"
+          "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.5b7ea57a-ceba-47c6-81bc-978585b50f8e.9e5e0783-f66e-44b1-8fbb-6d9472e9d7c2"
         },
-        "softwareSystemId" : "106",
+        "softwareSystemId" : "145",
         "tags" : "Software System Instance"
       } ],
       "tags" : "Element,Deployment Node",
@@ -775,21 +836,21 @@
     }, {
       "description" : "Email/workflow (production)",
       "environment" : "Production",
-      "id" : "204",
+      "id" : "253",
       "instances" : "1",
       "name" : "External - Notification Service",
       "properties" : {
-        "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.542dd1fd-1707-438d-99ec-b0a021b2e4fc"
+        "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.9402f1d5-cd7a-4037-98cc-f260d8bcb904"
       },
       "softwareSystemInstances" : [ {
         "deploymentGroups" : [ "Default" ],
         "environment" : "Production",
-        "id" : "205",
+        "id" : "254",
         "instanceId" : 1,
         "properties" : {
-          "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.542dd1fd-1707-438d-99ec-b0a021b2e4fc.2f1a852a-b079-4a24-97e8-fe2450b60ee0"
+          "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.9402f1d5-cd7a-4037-98cc-f260d8bcb904.b7ccd1c3-0831-4d3d-a609-562ec689e8db"
         },
-        "softwareSystemId" : "107",
+        "softwareSystemId" : "146",
         "tags" : "Software System Instance"
       } ],
       "tags" : "Element,Deployment Node",
@@ -797,28 +858,28 @@
     }, {
       "description" : "End-user calendar apps",
       "environment" : "Production",
-      "id" : "207",
+      "id" : "256",
       "instances" : "1",
       "name" : "External - Calendar Clients",
       "properties" : {
-        "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.27eb275f-c159-483f-9ac9-cefa6952d677"
+        "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.63db50dd-1b18-4a46-bc93-609e7d9d0036"
       },
       "softwareSystemInstances" : [ {
         "deploymentGroups" : [ "Default" ],
         "environment" : "Production",
-        "id" : "208",
+        "id" : "257",
         "instanceId" : 1,
         "properties" : {
-          "structurizr.dsl.identifier" : "362a70c3-3ed0-42a5-b309-a74896121caf.27eb275f-c159-483f-9ac9-cefa6952d677.29a265d2-a04a-4a42-81da-f8ecb85485c1"
+          "structurizr.dsl.identifier" : "aeabd364-86e9-4611-9fcf-543760ddb1ea.63db50dd-1b18-4a46-bc93-609e7d9d0036.55800471-cb7a-431c-bda6-2baad2d55531"
         },
         "relationships" : [ {
           "description" : "Fetch iCal",
-          "destinationId" : "178",
-          "id" : "209",
-          "linkedRelationshipId" : "116",
-          "sourceId" : "208"
+          "destinationId" : "224",
+          "id" : "258",
+          "linkedRelationshipId" : "155",
+          "sourceId" : "257"
         } ],
-        "softwareSystemId" : "108",
+        "softwareSystemId" : "147",
         "tags" : "Software System Instance"
       } ],
       "tags" : "Element,Deployment Node",
@@ -834,13 +895,13 @@
       "relationships" : [ {
         "description" : "Is a",
         "destinationId" : "5",
-        "id" : "39",
+        "id" : "49",
         "sourceId" : "1",
         "tags" : "Relationship,Is a"
       }, {
         "description" : "View schedules",
         "destinationId" : "6",
-        "id" : "44",
+        "id" : "54",
         "sourceId" : "1",
         "tags" : "Relationship"
       } ],
@@ -855,25 +916,49 @@
       "relationships" : [ {
         "description" : "Is a",
         "destinationId" : "5",
-        "id" : "40",
+        "id" : "50",
         "sourceId" : "2",
         "tags" : "Relationship,Is a"
       }, {
         "description" : "Create/modify subjects and schedules; View schedules",
         "destinationId" : "6",
-        "id" : "45",
+        "id" : "55",
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Course management; Management of schedule preferences",
+        "destinationId" : "8",
+        "id" : "58",
         "sourceId" : "2",
         "tags" : "Relationship"
       }, {
         "description" : "Course management; Management of schedule preferences",
         "destinationId" : "7",
-        "id" : "48",
+        "id" : "59",
+        "linkedRelationshipId" : "58",
+        "sourceId" : "2"
+      }, {
+        "description" : "Submit subjects for validation",
+        "destinationId" : "9",
+        "id" : "60",
         "sourceId" : "2",
         "tags" : "Relationship"
       }, {
         "description" : "Scheduling",
-        "destinationId" : "12",
-        "id" : "49",
+        "destinationId" : "15",
+        "id" : "63",
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Scheduling",
+        "destinationId" : "14",
+        "id" : "64",
+        "linkedRelationshipId" : "63",
+        "sourceId" : "2"
+      }, {
+        "description" : "Validate schedules",
+        "destinationId" : "16",
+        "id" : "65",
         "sourceId" : "2",
         "tags" : "Relationship"
       } ],
@@ -888,19 +973,31 @@
       "relationships" : [ {
         "description" : "Is a",
         "destinationId" : "5",
-        "id" : "41",
+        "id" : "51",
         "sourceId" : "3",
         "tags" : "Relationship,Is a"
       }, {
         "description" : "Validate subjects and schedules; View schedules",
         "destinationId" : "6",
-        "id" : "46",
+        "id" : "56",
         "sourceId" : "3",
         "tags" : "Relationship"
       }, {
         "description" : "Scheduling",
-        "destinationId" : "12",
-        "id" : "51",
+        "destinationId" : "15",
+        "id" : "66",
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Scheduling",
+        "destinationId" : "14",
+        "id" : "67",
+        "linkedRelationshipId" : "66",
+        "sourceId" : "3"
+      }, {
+        "description" : "Validate schedules",
+        "destinationId" : "16",
+        "id" : "68",
         "sourceId" : "3",
         "tags" : "Relationship"
       } ],
@@ -915,25 +1012,43 @@
       "relationships" : [ {
         "description" : "Is a",
         "destinationId" : "5",
-        "id" : "42",
+        "id" : "52",
         "sourceId" : "4",
         "tags" : "Relationship,Is a"
       }, {
         "description" : "Review reports and analytics; View schedules",
         "destinationId" : "6",
-        "id" : "47",
+        "id" : "57",
+        "sourceId" : "4",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Validate subjects",
+        "destinationId" : "9",
+        "id" : "61",
         "sourceId" : "4",
         "tags" : "Relationship"
       }, {
         "description" : "Validate subjects",
         "destinationId" : "7",
-        "id" : "50",
+        "id" : "62",
+        "linkedRelationshipId" : "61",
+        "sourceId" : "4"
+      }, {
+        "description" : "Review reports & analytics",
+        "destinationId" : "38",
+        "id" : "69",
         "sourceId" : "4",
         "tags" : "Relationship"
       }, {
         "description" : "Review reports & analytics",
-        "destinationId" : "29",
-        "id" : "52",
+        "destinationId" : "37",
+        "id" : "70",
+        "linkedRelationshipId" : "69",
+        "sourceId" : "4"
+      }, {
+        "description" : "Download reports",
+        "destinationId" : "39",
+        "id" : "71",
         "sourceId" : "4",
         "tags" : "Relationship"
       } ],
@@ -948,19 +1063,43 @@
       "relationships" : [ {
         "description" : "Uses",
         "destinationId" : "6",
-        "id" : "43",
-        "sourceId" : "5",
-        "tags" : "Relationship"
-      }, {
-        "description" : "Sign in",
-        "destinationId" : "24",
         "id" : "53",
         "sourceId" : "5",
         "tags" : "Relationship"
       }, {
-        "description" : "View timetable; manage basket",
-        "destinationId" : "17",
-        "id" : "54",
+        "description" : "Sign in",
+        "destinationId" : "32",
+        "id" : "72",
+        "sourceId" : "5",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Sign in",
+        "destinationId" : "31",
+        "id" : "73",
+        "linkedRelationshipId" : "72",
+        "sourceId" : "5"
+      }, {
+        "description" : "View timetable",
+        "destinationId" : "22",
+        "id" : "74",
+        "sourceId" : "5",
+        "tags" : "Relationship"
+      }, {
+        "description" : "View timetable",
+        "destinationId" : "21",
+        "id" : "75",
+        "linkedRelationshipId" : "74",
+        "sourceId" : "5"
+      }, {
+        "description" : "Manage basket",
+        "destinationId" : "23",
+        "id" : "76",
+        "sourceId" : "5",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Export schedules",
+        "destinationId" : "24",
+        "id" : "77",
         "sourceId" : "5",
         "tags" : "Relationship"
       } ],
@@ -968,10 +1107,43 @@
     } ],
     "softwareSystems" : [ {
       "containers" : [ {
+        "components" : [ {
+          "description" : "UI for creating and editing subjects.",
+          "documentation" : { },
+          "id" : "8",
+          "name" : "Subject Form",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sch.subjectsHtml.subjectForm"
+          },
+          "relationships" : [ {
+            "description" : "Create/modify subjects",
+            "destinationId" : "10",
+            "id" : "78",
+            "sourceId" : "8",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "UI for submitting and tracking subject validation.",
+          "documentation" : { },
+          "id" : "9",
+          "name" : "Validation UI",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sch.subjectsHtml.validationUI"
+          },
+          "relationships" : [ {
+            "description" : "Validate subjects",
+            "destinationId" : "10",
+            "id" : "80",
+            "sourceId" : "9",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
         "description" : "Subjects UI in the browser.",
         "documentation" : {
           "sections" : [ {
-            "content" : "## Subjects HTML\n\n**Purpose**  \nProvides the user GUI for subject creation, maintenance, and validation workflows.\n\n**Main responsibilities**\n- Show subject forms and basic guidance to teachers and managers.\n- Check the filled-in fields before sending them on.\n- Display simple success or error messages from the backend.\n\n**Collaborations**\n- Exchanges subject creation and maintenance requests with `Subjects Business`.\n\n",
+            "content" : "## Subjects HTML\r\n\r\n**Purpose**  \r\nProvides the user GUI for subject creation, maintenance, and validation workflows.\r\n\r\n**Main responsibilities**\r\n- Show subject forms and basic guidance to teachers and managers.\r\n- Check the filled-in fields before sending them on.\r\n- Display simple success or error messages from the backend.\r\n\r\n**Collaborations**\r\n- Exchanges subject creation and maintenance requests with `Subjects Business`.\r\n\r\n",
             "format" : "Markdown",
             "order" : 1,
             "title" : ""
@@ -984,23 +1156,11 @@
           "structurizr.dsl.identifier" : "sch.subjectsHtml"
         },
         "relationships" : [ {
-          "description" : "Requests",
-          "destinationId" : "8",
-          "id" : "55",
-          "sourceId" : "7",
-          "tags" : "Relationship"
-        }, {
           "description" : "Create/modify subjects",
-          "destinationId" : "9",
-          "id" : "73",
-          "sourceId" : "7",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Validate subjects",
           "destinationId" : "10",
-          "id" : "74",
-          "sourceId" : "7",
-          "tags" : "Relationship"
+          "id" : "79",
+          "linkedRelationshipId" : "78",
+          "sourceId" : "7"
         } ],
         "tags" : "Element,Container,HTML",
         "technology" : "HTML/JS"
@@ -1008,54 +1168,66 @@
         "components" : [ {
           "description" : "Creates and updates subject data and concepts.",
           "documentation" : { },
-          "id" : "9",
+          "id" : "11",
           "name" : "Subject Creator",
           "properties" : {
             "structurizr.dsl.identifier" : "sch.subjectsBusiness.subjectCreator"
           },
           "relationships" : [ {
+            "description" : "Subject data response",
+            "destinationId" : "7",
+            "id" : "94",
+            "sourceId" : "11",
+            "tags" : "Relationship"
+          }, {
             "description" : "Read/Write",
-            "destinationId" : "11",
-            "id" : "87",
-            "sourceId" : "9",
+            "destinationId" : "13",
+            "id" : "126",
+            "sourceId" : "11",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         }, {
           "description" : "Runs subject validation workflow.",
           "documentation" : { },
-          "id" : "10",
+          "id" : "12",
           "name" : "Subject Validator",
           "properties" : {
             "structurizr.dsl.identifier" : "sch.subjectsBusiness.subjectValidator"
           },
           "relationships" : [ {
+            "description" : "Validation status",
+            "destinationId" : "7",
+            "id" : "96",
+            "sourceId" : "12",
+            "tags" : "Relationship"
+          }, {
             "description" : "Read/Write",
-            "destinationId" : "11",
-            "id" : "88",
-            "sourceId" : "10",
+            "destinationId" : "13",
+            "id" : "127",
+            "sourceId" : "12",
             "tags" : "Relationship"
           }, {
             "description" : "Send validation notifications",
-            "destinationId" : "107",
-            "id" : "113",
-            "sourceId" : "10",
+            "destinationId" : "146",
+            "id" : "152",
+            "sourceId" : "12",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         }, {
           "description" : "CRUD for subjects and validation history.",
           "documentation" : { },
-          "id" : "11",
+          "id" : "13",
           "name" : "Subject Repository",
           "properties" : {
             "structurizr.dsl.identifier" : "sch.subjectsBusiness.subjectRepository"
           },
           "relationships" : [ {
             "description" : "Read/Write",
-            "destinationId" : "34",
-            "id" : "61",
-            "sourceId" : "11",
+            "destinationId" : "44",
+            "id" : "110",
+            "sourceId" : "13",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
@@ -1063,73 +1235,100 @@
         "description" : "Create/modify subjects; request validation.",
         "documentation" : {
           "sections" : [ {
-            "content" : "## Subjects Business\n\n**Purpose**  \nManages the lifecycle of subjects, from initial creation to validation and publication.\n\n**Main responsibilities**\n- Create and update subject records.\n- Check subject data before it moves forward.\n- Keep the history of changes and approvals.\n- Notify managers or teachers about subject status changes.\n\n**Collaborations**\n- Coordinates with `Subjects HTML` to process user-initiated changes.\n- Persists subject records through `Subjects DB`.\n- Shares policy constraints with `Scheduling Business`.\n- Consults the `Authorizer` before committing protected changes.\n- Sends validation updates to `Notification Service`.\n\n",
+            "content" : "## Subjects Business\r\n\r\n**Purpose**  \r\nManages the lifecycle of subjects, from initial creation to validation and publication.\r\n\r\n**Main responsibilities**\r\n- Create and update subject records.\r\n- Check subject data before it moves forward.\r\n- Keep the history of changes and approvals.\r\n- Notify managers or teachers about subject status changes.\r\n\r\n**Collaborations**\r\n- Coordinates with `Subjects HTML` to process user-initiated changes.\r\n- Persists subject records through `Subjects DB`.\r\n- Shares policy constraints with `Scheduling Business`.\r\n- Consults the `Authorizer` before committing protected changes.\r\n- Sends validation updates to `Notification Service`.\r\n\r\n",
             "format" : "Markdown",
             "order" : 1,
             "title" : ""
           } ]
         },
         "group" : "Subjects",
-        "id" : "8",
+        "id" : "10",
         "name" : "Subjects Business",
         "properties" : {
           "structurizr.dsl.identifier" : "sch.subjectsBusiness"
         },
         "relationships" : [ {
+          "description" : "Subject data response",
+          "destinationId" : "7",
+          "id" : "95",
+          "linkedRelationshipId" : "94",
+          "sourceId" : "10"
+        }, {
           "description" : "Read/Write",
-          "destinationId" : "34",
-          "id" : "62",
-          "linkedRelationshipId" : "61",
-          "sourceId" : "8"
+          "destinationId" : "44",
+          "id" : "111",
+          "linkedRelationshipId" : "110",
+          "sourceId" : "10"
         }, {
           "description" : "Authorize",
-          "destinationId" : "38",
-          "id" : "83",
-          "sourceId" : "8",
+          "destinationId" : "48",
+          "id" : "122",
+          "sourceId" : "10",
           "tags" : "Relationship"
         }, {
           "description" : "Send validation notifications",
-          "destinationId" : "107",
-          "id" : "114",
-          "linkedRelationshipId" : "113",
-          "sourceId" : "8"
+          "destinationId" : "146",
+          "id" : "153",
+          "linkedRelationshipId" : "152",
+          "sourceId" : "10"
         } ],
         "tags" : "Element,Container",
         "technology" : "Business"
       }, {
+        "components" : [ {
+          "description" : "UI for creating and adjusting schedule plans.",
+          "documentation" : { },
+          "id" : "15",
+          "name" : "Planning UI",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sch.schedulingHtml.planningUI"
+          },
+          "relationships" : [ {
+            "description" : "Plan schedules",
+            "destinationId" : "17",
+            "id" : "81",
+            "sourceId" : "15",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "UI for validating scheduling constraints.",
+          "documentation" : { },
+          "id" : "16",
+          "name" : "Validation UI",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sch.schedulingHtml.validationUI"
+          },
+          "relationships" : [ {
+            "description" : "Validate schedules",
+            "destinationId" : "17",
+            "id" : "83",
+            "sourceId" : "16",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
         "description" : "Scheduling UI in the browser.",
         "documentation" : {
           "sections" : [ {
-            "content" : "## Scheduling HTML\n\n**Purpose**  \nDelivers the planning interface used to define scheduling constraints and preferences.\n\n**Main responsibilities**\n- Present availability grids, subject lists, and interactive planning tools.\n- Collect teacher and committee input, including preferred times, rooms, and special needs.\n- Highlight conflicts or missing information before submitting requests.\n\n**Collaborations**\n- Exchanges scheduling requests and feedback with `Scheduling Business`.\n\n",
+            "content" : "## Scheduling HTML\r\n\r\n**Purpose**  \r\nDelivers the planning interface used to define scheduling constraints and preferences.\r\n\r\n**Main responsibilities**\r\n- Present availability grids, subject lists, and interactive planning tools.\r\n- Collect teacher and committee input, including preferred times, rooms, and special needs.\r\n- Highlight conflicts or missing information before submitting requests.\r\n\r\n**Collaborations**\r\n- Exchanges scheduling requests and feedback with `Scheduling Business`.\r\n\r\n",
             "format" : "Markdown",
             "order" : 1,
             "title" : ""
           } ]
         },
         "group" : "Scheduling",
-        "id" : "12",
+        "id" : "14",
         "name" : "Scheduling HTML",
         "properties" : {
           "structurizr.dsl.identifier" : "sch.schedulingHtml"
         },
         "relationships" : [ {
-          "description" : "Requests",
-          "destinationId" : "13",
-          "id" : "56",
-          "sourceId" : "12",
-          "tags" : "Relationship"
-        }, {
           "description" : "Plan schedules",
-          "destinationId" : "14",
-          "id" : "75",
-          "sourceId" : "12",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Validate schedules",
-          "destinationId" : "15",
-          "id" : "76",
-          "sourceId" : "12",
-          "tags" : "Relationship"
+          "destinationId" : "17",
+          "id" : "82",
+          "linkedRelationshipId" : "81",
+          "sourceId" : "14"
         } ],
         "tags" : "Element,Container,HTML",
         "technology" : "HTML/JS"
@@ -1137,60 +1336,72 @@
         "components" : [ {
           "description" : "Creates and adjusts plans.",
           "documentation" : { },
-          "id" : "14",
+          "id" : "18",
           "name" : "Schedule Planner",
           "properties" : {
             "structurizr.dsl.identifier" : "sch.schedulingBusiness.schedulePlanner"
           },
           "relationships" : [ {
+            "description" : "Schedule plan response",
+            "destinationId" : "14",
+            "id" : "97",
+            "sourceId" : "18",
+            "tags" : "Relationship"
+          }, {
             "description" : "Read/Write",
-            "destinationId" : "16",
-            "id" : "89",
-            "sourceId" : "14",
+            "destinationId" : "20",
+            "id" : "128",
+            "sourceId" : "18",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         }, {
           "description" : "Validates scheduling constraints.",
           "documentation" : { },
-          "id" : "15",
+          "id" : "19",
           "name" : "Schedule Validator",
           "properties" : {
             "structurizr.dsl.identifier" : "sch.schedulingBusiness.scheduleValidator"
           },
           "relationships" : [ {
+            "description" : "Validation results",
+            "destinationId" : "14",
+            "id" : "99",
+            "sourceId" : "19",
+            "tags" : "Relationship"
+          }, {
             "description" : "Read",
-            "destinationId" : "16",
-            "id" : "90",
-            "sourceId" : "15",
+            "destinationId" : "20",
+            "id" : "129",
+            "sourceId" : "19",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Subject invariants",
+            "destinationId" : "12",
+            "id" : "130",
+            "sourceId" : "19",
             "tags" : "Relationship"
           }, {
             "description" : "Subject invariants",
             "destinationId" : "10",
-            "id" : "91",
-            "sourceId" : "15",
-            "tags" : "Relationship"
-          }, {
-            "description" : "Subject invariants",
-            "destinationId" : "8",
-            "id" : "92",
-            "linkedRelationshipId" : "91",
-            "sourceId" : "15"
+            "id" : "131",
+            "linkedRelationshipId" : "130",
+            "sourceId" : "19"
           } ],
           "tags" : "Element,Component"
         }, {
           "description" : "CRUD for planning data and prefs.",
           "documentation" : { },
-          "id" : "16",
+          "id" : "20",
           "name" : "Scheduling Repository",
           "properties" : {
             "structurizr.dsl.identifier" : "sch.schedulingBusiness.schedulingRepository"
           },
           "relationships" : [ {
             "description" : "Read/Write",
-            "destinationId" : "35",
-            "id" : "63",
-            "sourceId" : "16",
+            "destinationId" : "45",
+            "id" : "112",
+            "sourceId" : "20",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
@@ -1198,85 +1409,128 @@
         "description" : "Plan schedules.",
         "documentation" : {
           "sections" : [ {
-            "content" : "## Scheduling Business\n\n**Purpose**  \nHandles planning logic, conflict checking, and storage of scheduling proposals.\n\n**Main responsibilities**\n- Create and adjust schedule plans based on user requirements.\n- Validate schedules for collisions, capacity, and policy alignment.\n- Store approved plans and keep historical context.\n\n**Collaborations**\n- Receives data from `Scheduling HTML` and returns validation feedback.\n- Exchanges policy insights with `Subjects Business`.\n- Provides collision checks to `Schedule Business`.\n- Persists planning artefacts in `Schedules DB`.\n- Consults the `Authorizer` before recording protected changes.\n\n",
+            "content" : "## Scheduling Business\r\n\r\n**Purpose**  \r\nHandles planning logic, conflict checking, and storage of scheduling proposals.\r\n\r\n**Main responsibilities**\r\n- Create and adjust schedule plans based on user requirements.\r\n- Validate schedules for collisions, capacity, and policy alignment.\r\n- Store approved plans and keep historical context.\r\n\r\n**Collaborations**\r\n- Receives data from `Scheduling HTML` and returns validation feedback.\r\n- Exchanges policy insights with `Subjects Business`.\r\n- Provides collision checks to `Schedule Business`.\r\n- Persists planning artefacts in `Schedules DB`.\r\n- Consults the `Authorizer` before recording protected changes.\r\n\r\n",
             "format" : "Markdown",
             "order" : 1,
             "title" : ""
           } ]
         },
         "group" : "Scheduling",
-        "id" : "13",
+        "id" : "17",
         "name" : "Scheduling Business",
         "properties" : {
           "structurizr.dsl.identifier" : "sch.schedulingBusiness"
         },
         "relationships" : [ {
+          "description" : "Schedule plan response",
+          "destinationId" : "14",
+          "id" : "98",
+          "linkedRelationshipId" : "97",
+          "sourceId" : "17"
+        }, {
           "description" : "Read subject catalog; evaluate subject policies",
-          "destinationId" : "8",
-          "id" : "60",
-          "sourceId" : "13",
+          "destinationId" : "10",
+          "id" : "109",
+          "sourceId" : "17",
           "tags" : "Relationship"
         }, {
           "description" : "Read/Write",
-          "destinationId" : "35",
-          "id" : "64",
-          "linkedRelationshipId" : "63",
-          "sourceId" : "13"
+          "destinationId" : "45",
+          "id" : "113",
+          "linkedRelationshipId" : "112",
+          "sourceId" : "17"
         }, {
           "description" : "Authorize",
-          "destinationId" : "38",
-          "id" : "84",
-          "sourceId" : "13",
+          "destinationId" : "48",
+          "id" : "123",
+          "sourceId" : "17",
           "tags" : "Relationship"
         }, {
           "description" : "Subject invariants",
-          "destinationId" : "10",
-          "id" : "93",
-          "linkedRelationshipId" : "91",
-          "sourceId" : "13"
+          "destinationId" : "12",
+          "id" : "132",
+          "linkedRelationshipId" : "130",
+          "sourceId" : "17"
         } ],
         "tags" : "Element,Container",
         "technology" : "Business"
       }, {
+        "components" : [ {
+          "description" : "UI for displaying and viewing schedules.",
+          "documentation" : { },
+          "id" : "22",
+          "name" : "Timetable View",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sch.scheduleHtml.timetableView"
+          },
+          "relationships" : [ {
+            "description" : "Load timetable",
+            "destinationId" : "25",
+            "id" : "84",
+            "sourceId" : "22",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "UI for managing subject basket.",
+          "documentation" : { },
+          "id" : "23",
+          "name" : "Basket Manager",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sch.scheduleHtml.basketManager"
+          },
+          "relationships" : [ {
+            "description" : "Modify basket",
+            "destinationId" : "25",
+            "id" : "86",
+            "sourceId" : "23",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Load basket",
+            "destinationId" : "25",
+            "id" : "87",
+            "sourceId" : "23",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "UI for exporting schedules to various formats.",
+          "documentation" : { },
+          "id" : "24",
+          "name" : "Export UI",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sch.scheduleHtml.exportUI"
+          },
+          "relationships" : [ {
+            "description" : "Export (format param)",
+            "destinationId" : "25",
+            "id" : "88",
+            "sourceId" : "24",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
         "description" : "Timetable/Basket UI in the browser.",
         "documentation" : {
           "sections" : [ {
-            "content" : "## Schedule HTML\n\n**Purpose**  \nDelivers the timetable and basket GUI for students and teachers.\n\n**Main responsibilities**\n- Render weekly schedules, and basket status in an interactive view.\n- Allow users to adjust selections, compare alternatives, and switch timeframes.\n- Initiate exports and reflect backend updates immediately in the interface.\n\n**Collaborations**\n- Retrieves time table data, writes changes, and requests exports from `Schedule Business`.\n\n",
+            "content" : "## Schedule HTML\r\n\r\n**Purpose**  \r\nDelivers the timetable and basket GUI for students and teachers.\r\n\r\n**Main responsibilities**\r\n- Render weekly schedules, and basket status in an interactive view.\r\n- Allow users to adjust selections, compare alternatives, and switch timeframes.\r\n- Initiate exports and reflect backend updates immediately in the interface.\r\n\r\n**Collaborations**\r\n- Retrieves time table data, writes changes, and requests exports from `Schedule Business`.\r\n\r\n",
             "format" : "Markdown",
             "order" : 1,
             "title" : ""
           } ]
         },
         "group" : "Schedules",
-        "id" : "17",
+        "id" : "21",
         "name" : "Schedule HTML",
         "properties" : {
           "structurizr.dsl.identifier" : "sch.scheduleHtml"
         },
         "relationships" : [ {
-          "description" : "Requests",
-          "destinationId" : "18",
-          "id" : "57",
-          "sourceId" : "17",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Modify timetable; basket",
-          "destinationId" : "22",
-          "id" : "77",
-          "sourceId" : "17",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Load timetable; basket",
-          "destinationId" : "19",
-          "id" : "78",
-          "sourceId" : "17",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Export (format param)",
-          "destinationId" : "21",
-          "id" : "79",
-          "sourceId" : "17",
-          "tags" : "Relationship"
+          "description" : "Load timetable",
+          "destinationId" : "25",
+          "id" : "85",
+          "linkedRelationshipId" : "84",
+          "sourceId" : "21"
         } ],
         "tags" : "Element,Container,HTML",
         "technology" : "HTML/JS"
@@ -1284,92 +1538,110 @@
         "components" : [ {
           "description" : "Read-only queries & projections for timetable/basket UI.",
           "documentation" : { },
-          "id" : "19",
+          "id" : "26",
           "name" : "Schedule Viewer",
           "properties" : {
             "structurizr.dsl.identifier" : "sch.scheduleBusiness.scheduleViewer"
           },
           "relationships" : [ {
+            "description" : "Timetable data",
+            "destinationId" : "21",
+            "id" : "100",
+            "sourceId" : "26",
+            "tags" : "Relationship"
+          }, {
             "description" : "Read",
-            "destinationId" : "23",
-            "id" : "96",
-            "sourceId" : "19",
+            "destinationId" : "30",
+            "id" : "135",
+            "sourceId" : "26",
             "tags" : "Relationship"
           }, {
             "description" : "Collisions/availability (read)",
-            "destinationId" : "15",
-            "id" : "98",
-            "sourceId" : "19",
+            "destinationId" : "19",
+            "id" : "137",
+            "sourceId" : "26",
             "tags" : "Relationship"
           }, {
             "description" : "Collisions/availability (read)",
-            "destinationId" : "13",
-            "id" : "99",
-            "linkedRelationshipId" : "98",
-            "sourceId" : "19"
+            "destinationId" : "17",
+            "id" : "138",
+            "linkedRelationshipId" : "137",
+            "sourceId" : "26"
           } ],
           "tags" : "Element,Component"
         }, {
           "description" : "Builds ScheduleSnapshot (canonical DTO).",
           "documentation" : { },
-          "id" : "20",
+          "id" : "27",
           "name" : "Schedule Transformer",
           "properties" : {
             "structurizr.dsl.identifier" : "sch.scheduleBusiness.scheduleTransformer"
           },
           "relationships" : [ {
             "description" : "Read",
-            "destinationId" : "23",
-            "id" : "97",
-            "sourceId" : "20",
+            "destinationId" : "30",
+            "id" : "136",
+            "sourceId" : "27",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         }, {
           "description" : "Renders ScheduleSnapshot to requested format (ics/pdf/csv).",
           "documentation" : { },
-          "id" : "21",
+          "id" : "28",
           "name" : "Schedule Exporter",
           "properties" : {
             "structurizr.dsl.identifier" : "sch.scheduleBusiness.scheduleExporter"
           },
           "relationships" : [ {
+            "description" : "Export file",
+            "destinationId" : "21",
+            "id" : "103",
+            "sourceId" : "28",
+            "tags" : "Relationship"
+          }, {
             "description" : "Build snapshot",
-            "destinationId" : "20",
-            "id" : "95",
-            "sourceId" : "21",
+            "destinationId" : "27",
+            "id" : "134",
+            "sourceId" : "28",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         }, {
           "description" : "Applies timetable and basket changes.",
           "documentation" : { },
-          "id" : "22",
+          "id" : "29",
           "name" : "Schedule Updater",
           "properties" : {
             "structurizr.dsl.identifier" : "sch.scheduleBusiness.scheduleUpdater"
           },
           "relationships" : [ {
+            "description" : "Update confirmation",
+            "destinationId" : "21",
+            "id" : "102",
+            "sourceId" : "29",
+            "tags" : "Relationship"
+          }, {
             "description" : "Read/Write",
-            "destinationId" : "23",
-            "id" : "94",
-            "sourceId" : "22",
+            "destinationId" : "30",
+            "id" : "133",
+            "sourceId" : "29",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         }, {
           "description" : "CRUD for schedules, basket, and preferences.",
           "documentation" : { },
-          "id" : "23",
+          "id" : "30",
           "name" : "Schedule Repository",
           "properties" : {
             "structurizr.dsl.identifier" : "sch.scheduleBusiness.scheduleRepository"
           },
           "relationships" : [ {
             "description" : "Read/Write",
-            "destinationId" : "35",
-            "id" : "65",
-            "sourceId" : "23",
+            "destinationId" : "45",
+            "id" : "114",
+            "sourceId" : "30",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
@@ -1377,67 +1649,84 @@
         "description" : "Timetable view, basket, collisions.",
         "documentation" : {
           "sections" : [ {
-            "content" : "## Schedule Business\n\n**Purpose**  \nServes timetable consumption use cases, basket management, and schedule exports.\n\n**Main responsibilities**\n- Assemble read models for timetable views.\n- Maintain basket state and apply modifications.\n- Export schedule in requested format. (ics/pdf/csv)\n\n**Collaborations**\n- Supplies projections and accepts changes from `Schedule HTML`.\n- Exchanges collision feedback and availability checks with `Scheduling Business`.\n- Reads from and writes to `Schedules DB`.\n- Exports data to `Calendar Clients`\n\n",
+            "content" : "## Schedule Business\r\n\r\n**Purpose**  \r\nServes timetable consumption use cases, basket management, and schedule exports.\r\n\r\n**Main responsibilities**\r\n- Assemble read models for timetable views.\r\n- Maintain basket state and apply modifications.\r\n- Export schedule in requested format. (ics/pdf/csv)\r\n\r\n**Collaborations**\r\n- Supplies projections and accepts changes from `Schedule HTML`.\r\n- Exchanges collision feedback and availability checks with `Scheduling Business`.\r\n- Reads from and writes to `Schedules DB`.\r\n- Exports data to `Calendar Clients`\r\n\r\n",
             "format" : "Markdown",
             "order" : 1,
             "title" : ""
           } ]
         },
         "group" : "Schedules",
-        "id" : "18",
+        "id" : "25",
         "name" : "Schedule Business",
         "properties" : {
           "structurizr.dsl.identifier" : "sch.scheduleBusiness"
         },
         "relationships" : [ {
-          "description" : "Read/Write",
-          "destinationId" : "35",
-          "id" : "66",
-          "linkedRelationshipId" : "65",
-          "sourceId" : "18"
-        }, {
-          "description" : "Collisions/availability (read)",
-          "destinationId" : "15",
-          "id" : "100",
-          "linkedRelationshipId" : "98",
-          "sourceId" : "18"
-        }, {
-          "description" : "Collisions/availability (read)",
-          "destinationId" : "13",
+          "description" : "Timetable data",
+          "destinationId" : "21",
           "id" : "101",
-          "linkedRelationshipId" : "98",
-          "sourceId" : "18"
+          "linkedRelationshipId" : "100",
+          "sourceId" : "25"
+        }, {
+          "description" : "Read/Write",
+          "destinationId" : "45",
+          "id" : "115",
+          "linkedRelationshipId" : "114",
+          "sourceId" : "25"
+        }, {
+          "description" : "Collisions/availability (read)",
+          "destinationId" : "19",
+          "id" : "139",
+          "linkedRelationshipId" : "137",
+          "sourceId" : "25"
+        }, {
+          "description" : "Collisions/availability (read)",
+          "destinationId" : "17",
+          "id" : "140",
+          "linkedRelationshipId" : "137",
+          "sourceId" : "25"
         } ],
         "tags" : "Element,Container",
         "technology" : "Business"
       }, {
+        "components" : [ {
+          "description" : "UI for user authentication and sign-in.",
+          "documentation" : { },
+          "id" : "32",
+          "name" : "Login Form",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sch.loginHtml.loginForm"
+          },
+          "relationships" : [ {
+            "description" : "Authenticate",
+            "destinationId" : "33",
+            "id" : "89",
+            "sourceId" : "32",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
         "description" : "Sign-in UI in the browser.",
         "documentation" : {
           "sections" : [ {
-            "content" : "## Login HTML\n\n**Purpose**  \nProvides the shared sign-in GUI for every role in the system.\n\n**Main responsibilities**\n- Present authentication forms, guidance, and status messages to users.\n- Initiate post-login routing based on role, previous context, or deep-link targets.\n\n**Collaborations**\n- Delegates authentication decisions to `Authentication Business`.\n\n",
+            "content" : "## Login HTML\r\n\r\n**Purpose**  \r\nProvides the shared sign-in GUI for every role in the system.\r\n\r\n**Main responsibilities**\r\n- Present authentication forms, guidance, and status messages to users.\r\n- Initiate post-login routing based on role, previous context, or deep-link targets.\r\n\r\n**Collaborations**\r\n- Delegates authentication decisions to `Authentication Business`.\r\n\r\n",
             "format" : "Markdown",
             "order" : 1,
             "title" : ""
           } ]
         },
         "group" : "Authentication",
-        "id" : "24",
+        "id" : "31",
         "name" : "Login HTML",
         "properties" : {
           "structurizr.dsl.identifier" : "sch.loginHtml"
         },
         "relationships" : [ {
-          "description" : "Requests",
-          "destinationId" : "25",
-          "id" : "58",
-          "sourceId" : "24",
-          "tags" : "Relationship"
-        }, {
           "description" : "Authenticate",
-          "destinationId" : "26",
-          "id" : "80",
-          "sourceId" : "24",
-          "tags" : "Relationship"
+          "destinationId" : "33",
+          "id" : "90",
+          "linkedRelationshipId" : "89",
+          "sourceId" : "31"
         } ],
         "tags" : "Element,Container,HTML",
         "technology" : "HTML/JS"
@@ -1445,54 +1734,60 @@
         "components" : [ {
           "description" : "Validates user identity and tokens.",
           "documentation" : { },
-          "id" : "26",
+          "id" : "34",
           "name" : "User Validator",
           "properties" : {
             "structurizr.dsl.identifier" : "sch.authBusiness.userValidator"
           },
           "relationships" : [ {
-            "description" : "Read/Write",
-            "destinationId" : "28",
+            "description" : "Authentication result",
+            "destinationId" : "31",
             "id" : "104",
-            "sourceId" : "26",
+            "sourceId" : "34",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Read/Write",
+            "destinationId" : "36",
+            "id" : "143",
+            "sourceId" : "34",
             "tags" : "Relationship"
           }, {
             "description" : "OIDC/JWT validation",
-            "destinationId" : "106",
-            "id" : "111",
-            "sourceId" : "26",
+            "destinationId" : "145",
+            "id" : "150",
+            "sourceId" : "34",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         }, {
           "description" : "Manages sessions and tokens.",
           "documentation" : { },
-          "id" : "27",
+          "id" : "35",
           "name" : "Session Manager",
           "properties" : {
             "structurizr.dsl.identifier" : "sch.authBusiness.sessionManager"
           },
           "relationships" : [ {
             "description" : "Read/Write",
-            "destinationId" : "28",
-            "id" : "105",
-            "sourceId" : "27",
+            "destinationId" : "36",
+            "id" : "144",
+            "sourceId" : "35",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         }, {
           "description" : "CRUD for users and credentials.",
           "documentation" : { },
-          "id" : "28",
+          "id" : "36",
           "name" : "User Repository",
           "properties" : {
             "structurizr.dsl.identifier" : "sch.authBusiness.userRepository"
           },
           "relationships" : [ {
             "description" : "Read/Write",
-            "destinationId" : "36",
-            "id" : "67",
-            "sourceId" : "28",
+            "destinationId" : "46",
+            "id" : "116",
+            "sourceId" : "36",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
@@ -1500,67 +1795,94 @@
         "description" : "Login logic.",
         "documentation" : {
           "sections" : [ {
-            "content" : "## Authentication Business\n\n**Purpose**  \nOwns authentication flows, session management, and integration with enterprise identity services.\n\n**Main responsibilities**\n- Verify user credentials or federated assertions and issue application sessions.\n- Maintain account status, security policies, and expiry rules within the system of record.\n\n**Collaborations**\n- Receives sign-in requests from `Login HTML` and returns outcomes or challenges.\n- Persists user and session data through `Users DB`.\n- Validates identity assertions with `University SSO`.\n\n",
+            "content" : "## Authentication Business\r\n\r\n**Purpose**  \r\nOwns authentication flows, session management, and integration with enterprise identity services.\r\n\r\n**Main responsibilities**\r\n- Verify user credentials or federated assertions and issue application sessions.\r\n- Maintain account status, security policies, and expiry rules within the system of record.\r\n\r\n**Collaborations**\r\n- Receives sign-in requests from `Login HTML` and returns outcomes or challenges.\r\n- Persists user and session data through `Users DB`.\r\n- Validates identity assertions with `University SSO`.\r\n\r\n",
             "format" : "Markdown",
             "order" : 1,
             "title" : ""
           } ]
         },
         "group" : "Authentication",
-        "id" : "25",
+        "id" : "33",
         "name" : "Authentication Business",
         "properties" : {
           "structurizr.dsl.identifier" : "sch.authBusiness"
         },
         "relationships" : [ {
+          "description" : "Authentication result",
+          "destinationId" : "31",
+          "id" : "105",
+          "linkedRelationshipId" : "104",
+          "sourceId" : "33"
+        }, {
           "description" : "Read/Write",
-          "destinationId" : "36",
-          "id" : "68",
-          "linkedRelationshipId" : "67",
-          "sourceId" : "25"
+          "destinationId" : "46",
+          "id" : "117",
+          "linkedRelationshipId" : "116",
+          "sourceId" : "33"
         }, {
           "description" : "OIDC/JWT validation",
-          "destinationId" : "106",
-          "id" : "112",
-          "linkedRelationshipId" : "111",
-          "sourceId" : "25"
+          "destinationId" : "145",
+          "id" : "151",
+          "linkedRelationshipId" : "150",
+          "sourceId" : "33"
         } ],
         "tags" : "Element,Container",
         "technology" : "Business"
       }, {
+        "components" : [ {
+          "description" : "UI for viewing analytics and statistics.",
+          "documentation" : { },
+          "id" : "38",
+          "name" : "Analytics Dashboard",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sch.reportHtml.analyticsDashboard"
+          },
+          "relationships" : [ {
+            "description" : "Request analytics",
+            "destinationId" : "40",
+            "id" : "91",
+            "sourceId" : "38",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "UI for downloading report files.",
+          "documentation" : { },
+          "id" : "39",
+          "name" : "Report Download",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sch.reportHtml.reportDownload"
+          },
+          "relationships" : [ {
+            "description" : "Download reports",
+            "destinationId" : "40",
+            "id" : "93",
+            "sourceId" : "39",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
         "description" : "Reports UI in the browser.",
         "documentation" : {
           "sections" : [ {
-            "content" : "## Report HTML\n\n**Purpose**  \nDelivers the reporting dashboard for managers who monitor enrolment and capacity trends.\n\n**Main responsibilities**\n- Present aggregated metrics, visualisations, and recommendations in a clear layout.\n- Allow filtering, drill-down, and export initiation from within the interface.\n- Communicate status messages and guidance from the reporting workflows.\n\n**Collaborations**\n- Requests datasets, charts, and export artefacts from `Reporting Business`.\n\n",
+            "content" : "## Report HTML\r\n\r\n**Purpose**  \r\nDelivers the reporting dashboard for managers who monitor enrolment and capacity trends.\r\n\r\n**Main responsibilities**\r\n- Present aggregated metrics, visualisations, and recommendations in a clear layout.\r\n- Allow filtering, drill-down, and export initiation from within the interface.\r\n- Communicate status messages and guidance from the reporting workflows.\r\n\r\n**Collaborations**\r\n- Requests datasets, charts, and export artefacts from `Reporting Business`.\r\n\r\n",
             "format" : "Markdown",
             "order" : 1,
             "title" : ""
           } ]
         },
         "group" : "Reporting",
-        "id" : "29",
+        "id" : "37",
         "name" : "Report HTML",
         "properties" : {
           "structurizr.dsl.identifier" : "sch.reportHtml"
         },
         "relationships" : [ {
-          "description" : "Requests",
-          "destinationId" : "30",
-          "id" : "59",
-          "sourceId" : "29",
-          "tags" : "Relationship"
-        }, {
           "description" : "Request analytics",
-          "destinationId" : "31",
-          "id" : "81",
-          "sourceId" : "29",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Download reports",
-          "destinationId" : "32",
-          "id" : "82",
-          "sourceId" : "29",
-          "tags" : "Relationship"
+          "destinationId" : "40",
+          "id" : "92",
+          "linkedRelationshipId" : "91",
+          "sourceId" : "37"
         } ],
         "tags" : "Element,Container,HTML",
         "technology" : "HTML/JS"
@@ -1568,54 +1890,66 @@
         "components" : [ {
           "description" : "Computes statistics and analytics.",
           "documentation" : { },
-          "id" : "31",
+          "id" : "41",
           "name" : "Report Generator",
           "properties" : {
             "structurizr.dsl.identifier" : "sch.reportingBusiness.reportGenerator"
           },
           "relationships" : [ {
+            "description" : "Analytics data",
+            "destinationId" : "37",
+            "id" : "106",
+            "sourceId" : "41",
+            "tags" : "Relationship"
+          }, {
             "description" : "Read",
-            "destinationId" : "35",
-            "id" : "71",
-            "sourceId" : "31",
+            "destinationId" : "45",
+            "id" : "120",
+            "sourceId" : "41",
             "tags" : "Relationship"
           }, {
             "description" : "Read/Write",
-            "destinationId" : "33",
-            "id" : "102",
-            "sourceId" : "31",
+            "destinationId" : "43",
+            "id" : "141",
+            "sourceId" : "41",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         }, {
           "description" : "Generates downloadable report files.",
           "documentation" : { },
-          "id" : "32",
+          "id" : "42",
           "name" : "Report Exporter",
           "properties" : {
             "structurizr.dsl.identifier" : "sch.reportingBusiness.reportExporter"
           },
           "relationships" : [ {
+            "description" : "Report file",
+            "destinationId" : "37",
+            "id" : "108",
+            "sourceId" : "42",
+            "tags" : "Relationship"
+          }, {
             "description" : "Read",
-            "destinationId" : "33",
-            "id" : "103",
-            "sourceId" : "32",
+            "destinationId" : "43",
+            "id" : "142",
+            "sourceId" : "42",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         }, {
           "description" : "CRUD for reports and aggregates.",
           "documentation" : { },
-          "id" : "33",
+          "id" : "43",
           "name" : "Report Repository",
           "properties" : {
             "structurizr.dsl.identifier" : "sch.reportingBusiness.reportRepository"
           },
           "relationships" : [ {
             "description" : "Read/Write",
-            "destinationId" : "37",
-            "id" : "69",
-            "sourceId" : "33",
+            "destinationId" : "47",
+            "id" : "118",
+            "sourceId" : "43",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
@@ -1623,35 +1957,41 @@
         "description" : "Generate and export reports.",
         "documentation" : {
           "sections" : [ {
-            "content" : "## Reporting Business\n\n**Purpose**  \nProduces management insights by aggregating scheduling and registration data.\n\n**Main responsibilities**\n- Collect, transform, and store report data for reuse and historical analysis.\n- Prepare exportable artefacts for managers.\n\n**Collaborations**\n- Retrieves source data from `Schedules DB`.\n- Persists computed insights within `Reports DB`.\n- Serves `Report HTML` with datasets and export payloads.\n- Consults the `Authorizer` to ensure only entitled roles access sensitive reports.\n\n",
+            "content" : "## Reporting Business\r\n\r\n**Purpose**  \r\nProduces management insights by aggregating scheduling and registration data.\r\n\r\n**Main responsibilities**\r\n- Collect, transform, and store report data for reuse and historical analysis.\r\n- Prepare exportable artefacts for managers.\r\n\r\n**Collaborations**\r\n- Retrieves source data from `Schedules DB`.\r\n- Persists computed insights within `Reports DB`.\r\n- Serves `Report HTML` with datasets and export payloads.\r\n- Consults the `Authorizer` to ensure only entitled roles access sensitive reports.\r\n\r\n",
             "format" : "Markdown",
             "order" : 1,
             "title" : ""
           } ]
         },
         "group" : "Reporting",
-        "id" : "30",
+        "id" : "40",
         "name" : "Reporting Business",
         "properties" : {
           "structurizr.dsl.identifier" : "sch.reportingBusiness"
         },
         "relationships" : [ {
-          "description" : "Read/Write",
+          "description" : "Analytics data",
           "destinationId" : "37",
-          "id" : "70",
-          "linkedRelationshipId" : "69",
-          "sourceId" : "30"
+          "id" : "107",
+          "linkedRelationshipId" : "106",
+          "sourceId" : "40"
+        }, {
+          "description" : "Read/Write",
+          "destinationId" : "47",
+          "id" : "119",
+          "linkedRelationshipId" : "118",
+          "sourceId" : "40"
         }, {
           "description" : "Read",
-          "destinationId" : "35",
-          "id" : "72",
-          "linkedRelationshipId" : "71",
-          "sourceId" : "30"
+          "destinationId" : "45",
+          "id" : "121",
+          "linkedRelationshipId" : "120",
+          "sourceId" : "40"
         }, {
           "description" : "Authorize",
-          "destinationId" : "38",
-          "id" : "85",
-          "sourceId" : "30",
+          "destinationId" : "48",
+          "id" : "124",
+          "sourceId" : "40",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container",
@@ -1660,14 +2000,14 @@
         "description" : "Subjects and validation history.",
         "documentation" : {
           "sections" : [ {
-            "content" : "## Subjects DB\n\n**Purpose**  \nStores authoritative data about subjects, their metadata, and validation history.\n\n**Collaborations**\n- Accessed directly by `Subjects Business`.\n\n",
+            "content" : "## Subjects DB\r\n\r\n**Purpose**  \r\nStores authoritative data about subjects, their metadata, and validation history.\r\n\r\n**Collaborations**\r\n- Accessed directly by `Subjects Business`.\r\n\r\n",
             "format" : "Markdown",
             "order" : 1,
             "title" : ""
           } ]
         },
         "group" : "Datastores",
-        "id" : "34",
+        "id" : "44",
         "name" : "Subjects DB",
         "properties" : {
           "structurizr.dsl.identifier" : "sch.dbSubjects"
@@ -1678,14 +2018,14 @@
         "description" : "Schedules, basket, preferences.",
         "documentation" : {
           "sections" : [ {
-            "content" : "## Schedules DB\n\n**Purpose**  \nHosts timetable data, basket contents, and planning preferences for the system.\n\n**Collaborations**\n- Written to and read by `Schedule Business`.\n- Receives planning artefacts from `Scheduling Business`.\n- Supplies aggregated data to `Reporting Business`.\n\n",
+            "content" : "## Schedules DB\r\n\r\n**Purpose**  \r\nHosts timetable data, basket contents, and planning preferences for the system.\r\n\r\n**Collaborations**\r\n- Written to and read by `Schedule Business`.\r\n- Receives planning artefacts from `Scheduling Business`.\r\n- Supplies aggregated data to `Reporting Business`.\r\n\r\n",
             "format" : "Markdown",
             "order" : 1,
             "title" : ""
           } ]
         },
         "group" : "Datastores",
-        "id" : "35",
+        "id" : "45",
         "name" : "Schedules DB",
         "properties" : {
           "structurizr.dsl.identifier" : "sch.dbSchedules"
@@ -1696,14 +2036,14 @@
         "description" : "Users and credentials.",
         "documentation" : {
           "sections" : [ {
-            "content" : "## Users DB\n\n**Purpose**  \nActs as the source of truth for user accounts, credentials, and session metadata.\n\n**Collaborations**\n- Accessed and maintained by `Authentication Business`.\n- Queried by `Authorizer` when evaluating permissions.\n\n",
+            "content" : "## Users DB\r\n\r\n**Purpose**  \r\nActs as the source of truth for user accounts, credentials, and session metadata.\r\n\r\n**Collaborations**\r\n- Accessed and maintained by `Authentication Business`.\r\n- Queried by `Authorizer` when evaluating permissions.\r\n\r\n",
             "format" : "Markdown",
             "order" : 1,
             "title" : ""
           } ]
         },
         "group" : "Datastores",
-        "id" : "36",
+        "id" : "46",
         "name" : "Users DB",
         "properties" : {
           "structurizr.dsl.identifier" : "sch.dbUsers"
@@ -1714,14 +2054,14 @@
         "description" : "Reports and analytics data.",
         "documentation" : {
           "sections" : [ {
-            "content" : "## Reports DB\n\n**Purpose**  \nHolds aggregated reporting data, historical metrics, and previously generated exports.\n\n**Collaborations**\n- Managed by `Reporting Business`.\n\n",
+            "content" : "## Reports DB\r\n\r\n**Purpose**  \r\nHolds aggregated reporting data, historical metrics, and previously generated exports.\r\n\r\n**Collaborations**\r\n- Managed by `Reporting Business`.\r\n\r\n",
             "format" : "Markdown",
             "order" : 1,
             "title" : ""
           } ]
         },
         "group" : "Datastores",
-        "id" : "37",
+        "id" : "47",
         "name" : "Reports DB",
         "properties" : {
           "structurizr.dsl.identifier" : "sch.dbReports"
@@ -1731,22 +2071,22 @@
       }, {
         "documentation" : {
           "sections" : [ {
-            "content" : "## Authorizer\n\n**Purpose**  \nProvides a central authorisation decision point for backend services.\n\n**Main responsibilities**\n- Evaluate requested actions against role policies and contextual rules.\n- Record authorisation outcomes for audit and monitoring.\n- Deliver consistent allow/deny responses to callers.\n\n**Collaborations**\n- Invoked by `Subjects Business`, `Scheduling Business`, and `Reporting Business` before privileged changes.\n- Relies on `Authentication Business` for verified identity and role information.\n- Reads account roles and policy metadata from `Users DB`.\n\n",
+            "content" : "## Authorizer\r\n\r\n**Purpose**  \r\nProvides a central authorisation decision point for backend services.\r\n\r\n**Main responsibilities**\r\n- Evaluate requested actions against role policies and contextual rules.\r\n- Record authorisation outcomes for audit and monitoring.\r\n- Deliver consistent allow/deny responses to callers.\r\n\r\n**Collaborations**\r\n- Invoked by `Subjects Business`, `Scheduling Business`, and `Reporting Business` before privileged changes.\r\n- Relies on `Authentication Business` for verified identity and role information.\r\n- Reads account roles and policy metadata from `Users DB`.\r\n\r\n",
             "format" : "Markdown",
             "order" : 1,
             "title" : ""
           } ]
         },
-        "id" : "38",
+        "id" : "48",
         "name" : "Authorizer",
         "properties" : {
           "structurizr.dsl.identifier" : "sch.authorizer"
         },
         "relationships" : [ {
           "description" : "Read/Write",
-          "destinationId" : "36",
-          "id" : "86",
-          "sourceId" : "38",
+          "destinationId" : "46",
+          "id" : "125",
+          "sourceId" : "48",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container"
@@ -1754,7 +2094,7 @@
       "description" : "Course management, scheduling, preferences, viewing, and reports.",
       "documentation" : {
         "sections" : [ {
-          "content" : "**Purpose**  \nProvides a unified platform for subject management, timetable planning, publication, and reporting across the university.\n\n**Main responsibilities**  \n- Support teachers in defining subjects, requirements, and preferred times.  \n- Enable the scheduling committee to plan and validate timetables while avoiding conflicts.  \n- Offer students and teachers clear timetable views, basket planning, and exports.  \n- Deliver managers the analytics needed to balance capacity with student demand.  \n- Secure access through shared authentication, authorisation, and audit services.\n\n**Key collaborations**  \n- Integrates with `University SSO` for sign-in and identity assertions.  \n- Sends workflow notifications via `Notification Service`.  \n- Publishes calendar feeds to external `Calendar Clients`.  \n\n",
+          "content" : "**Purpose**  \r\nProvides a unified platform for subject management, timetable planning, publication, and reporting across the university.\r\n\r\n**Main responsibilities**  \r\n- Support teachers in defining subjects, requirements, and preferred times.  \r\n- Enable the scheduling committee to plan and validate timetables while avoiding conflicts.  \r\n- Offer students and teachers clear timetable views, basket planning, and exports.  \r\n- Deliver managers the analytics needed to balance capacity with student demand.  \r\n- Secure access through shared authentication, authorisation, and audit services.\r\n\r\n**Key collaborations**  \r\n- Integrates with `University SSO` for sign-in and identity assertions.  \r\n- Sends workflow notifications via `Notification Service`.  \r\n- Publishes calendar feeds to external `Calendar Clients`.  \r\n\r\n",
           "format" : "Markdown",
           "order" : 1,
           "title" : ""
@@ -1767,14 +2107,14 @@
       },
       "relationships" : [ {
         "description" : "SSO/JWT",
-        "destinationId" : "106",
-        "id" : "109",
+        "destinationId" : "145",
+        "id" : "148",
         "sourceId" : "6",
         "tags" : "Relationship"
       }, {
         "description" : "Notify",
-        "destinationId" : "107",
-        "id" : "110",
+        "destinationId" : "146",
+        "id" : "149",
         "sourceId" : "6",
         "tags" : "Relationship"
       } ],
@@ -1782,7 +2122,7 @@
     }, {
       "description" : "OIDC provider for authentication.",
       "documentation" : { },
-      "id" : "106",
+      "id" : "145",
       "name" : "University SSO",
       "properties" : {
         "structurizr.dsl.identifier" : "idp"
@@ -1791,7 +2131,7 @@
     }, {
       "description" : "Email and workflow notifications.",
       "documentation" : { },
-      "id" : "107",
+      "id" : "146",
       "name" : "Notification Service",
       "properties" : {
         "structurizr.dsl.identifier" : "notif"
@@ -1800,38 +2140,38 @@
     }, {
       "description" : "External calendar apps consuming iCal feeds.",
       "documentation" : { },
-      "id" : "108",
+      "id" : "147",
       "name" : "Calendar Clients",
       "properties" : {
         "structurizr.dsl.identifier" : "calendars"
       },
       "relationships" : [ {
         "description" : "Fetch iCal",
-        "destinationId" : "21",
-        "id" : "115",
-        "sourceId" : "108",
+        "destinationId" : "28",
+        "id" : "154",
+        "sourceId" : "147",
         "tags" : "Relationship"
       }, {
         "description" : "Fetch iCal",
-        "destinationId" : "18",
-        "id" : "116",
-        "linkedRelationshipId" : "115",
-        "sourceId" : "108"
+        "destinationId" : "25",
+        "id" : "155",
+        "linkedRelationshipId" : "154",
+        "sourceId" : "147"
       }, {
         "description" : "Fetch iCal",
         "destinationId" : "6",
-        "id" : "117",
-        "linkedRelationshipId" : "115",
-        "sourceId" : "108"
+        "id" : "156",
+        "linkedRelationshipId" : "154",
+        "sourceId" : "147"
       } ],
       "tags" : "Element,Software System,External"
     } ]
   },
   "name" : "Schedules (SCH)",
   "properties" : {
-    "structurizr.inspection.error" : "121",
     "structurizr.inspection.info" : "0",
     "structurizr.inspection.ignore" : "0",
+    "structurizr.inspection.error" : "160",
     "structurizr.inspection.warning" : "0"
   },
   "views" : {
@@ -1845,17 +2185,9 @@
         "rankSeparation" : 600,
         "vertices" : false
       },
-      "containerId" : "8",
+      "containerId" : "10",
       "elements" : [ {
         "id" : "7",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "9",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "10",
         "x" : 0,
         "y" : 0
       }, {
@@ -1863,15 +2195,23 @@
         "x" : 0,
         "y" : 0
       }, {
+        "id" : "12",
+        "x" : 0,
+        "y" : 0
+      }, {
         "id" : "13",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "34",
+        "id" : "17",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "107",
+        "id" : "44",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "146",
         "x" : 0,
         "y" : 0
       } ],
@@ -1880,19 +2220,19 @@
       "name" : "Component View: Schedules (SCH) - Subjects Business",
       "order" : 3,
       "relationships" : [ {
-        "id" : "113"
+        "id" : "110"
       }, {
-        "id" : "61"
+        "id" : "126"
       }, {
-        "id" : "73"
+        "id" : "127"
       }, {
-        "id" : "74"
+        "id" : "132"
       }, {
-        "id" : "87"
+        "id" : "152"
       }, {
-        "id" : "88"
+        "id" : "94"
       }, {
-        "id" : "93"
+        "id" : "96"
       } ]
     }, {
       "automaticLayout" : {
@@ -1904,13 +2244,9 @@
         "rankSeparation" : 600,
         "vertices" : false
       },
-      "containerId" : "13",
+      "containerId" : "17",
       "elements" : [ {
-        "id" : "8",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "12",
+        "id" : "10",
         "x" : 0,
         "y" : 0
       }, {
@@ -1918,60 +2254,7 @@
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "15",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "16",
-        "x" : 0,
-        "y" : 0
-      }, {
         "id" : "18",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "35",
-        "x" : 0,
-        "y" : 0
-      } ],
-      "externalContainerBoundariesVisible" : false,
-      "key" : "L3-Scheduling",
-      "name" : "Component View: Schedules (SCH) - Scheduling Business",
-      "order" : 4,
-      "relationships" : [ {
-        "id" : "100"
-      }, {
-        "id" : "63"
-      }, {
-        "id" : "66"
-      }, {
-        "id" : "75"
-      }, {
-        "id" : "76"
-      }, {
-        "id" : "89"
-      }, {
-        "id" : "90"
-      }, {
-        "id" : "92"
-      } ]
-    }, {
-      "automaticLayout" : {
-        "applied" : false,
-        "edgeSeparation" : 0,
-        "implementation" : "Graphviz",
-        "nodeSeparation" : 320,
-        "rankDirection" : "LeftRight",
-        "rankSeparation" : 600,
-        "vertices" : false
-      },
-      "containerId" : "18",
-      "elements" : [ {
-        "id" : "13",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "17",
         "x" : 0,
         "y" : 0
       }, {
@@ -1983,52 +2266,132 @@
         "x" : 0,
         "y" : 0
       }, {
+        "id" : "25",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "45",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "L3-Scheduling",
+      "name" : "Component View: Schedules (SCH) - Scheduling Business",
+      "order" : 4,
+      "relationships" : [ {
+        "id" : "112"
+      }, {
+        "id" : "115"
+      }, {
+        "id" : "128"
+      }, {
+        "id" : "129"
+      }, {
+        "id" : "131"
+      }, {
+        "id" : "139"
+      }, {
+        "id" : "97"
+      }, {
+        "id" : "99"
+      } ]
+    }, {
+      "automaticLayout" : {
+        "applied" : true,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 320,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 600,
+        "vertices" : false
+      },
+      "containerId" : "25",
+      "dimensions" : {
+        "height" : 3289,
+        "width" : 5070
+      },
+      "elements" : [ {
+        "id" : "17",
+        "x" : 3349,
+        "y" : 800
+      }, {
         "id" : "21",
-        "x" : 0,
-        "y" : 0
+        "x" : 3349,
+        "y" : 179
       }, {
-        "id" : "22",
-        "x" : 0,
-        "y" : 0
+        "id" : "26",
+        "x" : 2299,
+        "y" : 1308
       }, {
-        "id" : "23",
-        "x" : 0,
-        "y" : 0
+        "id" : "27",
+        "x" : 2299,
+        "y" : 2550
       }, {
-        "id" : "35",
-        "x" : 0,
-        "y" : 0
+        "id" : "28",
+        "x" : 1249,
+        "y" : 1929
       }, {
-        "id" : "108",
-        "x" : 0,
-        "y" : 0
+        "id" : "29",
+        "x" : 2299,
+        "y" : 1929
+      }, {
+        "id" : "30",
+        "x" : 3349,
+        "y" : 1675
+      }, {
+        "id" : "45",
+        "x" : 4399,
+        "y" : 1112
+      }, {
+        "id" : "147",
+        "x" : 199,
+        "y" : 1929
       } ],
       "externalContainerBoundariesVisible" : false,
       "key" : "L3-Schedules",
       "name" : "Component View: Schedules (SCH) - Schedule Business",
       "order" : 5,
       "relationships" : [ {
-        "id" : "115"
+        "id" : "100",
+        "vertices" : [ {
+          "x" : 2749,
+          "y" : 1291
+        } ]
       }, {
-        "id" : "64"
+        "id" : "102",
+        "vertices" : [ {
+          "x" : 2749,
+          "y" : 1766
+        }, {
+          "x" : 3349,
+          "y" : 637
+        } ]
       }, {
-        "id" : "65"
+        "id" : "103",
+        "vertices" : [ {
+          "x" : 2299,
+          "y" : 1145
+        } ]
       }, {
-        "id" : "77"
+        "id" : "113"
       }, {
-        "id" : "78"
+        "id" : "114",
+        "vertices" : [ {
+          "x" : 3903,
+          "y" : 1658
+        } ]
       }, {
-        "id" : "79"
+        "id" : "133"
       }, {
-        "id" : "94"
+        "id" : "134"
       }, {
-        "id" : "95"
+        "id" : "135"
       }, {
-        "id" : "96"
+        "id" : "136"
       }, {
-        "id" : "97"
+        "id" : "138"
       }, {
-        "id" : "99"
+        "id" : "154"
       } ]
     }, {
       "automaticLayout" : {
@@ -2040,21 +2403,17 @@
         "rankSeparation" : 600,
         "vertices" : false
       },
-      "containerId" : "25",
+      "containerId" : "33",
       "elements" : [ {
-        "id" : "24",
+        "id" : "31",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "26",
+        "id" : "34",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "27",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "28",
+        "id" : "35",
         "x" : 0,
         "y" : 0
       }, {
@@ -2062,7 +2421,11 @@
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "106",
+        "id" : "46",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "145",
         "x" : 0,
         "y" : 0
       } ],
@@ -2073,13 +2436,13 @@
       "relationships" : [ {
         "id" : "104"
       }, {
-        "id" : "105"
+        "id" : "116"
       }, {
-        "id" : "111"
+        "id" : "143"
       }, {
-        "id" : "67"
+        "id" : "144"
       }, {
-        "id" : "80"
+        "id" : "150"
       } ]
     }, {
       "automaticLayout" : {
@@ -2091,29 +2454,29 @@
         "rankSeparation" : 600,
         "vertices" : false
       },
-      "containerId" : "30",
+      "containerId" : "40",
       "elements" : [ {
-        "id" : "29",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "31",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "32",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "33",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "35",
-        "x" : 0,
-        "y" : 0
-      }, {
         "id" : "37",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "41",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "42",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "43",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "45",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "47",
         "x" : 0,
         "y" : 0
       } ],
@@ -2122,17 +2485,17 @@
       "name" : "Component View: Schedules (SCH) - Reporting Business",
       "order" : 7,
       "relationships" : [ {
-        "id" : "102"
+        "id" : "106"
       }, {
-        "id" : "103"
+        "id" : "108"
       }, {
-        "id" : "69"
+        "id" : "118"
       }, {
-        "id" : "71"
+        "id" : "120"
       }, {
-        "id" : "81"
+        "id" : "141"
       }, {
-        "id" : "82"
+        "id" : "142"
       } ]
     }, {
       "automaticLayout" : {
@@ -2146,6 +2509,18 @@
       },
       "containerId" : "7",
       "elements" : [ {
+        "id" : "2",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "4",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "8",
+        "x" : 0,
+        "y" : 0
+      }, {
         "id" : "9",
         "x" : 0,
         "y" : 0
@@ -2157,65 +2532,17 @@
       "externalContainerBoundariesVisible" : false,
       "key" : "L3-Subjects-HTML",
       "name" : "Component View: Schedules (SCH) - Subjects HTML",
-      "order" : 8
-    }, {
-      "automaticLayout" : {
-        "applied" : false,
-        "edgeSeparation" : 0,
-        "implementation" : "Graphviz",
-        "nodeSeparation" : 320,
-        "rankDirection" : "LeftRight",
-        "rankSeparation" : 600,
-        "vertices" : false
-      },
-      "containerId" : "12",
-      "elements" : [ {
-        "id" : "14",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "15",
-        "x" : 0,
-        "y" : 0
-      } ],
-      "externalContainerBoundariesVisible" : false,
-      "key" : "L3-Scheduling-HTML",
-      "name" : "Component View: Schedules (SCH) - Scheduling HTML",
-      "order" : 9
-    }, {
-      "automaticLayout" : {
-        "applied" : false,
-        "edgeSeparation" : 0,
-        "implementation" : "Graphviz",
-        "nodeSeparation" : 320,
-        "rankDirection" : "LeftRight",
-        "rankSeparation" : 600,
-        "vertices" : false
-      },
-      "containerId" : "17",
-      "elements" : [ {
-        "id" : "19",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "21",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "22",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "108",
-        "x" : 0,
-        "y" : 0
-      } ],
-      "externalContainerBoundariesVisible" : false,
-      "key" : "L3-Schedule-HTML",
-      "name" : "Component View: Schedules (SCH) - Schedule HTML",
-      "order" : 10,
+      "order" : 8,
       "relationships" : [ {
-        "id" : "115"
+        "id" : "58"
+      }, {
+        "id" : "60"
+      }, {
+        "id" : "61"
+      }, {
+        "id" : "78"
+      }, {
+        "id" : "80"
       } ]
     }, {
       "automaticLayout" : {
@@ -2227,13 +2554,143 @@
         "rankSeparation" : 600,
         "vertices" : false
       },
-      "containerId" : "24",
+      "containerId" : "14",
       "elements" : [ {
-        "id" : "26",
+        "id" : "2",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "106",
+        "id" : "3",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "15",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "16",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "17",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "L3-Scheduling-HTML",
+      "name" : "Component View: Schedules (SCH) - Scheduling HTML",
+      "order" : 9,
+      "relationships" : [ {
+        "id" : "63"
+      }, {
+        "id" : "65"
+      }, {
+        "id" : "66"
+      }, {
+        "id" : "68"
+      }, {
+        "id" : "81"
+      }, {
+        "id" : "83"
+      } ]
+    }, {
+      "automaticLayout" : {
+        "applied" : true,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 320,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 600,
+        "vertices" : false
+      },
+      "containerId" : "21",
+      "dimensions" : {
+        "height" : 2602,
+        "width" : 2920
+      },
+      "elements" : [ {
+        "id" : "5",
+        "x" : 199,
+        "y" : 770
+      }, {
+        "id" : "22",
+        "x" : 1199,
+        "y" : 199
+      }, {
+        "id" : "23",
+        "x" : 1199,
+        "y" : 820
+      }, {
+        "id" : "24",
+        "x" : 1199,
+        "y" : 1441
+      }, {
+        "id" : "25",
+        "x" : 2249,
+        "y" : 820
+      }, {
+        "id" : "147",
+        "x" : 1199,
+        "y" : 2061
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "L3-Schedule-HTML",
+      "name" : "Component View: Schedules (SCH) - Schedule HTML",
+      "order" : 10,
+      "relationships" : [ {
+        "id" : "155",
+        "vertices" : [ {
+          "x" : 1753,
+          "y" : 1924
+        } ]
+      }, {
+        "id" : "74"
+      }, {
+        "id" : "76"
+      }, {
+        "id" : "77"
+      }, {
+        "id" : "84"
+      }, {
+        "id" : "86",
+        "vertices" : [ {
+          "x" : 1949,
+          "y" : 1120
+        } ]
+      }, {
+        "id" : "87",
+        "vertices" : [ {
+          "x" : 1949,
+          "y" : 820
+        } ]
+      }, {
+        "id" : "88"
+      } ]
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 320,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 600,
+        "vertices" : false
+      },
+      "containerId" : "31",
+      "elements" : [ {
+        "id" : "5",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "32",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "33",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "145",
         "x" : 0,
         "y" : 0
       } ],
@@ -2242,7 +2699,11 @@
       "name" : "Component View: Schedules (SCH) - Login HTML",
       "order" : 11,
       "relationships" : [ {
-        "id" : "111"
+        "id" : "151"
+      }, {
+        "id" : "72"
+      }, {
+        "id" : "89"
       } ]
     }, {
       "automaticLayout" : {
@@ -2254,24 +2715,42 @@
         "rankSeparation" : 600,
         "vertices" : false
       },
-      "containerId" : "29",
+      "containerId" : "37",
       "elements" : [ {
-        "id" : "31",
+        "id" : "4",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "32",
+        "id" : "38",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "39",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "40",
         "x" : 0,
         "y" : 0
       } ],
       "externalContainerBoundariesVisible" : false,
       "key" : "L3-Report-HTML",
       "name" : "Component View: Schedules (SCH) - Report HTML",
-      "order" : 12
+      "order" : 12,
+      "relationships" : [ {
+        "id" : "69"
+      }, {
+        "id" : "71"
+      }, {
+        "id" : "91"
+      }, {
+        "id" : "93"
+      } ]
     } ],
     "configuration" : {
       "branding" : { },
-      "lastSavedView" : "L1-SystemContext",
+      "lastSavedView" : "L3-Schedules",
+      "metadataSymbols" : "SquareBrackets",
       "styles" : {
         "elements" : [ {
           "strokeWidth" : 2,
@@ -2330,7 +2809,7 @@
     },
     "containerViews" : [ {
       "automaticLayout" : {
-        "applied" : false,
+        "applied" : true,
         "edgeSeparation" : 0,
         "implementation" : "Graphviz",
         "nodeSeparation" : 340,
@@ -2338,121 +2817,211 @@
         "rankSeparation" : 650,
         "vertices" : false
       },
+      "dimensions" : {
+        "height" : 7492,
+        "width" : 8490
+      },
       "elements" : [ {
         "id" : "1",
-        "x" : 0,
-        "y" : 0
+        "x" : 200,
+        "y" : 2488
       }, {
         "id" : "2",
-        "x" : 0,
-        "y" : 0
+        "x" : 200,
+        "y" : 4976
       }, {
         "id" : "3",
-        "x" : 0,
-        "y" : 0
+        "x" : 200,
+        "y" : 1747
       }, {
         "id" : "4",
-        "x" : 0,
-        "y" : 0
+        "x" : 200,
+        "y" : 6359
       }, {
         "id" : "5",
-        "x" : 0,
-        "y" : 0
+        "x" : 1250,
+        "y" : 2476
       }, {
         "id" : "7",
-        "x" : 0,
-        "y" : 0
+        "x" : 6700,
+        "y" : 3134
       }, {
-        "id" : "8",
-        "x" : 0,
-        "y" : 0
+        "id" : "10",
+        "x" : 5600,
+        "y" : 3105
       }, {
-        "id" : "12",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "13",
-        "x" : 0,
-        "y" : 0
+        "id" : "14",
+        "x" : 3400,
+        "y" : 3105
       }, {
         "id" : "17",
-        "x" : 0,
-        "y" : 0
+        "x" : 4500,
+        "y" : 3105
       }, {
-        "id" : "18",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "24",
-        "x" : 0,
-        "y" : 0
+        "id" : "21",
+        "x" : 2300,
+        "y" : 2463
       }, {
         "id" : "25",
-        "x" : 0,
-        "y" : 0
+        "x" : 3400,
+        "y" : 2463
       }, {
-        "id" : "29",
-        "x" : 0,
-        "y" : 0
+        "id" : "31",
+        "x" : 5600,
+        "y" : 801
       }, {
-        "id" : "30",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "34",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "35",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "36",
-        "x" : 0,
-        "y" : 0
+        "id" : "33",
+        "x" : 6700,
+        "y" : 801
       }, {
         "id" : "37",
-        "x" : 0,
-        "y" : 0
+        "x" : 4500,
+        "y" : 3747
       }, {
-        "id" : "38",
-        "x" : 0,
-        "y" : 0
+        "id" : "40",
+        "x" : 5600,
+        "y" : 3747
       }, {
-        "id" : "106",
-        "x" : 0,
-        "y" : 0
+        "id" : "44",
+        "x" : 7800,
+        "y" : 2638
       }, {
-        "id" : "107",
-        "x" : 0,
-        "y" : 0
+        "id" : "45",
+        "x" : 7800,
+        "y" : 1997
       }, {
-        "id" : "108",
-        "x" : 0,
-        "y" : 0
+        "id" : "46",
+        "x" : 7800,
+        "y" : 1355
+      }, {
+        "id" : "47",
+        "x" : 7800,
+        "y" : 3280
+      }, {
+        "id" : "48",
+        "x" : 6700,
+        "y" : 2143
+      }, {
+        "id" : "145",
+        "x" : 7800,
+        "y" : 4359
+      }, {
+        "id" : "146",
+        "x" : 6700,
+        "y" : 159
+      }, {
+        "id" : "147",
+        "x" : 2300,
+        "y" : 4359
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
       "key" : "L2-Grouped",
       "name" : "Container View: Schedules (SCH)",
       "order" : 2,
       "relationships" : [ {
-        "id" : "101"
+        "id" : "101",
+        "vertices" : [ {
+          "x" : 3075,
+          "y" : 2463
+        } ]
       }, {
-        "id" : "112"
+        "id" : "105",
+        "vertices" : [ {
+          "x" : 6375,
+          "y" : 801
+        } ]
       }, {
-        "id" : "114"
+        "id" : "107",
+        "vertices" : [ {
+          "x" : 5275,
+          "y" : 3747
+        } ]
       }, {
-        "id" : "116"
+        "id" : "109"
       }, {
-        "id" : "39"
+        "id" : "111",
+        "vertices" : [ {
+          "x" : 6700,
+          "y" : 2963
+        } ]
       }, {
-        "id" : "40"
+        "id" : "113",
+        "vertices" : [ {
+          "x" : 5496,
+          "y" : 1818
+        }, {
+          "x" : 7254,
+          "y" : 1818
+        } ]
       }, {
-        "id" : "41"
+        "id" : "115",
+        "vertices" : [ {
+          "x" : 5496,
+          "y" : 1730
+        }, {
+          "x" : 7254,
+          "y" : 1730
+        } ]
       }, {
-        "id" : "42"
+        "id" : "117"
       }, {
-        "id" : "48"
+        "id" : "119",
+        "vertices" : [ {
+          "x" : 7254,
+          "y" : 3868
+        } ]
+      }, {
+        "id" : "121",
+        "vertices" : [ {
+          "x" : 7254,
+          "y" : 3622
+        }, {
+          "x" : 7696,
+          "y" : 2468
+        } ]
+      }, {
+        "id" : "122",
+        "vertices" : [ {
+          "x" : 6154,
+          "y" : 3088
+        } ]
+      }, {
+        "id" : "123",
+        "vertices" : [ {
+          "x" : 5496,
+          "y" : 2918
+        } ]
+      }, {
+        "id" : "124",
+        "vertices" : [ {
+          "x" : 6154,
+          "y" : 3622
+        } ]
+      }, {
+        "id" : "125"
+      }, {
+        "id" : "140"
+      }, {
+        "id" : "151",
+        "vertices" : [ {
+          "x" : 7254,
+          "y" : 1118
+        }, {
+          "x" : 7696,
+          "y" : 3768
+        } ]
+      }, {
+        "id" : "153",
+        "vertices" : [ {
+          "x" : 6700,
+          "y" : 613
+        } ]
+      }, {
+        "id" : "155",
+        "vertices" : [ {
+          "x" : 3296,
+          "y" : 2918
+        } ]
       }, {
         "id" : "49"
       }, {
@@ -2462,41 +3031,93 @@
       }, {
         "id" : "52"
       }, {
-        "id" : "53"
+        "id" : "59",
+        "vertices" : [ {
+          "x" : 3621,
+          "y" : 6559
+        }, {
+          "x" : 4729,
+          "y" : 6559
+        } ]
       }, {
-        "id" : "54"
+        "id" : "62",
+        "vertices" : [ {
+          "x" : 2521,
+          "y" : 7251
+        }, {
+          "x" : 4729,
+          "y" : 7251
+        }, {
+          "x" : 6154,
+          "y" : 5488
+        } ]
       }, {
-        "id" : "55"
+        "id" : "64",
+        "vertices" : [ {
+          "x" : 2750,
+          "y" : 4830
+        } ]
       }, {
-        "id" : "56"
-      }, {
-        "id" : "57"
-      }, {
-        "id" : "58"
-      }, {
-        "id" : "59"
-      }, {
-        "id" : "60"
-      }, {
-        "id" : "62"
-      }, {
-        "id" : "64"
-      }, {
-        "id" : "66"
-      }, {
-        "id" : "68"
+        "id" : "67",
+        "vertices" : [ {
+          "x" : 2750,
+          "y" : 2276
+        }, {
+          "x" : 3296,
+          "y" : 2951
+        } ]
       }, {
         "id" : "70"
       }, {
-        "id" : "72"
+        "id" : "73",
+        "vertices" : [ {
+          "x" : 2092,
+          "y" : 2276
+        } ]
       }, {
-        "id" : "83"
+        "id" : "75"
       }, {
-        "id" : "84"
+        "id" : "79",
+        "vertices" : [ {
+          "x" : 6378,
+          "y" : 3119
+        } ]
       }, {
-        "id" : "85"
+        "id" : "82",
+        "vertices" : [ {
+          "x" : 4175,
+          "y" : 3405
+        } ]
       }, {
-        "id" : "86"
+        "id" : "85",
+        "vertices" : [ {
+          "x" : 3075,
+          "y" : 2763
+        } ]
+      }, {
+        "id" : "90",
+        "vertices" : [ {
+          "x" : 6375,
+          "y" : 1101
+        } ]
+      }, {
+        "id" : "92",
+        "vertices" : [ {
+          "x" : 5275,
+          "y" : 4047
+        } ]
+      }, {
+        "id" : "95",
+        "vertices" : [ {
+          "x" : 6371,
+          "y" : 3419
+        } ]
+      }, {
+        "id" : "98",
+        "vertices" : [ {
+          "x" : 4175,
+          "y" : 3105
+        } ]
       } ],
       "softwareSystemId" : "6"
     } ],
@@ -2511,91 +3132,7 @@
         "vertices" : false
       },
       "elements" : [ {
-        "id" : "118",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "119",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "120",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "121",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "122",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "123",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "124",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "125",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "126",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "127",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "129",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "132",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "135",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "137",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "139",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "143",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "144",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "146",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "150",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "153",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "155",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "156",
+        "id" : "157",
         "x" : 0,
         "y" : 0
       }, {
@@ -2607,11 +3144,95 @@
         "x" : 0,
         "y" : 0
       }, {
+        "id" : "160",
+        "x" : 0,
+        "y" : 0
+      }, {
         "id" : "161",
         "x" : 0,
         "y" : 0
       }, {
         "id" : "162",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "163",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "164",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "165",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "166",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "169",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "173",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "177",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "180",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "183",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "187",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "188",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "190",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "194",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "197",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "199",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "200",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "202",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "203",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "205",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "206",
         "x" : 0,
         "y" : 0
       } ],
@@ -2621,45 +3242,55 @@
       "name" : "Deployment View: Schedules (SCH) - Development",
       "order" : 13,
       "relationships" : [ {
-        "id" : "128"
+        "id" : "167"
       }, {
-        "id" : "130"
+        "id" : "168"
       }, {
-        "id" : "131"
+        "id" : "170"
       }, {
-        "id" : "133"
+        "id" : "171"
       }, {
-        "id" : "134"
+        "id" : "172"
       }, {
-        "id" : "136"
+        "id" : "174"
       }, {
-        "id" : "138"
+        "id" : "175"
       }, {
-        "id" : "140"
+        "id" : "176"
       }, {
-        "id" : "141"
+        "id" : "178"
       }, {
-        "id" : "142"
+        "id" : "179"
       }, {
-        "id" : "145"
+        "id" : "181"
       }, {
-        "id" : "147"
+        "id" : "182"
       }, {
-        "id" : "148"
+        "id" : "184"
       }, {
-        "id" : "149"
+        "id" : "185"
       }, {
-        "id" : "151"
+        "id" : "186"
       }, {
-        "id" : "152"
+        "id" : "189"
       }, {
-        "id" : "154"
+        "id" : "191"
       }, {
-        "id" : "157"
+        "id" : "192"
       }, {
-        "id" : "160"
+        "id" : "193"
       }, {
-        "id" : "163"
+        "id" : "195"
+      }, {
+        "id" : "196"
+      }, {
+        "id" : "198"
+      }, {
+        "id" : "201"
+      }, {
+        "id" : "204"
+      }, {
+        "id" : "207"
       } ],
       "softwareSystemId" : "6",
       "title" : "D1-Dev-Local"
@@ -2674,107 +3305,107 @@
         "vertices" : false
       },
       "elements" : [ {
-        "id" : "164",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "165",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "166",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "167",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "168",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "169",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "170",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "171",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "172",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "173",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "175",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "178",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "181",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "183",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "185",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "189",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "190",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "192",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "196",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "199",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "201",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "202",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "204",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "205",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "207",
-        "x" : 0,
-        "y" : 0
-      }, {
         "id" : "208",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "209",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "210",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "211",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "212",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "213",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "214",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "215",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "216",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "217",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "220",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "224",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "228",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "231",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "234",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "238",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "239",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "241",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "245",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "248",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "250",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "251",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "253",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "254",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "256",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "257",
         "x" : 0,
         "y" : 0
       } ],
@@ -2784,45 +3415,55 @@
       "name" : "Deployment View: Schedules (SCH) - Production",
       "order" : 14,
       "relationships" : [ {
-        "id" : "174"
+        "id" : "218"
       }, {
-        "id" : "176"
+        "id" : "219"
       }, {
-        "id" : "177"
+        "id" : "221"
       }, {
-        "id" : "179"
+        "id" : "222"
       }, {
-        "id" : "180"
+        "id" : "223"
       }, {
-        "id" : "182"
+        "id" : "225"
       }, {
-        "id" : "184"
+        "id" : "226"
       }, {
-        "id" : "186"
+        "id" : "227"
       }, {
-        "id" : "187"
+        "id" : "229"
       }, {
-        "id" : "188"
+        "id" : "230"
       }, {
-        "id" : "191"
+        "id" : "232"
       }, {
-        "id" : "193"
+        "id" : "233"
       }, {
-        "id" : "194"
+        "id" : "235"
       }, {
-        "id" : "195"
+        "id" : "236"
       }, {
-        "id" : "197"
+        "id" : "237"
       }, {
-        "id" : "198"
+        "id" : "240"
       }, {
-        "id" : "200"
+        "id" : "242"
       }, {
-        "id" : "203"
+        "id" : "243"
       }, {
-        "id" : "206"
+        "id" : "244"
       }, {
-        "id" : "209"
+        "id" : "246"
+      }, {
+        "id" : "247"
+      }, {
+        "id" : "249"
+      }, {
+        "id" : "252"
+      }, {
+        "id" : "255"
+      }, {
+        "id" : "258"
       } ],
       "softwareSystemId" : "6",
       "title" : "D2-Production"
@@ -2847,15 +3488,7 @@
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "17",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "18",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "24",
+        "id" : "21",
         "x" : 0,
         "y" : 0
       }, {
@@ -2863,7 +3496,15 @@
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "35",
+        "id" : "31",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "33",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "45",
         "x" : 0,
         "y" : 0
       } ],
@@ -2873,37 +3514,37 @@
       "order" : 15,
       "relationships" : [ {
         "description" : "Is a",
-        "id" : "39",
+        "id" : "49",
         "order" : "1",
         "response" : false
       }, {
         "description" : "Open Schedule",
-        "id" : "54",
+        "id" : "75",
         "order" : "2",
         "response" : false
       }, {
         "description" : "If not signed in: Sign in",
-        "id" : "53",
+        "id" : "73",
         "order" : "3",
         "response" : false
       }, {
         "description" : "Authenticate",
-        "id" : "58",
+        "id" : "90",
         "order" : "4",
         "response" : false
       }, {
         "description" : "Load timetable",
-        "id" : "57",
+        "id" : "85",
         "order" : "5",
         "response" : false
       }, {
         "description" : "Read",
-        "id" : "66",
+        "id" : "115",
         "order" : "6",
         "response" : false
       }, {
         "description" : "Render/refresh UI",
-        "id" : "57",
+        "id" : "85",
         "order" : "7",
         "response" : false
       } ],
@@ -2928,19 +3569,11 @@
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "13",
-        "x" : 0,
-        "y" : 0
-      }, {
         "id" : "17",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "18",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "24",
+        "id" : "21",
         "x" : 0,
         "y" : 0
       }, {
@@ -2948,7 +3581,15 @@
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "35",
+        "id" : "31",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "33",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "45",
         "x" : 0,
         "y" : 0
       } ],
@@ -2958,67 +3599,67 @@
       "order" : 16,
       "relationships" : [ {
         "description" : "Is a",
-        "id" : "39",
+        "id" : "49",
         "order" : "1",
         "response" : false
       }, {
         "description" : "Open Basket",
-        "id" : "54",
+        "id" : "75",
         "order" : "2",
         "response" : false
       }, {
         "description" : "If not signed in: Sign in",
-        "id" : "53",
+        "id" : "73",
         "order" : "3",
         "response" : false
       }, {
         "description" : "Authenticate / check session",
-        "id" : "58",
+        "id" : "90",
         "order" : "4",
         "response" : false
       }, {
         "description" : "Load page",
-        "id" : "57",
+        "id" : "85",
         "order" : "5",
         "response" : false
       }, {
         "description" : "Read subjects + slots (projection)",
-        "id" : "66",
+        "id" : "115",
         "order" : "6",
         "response" : false
       }, {
         "description" : "Select subjects",
-        "id" : "54",
+        "id" : "75",
         "order" : "7",
         "response" : false
       }, {
         "description" : "Add to basket",
-        "id" : "57",
+        "id" : "85",
         "order" : "8",
         "response" : false
       }, {
         "description" : "Write basket",
-        "id" : "66",
+        "id" : "115",
         "order" : "9",
         "response" : false
       }, {
         "description" : "Check collisions",
-        "id" : "101",
+        "id" : "140",
         "order" : "10",
         "response" : false
       }, {
         "description" : "Read",
-        "id" : "64",
+        "id" : "113",
         "order" : "11",
         "response" : false
       }, {
         "description" : "Request alternatives on conflict",
-        "id" : "101",
+        "id" : "140",
         "order" : "12",
         "response" : false
       }, {
         "description" : "Refresh timetable",
-        "id" : "57",
+        "id" : "85",
         "order" : "13",
         "response" : false
       } ],
@@ -3047,19 +3688,23 @@
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "8",
+        "id" : "10",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "24",
+        "id" : "31",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "25",
+        "id" : "33",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "38",
+        "id" : "48",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "146",
         "x" : 0,
         "y" : 0
       } ],
@@ -3069,38 +3714,43 @@
       "order" : 17,
       "relationships" : [ {
         "description" : "Open Subject form",
-        "id" : "48",
+        "id" : "59",
         "order" : "1",
         "response" : false
       }, {
         "description" : "Is a",
-        "id" : "40",
+        "id" : "50",
         "order" : "2",
         "response" : false
       }, {
         "description" : "If not signed in: Sign in",
-        "id" : "53",
+        "id" : "73",
         "order" : "3",
         "response" : false
       }, {
         "description" : "Authenticate",
-        "id" : "58",
+        "id" : "90",
         "order" : "4",
         "response" : false
       }, {
         "description" : "Submit subject",
-        "id" : "55",
+        "id" : "79",
         "order" : "5",
         "response" : false
       }, {
         "description" : "Validate data",
-        "id" : "55",
+        "id" : "79",
         "order" : "6",
         "response" : false
       }, {
         "description" : "Authorize",
-        "id" : "83",
+        "id" : "122",
         "order" : "7",
+        "response" : false
+      }, {
+        "description" : "Send validation notifications",
+        "id" : "153",
+        "order" : "8",
         "response" : false
       } ],
       "title" : "Vypsání předmětu (Teacher)"
@@ -3124,15 +3774,7 @@
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "17",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "18",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "24",
+        "id" : "21",
         "x" : 0,
         "y" : 0
       }, {
@@ -3140,7 +3782,15 @@
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "35",
+        "id" : "31",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "33",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "45",
         "x" : 0,
         "y" : 0
       } ],
@@ -3150,37 +3800,37 @@
       "order" : 18,
       "relationships" : [ {
         "description" : "Is a",
-        "id" : "40",
+        "id" : "50",
         "order" : "1",
         "response" : false
       }, {
         "description" : "Open Schedule",
-        "id" : "54",
+        "id" : "75",
         "order" : "2",
         "response" : false
       }, {
         "description" : "If not signed in: Sign in",
-        "id" : "53",
+        "id" : "73",
         "order" : "3",
         "response" : false
       }, {
         "description" : "Authenticate",
-        "id" : "58",
+        "id" : "90",
         "order" : "4",
         "response" : false
       }, {
         "description" : "Load timetable",
-        "id" : "57",
+        "id" : "85",
         "order" : "5",
         "response" : false
       }, {
         "description" : "Read",
-        "id" : "66",
+        "id" : "115",
         "order" : "6",
         "response" : false
       }, {
         "description" : "Render/refresh UI",
-        "id" : "57",
+        "id" : "85",
         "order" : "7",
         "response" : false
       } ],
@@ -3209,27 +3859,31 @@
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "8",
+        "id" : "10",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "12",
+        "id" : "14",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "13",
+        "id" : "17",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "24",
+        "id" : "31",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "25",
+        "id" : "33",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "38",
+        "id" : "44",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "48",
         "x" : 0,
         "y" : 0
       } ],
@@ -3239,93 +3893,98 @@
       "order" : 19,
       "relationships" : [ {
         "description" : "Open requirements form",
-        "id" : "49",
+        "id" : "64",
         "order" : "1",
         "response" : false
       }, {
         "description" : "Is a",
-        "id" : "40",
+        "id" : "50",
         "order" : "2",
         "response" : false
       }, {
         "description" : "If not signed in: Sign in",
-        "id" : "53",
+        "id" : "73",
         "order" : "3",
         "response" : false
       }, {
         "description" : "Authenticate",
-        "id" : "58",
+        "id" : "90",
         "order" : "4",
         "response" : false
       }, {
         "description" : "Load subject list",
-        "id" : "56",
+        "id" : "82",
         "order" : "5",
         "response" : false
       }, {
         "description" : "Fetch teacher's subjects & policies",
-        "id" : "60",
+        "id" : "109",
         "order" : "6",
         "response" : false
       }, {
-        "description" : "Enter time/day/length/frequency",
-        "id" : "49",
+        "description" : "Read subjects",
+        "id" : "111",
         "order" : "7",
         "response" : false
       }, {
-        "description" : "Submit time preferences",
-        "id" : "56",
+        "description" : "Enter time/day/length/frequency",
+        "id" : "64",
         "order" : "8",
         "response" : false
       }, {
-        "description" : "Enter room type & capacity",
-        "id" : "49",
+        "description" : "Submit time preferences",
+        "id" : "82",
         "order" : "9",
         "response" : false
       }, {
-        "description" : "Submit room requirements",
-        "id" : "56",
+        "description" : "Enter room type & capacity",
+        "id" : "64",
         "order" : "10",
         "response" : false
       }, {
-        "description" : "Add special requirements",
-        "id" : "49",
+        "description" : "Submit room requirements",
+        "id" : "82",
         "order" : "11",
         "response" : false
       }, {
-        "description" : "Submit special requirements",
-        "id" : "56",
+        "description" : "Add special requirements",
+        "id" : "64",
         "order" : "12",
         "response" : false
       }, {
-        "description" : "Validate availability & realism",
-        "id" : "56",
+        "description" : "Submit special requirements",
+        "id" : "82",
         "order" : "13",
         "response" : false
       }, {
-        "description" : "Policy checks",
-        "id" : "60",
+        "description" : "Validate availability & realism",
+        "id" : "82",
         "order" : "14",
         "response" : false
       }, {
-        "description" : "Check collisions; request alternatives",
-        "id" : "56",
+        "description" : "Policy checks",
+        "id" : "109",
         "order" : "15",
         "response" : false
       }, {
-        "description" : "Confirm & submit",
-        "id" : "56",
+        "description" : "Check collisions; request alternatives",
+        "id" : "82",
         "order" : "16",
         "response" : false
       }, {
-        "description" : "Authorize / record submission",
-        "id" : "84",
+        "description" : "Confirm & submit",
+        "id" : "82",
         "order" : "17",
         "response" : false
       }, {
-        "description" : "Review submitted requirements",
-        "id" : "51",
+        "description" : "Authorize / record submission",
+        "id" : "123",
         "order" : "18",
+        "response" : false
+      }, {
+        "description" : "Review submitted requirements",
+        "id" : "67",
+        "order" : "19",
         "response" : false
       } ],
       "title" : "Vypsání časových a prostorových požadavků (Teacher)"
@@ -3365,15 +4024,15 @@
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "106",
+        "id" : "145",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "107",
+        "id" : "146",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "108",
+        "id" : "147",
         "x" : 0,
         "y" : 0
       } ],
@@ -3382,29 +4041,29 @@
       "name" : "System Context View: Schedules (SCH)",
       "order" : 1,
       "relationships" : [ {
-        "id" : "109"
+        "id" : "148"
       }, {
-        "id" : "110"
+        "id" : "149"
       }, {
-        "id" : "117"
+        "id" : "156"
       }, {
-        "id" : "39"
+        "id" : "49"
       }, {
-        "id" : "40"
+        "id" : "50"
       }, {
-        "id" : "41"
+        "id" : "51"
       }, {
-        "id" : "42"
+        "id" : "52"
       }, {
-        "id" : "43"
+        "id" : "53"
       }, {
-        "id" : "44"
+        "id" : "54"
       }, {
-        "id" : "45"
+        "id" : "55"
       }, {
-        "id" : "46"
+        "id" : "56"
       }, {
-        "id" : "47"
+        "id" : "57"
       } ],
       "softwareSystemId" : "6"
     } ]

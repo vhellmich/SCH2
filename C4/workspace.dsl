@@ -14,6 +14,8 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
 
             group "Subjects" {
                 subjectsHtml = container "Subjects HTML" "Subjects UI in the browser." "HTML/JS" "HTML" {
+                    subjectForm = component "Subject Form" "UI for creating and editing subjects."
+                    validationUI = component "Validation UI" "UI for submitting and tracking subject validation."
                     !docs docs/subjects-html.md
                 }
                 subjectsBusiness = container "Subjects Business" "Create/modify subjects; request validation." "Business" {
@@ -28,6 +30,8 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
 
             group "Scheduling" {
                 schedulingHtml = container "Scheduling HTML" "Scheduling UI in the browser." "HTML/JS" "HTML" {
+                    planningUI = component "Planning UI" "UI for creating and adjusting schedule plans."
+                    validationUI = component "Validation UI" "UI for validating scheduling constraints."
                     !docs docs/scheduling-html.md
                 }
                 schedulingBusiness = container "Scheduling Business" "Plan schedules." "Business" {
@@ -40,6 +44,9 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
 
             group "Schedules" {
                 scheduleHtml = container "Schedule HTML" "Timetable/Basket UI in the browser." "HTML/JS" "HTML" {
+                    timetableView = component "Timetable View" "UI for displaying and viewing schedules."
+                    basketManager = component "Basket Manager" "UI for managing subject basket."
+                    exportUI = component "Export UI" "UI for exporting schedules to various formats."
                     !docs docs/schedule-html.md
                 }
                 scheduleBusiness = container "Schedule Business" "Timetable view, basket, collisions." "Business" {
@@ -54,6 +61,7 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
 
             group "Authentication" {
                 loginHtml = container "Login HTML" "Sign-in UI in the browser." "HTML/JS" "HTML" {
+                    loginForm = component "Login Form" "UI for user authentication and sign-in."
                     !docs docs/login-html.md
                 }
                 authBusiness = container "Authentication Business" "Login logic." "Business" {
@@ -66,6 +74,8 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
 
             group "Reporting" {
                 reportHtml = container "Report HTML" "Reports UI in the browser." "HTML/JS" "HTML" {
+                    analyticsDashboard = component "Analytics Dashboard" "UI for viewing analytics and statistics."
+                    reportDownload = component "Report Download" "UI for downloading report files."
                     !docs docs/report-html.md
                 }
                 reportingBusiness = container "Reporting Business" "Generate and export reports." "Business" {
@@ -114,20 +124,43 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             committee -> sch "Validate subjects and schedules; View schedules"
             manager -> sch "Review reports and analytics; View schedules"
 
-            teacher -> sch.subjectsHtml "Course management; Management of schedule preferences"
-            teacher -> sch.schedulingHtml "Scheduling"
-            manager -> sch.subjectsHtml "Validate subjects"
-            committee -> sch.schedulingHtml "Scheduling"
-            manager -> sch.reportHtml "Review reports & analytics"
+            teacher -> sch.subjectsHtml.subjectForm "Course management; Management of schedule preferences"
+            teacher -> sch.subjectsHtml.validationUI "Submit subjects for validation"
+            manager -> sch.subjectsHtml.validationUI "Validate subjects"
+            teacher -> sch.schedulingHtml.planningUI "Scheduling"
+            teacher -> sch.schedulingHtml.validationUI "Validate schedules"
+            committee -> sch.schedulingHtml.planningUI "Scheduling"
+            committee -> sch.schedulingHtml.validationUI "Validate schedules"
+            manager -> sch.reportHtml.analyticsDashboard "Review reports & analytics"
+            manager -> sch.reportHtml.reportDownload "Download reports"
             
-            user -> sch.loginHtml "Sign in"
-            user -> sch.scheduleHtml "View timetable; manage basket"
+            user -> sch.loginHtml.loginForm "Sign in"
+            user -> sch.scheduleHtml.timetableView "View timetable"
+            user -> sch.scheduleHtml.basketManager "Manage basket"
+            user -> sch.scheduleHtml.exportUI "Export schedules"
 
-            subjectsHtml -> subjectsBusiness "Requests"
-            schedulingHtml -> schedulingBusiness "Requests"
-            scheduleHtml -> scheduleBusiness "Requests"
-            loginHtml -> authBusiness "Requests"
-            reportHtml -> reportingBusiness "Requests"
+            subjectsHtml.subjectForm -> subjectsBusiness "Create/modify subjects"
+            subjectsHtml.validationUI -> subjectsBusiness "Validate subjects"
+            schedulingHtml.planningUI -> schedulingBusiness "Plan schedules"
+            schedulingHtml.validationUI -> schedulingBusiness "Validate schedules"
+            scheduleHtml.timetableView -> scheduleBusiness "Load timetable"
+            scheduleHtml.basketManager -> scheduleBusiness "Modify basket"
+            scheduleHtml.basketManager -> scheduleBusiness "Load basket"
+            scheduleHtml.exportUI -> scheduleBusiness "Export (format param)"
+            loginHtml.loginForm -> authBusiness "Authenticate"
+            reportHtml.analyticsDashboard -> reportingBusiness "Request analytics"
+            reportHtml.reportDownload -> reportingBusiness "Download reports"
+            
+            subjectsBusiness.subjectCreator -> subjectsHtml "Subject data response"
+            subjectsBusiness.subjectValidator -> subjectsHtml "Validation status"
+            schedulingBusiness.schedulePlanner -> schedulingHtml "Schedule plan response"
+            schedulingBusiness.scheduleValidator -> schedulingHtml "Validation results"
+            scheduleBusiness.scheduleViewer -> scheduleHtml "Timetable data"
+            scheduleBusiness.scheduleUpdater -> scheduleHtml "Update confirmation"
+            scheduleBusiness.scheduleExporter -> scheduleHtml "Export file"
+            authBusiness.userValidator -> loginHtml "Authentication result"
+            reportingBusiness.reportGenerator -> reportHtml "Analytics data"
+            reportingBusiness.reportExporter -> reportHtml "Report file"
             
             schedulingBusiness -> subjectsBusiness "Read subject catalog; evaluate subject policies"
 
@@ -137,17 +170,6 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             authBusiness.userRepository -> dbUsers "Read/Write"
             reportingBusiness.reportRepository -> dbReports "Read/Write"
             reportingBusiness.reportGenerator -> dbSchedules "Read"
-
-            subjectsHtml -> subjectsBusiness.subjectCreator "Create/modify subjects"
-            subjectsHtml -> subjectsBusiness.subjectValidator "Validate subjects"
-            schedulingHtml -> schedulingBusiness.schedulePlanner "Plan schedules"
-            schedulingHtml -> schedulingBusiness.scheduleValidator "Validate schedules"
-            scheduleHtml -> scheduleBusiness.scheduleUpdater "Modify timetable; basket"
-            scheduleHtml -> scheduleBusiness.scheduleViewer "Load timetable; basket"
-            scheduleHtml -> scheduleBusiness.scheduleExporter "Export (format param)"
-            loginHtml -> authBusiness.userValidator "Authenticate"
-            reportHtml -> reportingBusiness.reportGenerator "Request analytics"
-            reportHtml -> reportingBusiness.reportExporter "Download reports"
 
             subjectsBusiness -> authorizer "Authorize"
             schedulingBusiness -> authorizer "Authorize"
@@ -299,59 +321,76 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
 
         component sch.subjectsBusiness "L3-Subjects" {
             include *
+            include sch.subjectsHtml
             autolayout lr 600 320 220
         }
 
         component sch.schedulingBusiness "L3-Scheduling" {
             include *
             include sch.subjectsBusiness.subjectValidator
+            include sch.schedulingHtml
             autolayout lr 600 320 220
         }
 
         component sch.scheduleBusiness "L3-Schedules" {
             include *
+            include sch.scheduleHtml
             autolayout lr 600 320 220
         }
 
         component sch.authBusiness "L3-Authentication" {
             include *
+            include sch.loginHtml
             autolayout lr 600 320 220
         }
 
         component sch.reportingBusiness "L3-Reporting" {
             include *
+            include sch.reportHtml
             autolayout lr 600 320 220
         }
         
         component sch.subjectsHtml "L3-Subjects-HTML" {
-            include sch.subjectsBusiness.subjectCreator
-            include sch.subjectsBusiness.subjectValidator
+            include teacher
+            include manager
+            include sch.subjectsHtml.subjectForm
+            include sch.subjectsHtml.validationUI
+            include sch.subjectsBusiness
             autolayout lr 600 320 220
         }
         
         component sch.schedulingHtml "L3-Scheduling-HTML" {
-            include sch.schedulingBusiness.schedulePlanner
-            include sch.schedulingBusiness.scheduleValidator
+            include teacher
+            include committee
+            include sch.schedulingHtml.planningUI
+            include sch.schedulingHtml.validationUI
+            include sch.schedulingBusiness
             autolayout lr 600 320 220
         }
         
         component sch.scheduleHtml "L3-Schedule-HTML" {
-            include sch.scheduleBusiness.scheduleViewer
-            include sch.scheduleBusiness.scheduleUpdater
-            include sch.scheduleBusiness.scheduleExporter
+            include user
+            include sch.scheduleHtml.timetableView
+            include sch.scheduleHtml.basketManager
+            include sch.scheduleHtml.exportUI
+            include sch.scheduleBusiness
             include calendars
             autolayout lr 600 320 220
         }
         
         component sch.loginHtml "L3-Login-HTML" {
-            include sch.authBusiness.userValidator
+            include user
+            include sch.loginHtml.loginForm
+            include sch.authBusiness
             include idp
             autolayout lr 600 320 220
         }
         
         component sch.reportHtml "L3-Report-HTML" {
-            include sch.reportingBusiness.reportGenerator
-            include sch.reportingBusiness.reportExporter
+            include manager
+            include sch.reportHtml.analyticsDashboard
+            include sch.reportHtml.reportDownload
+            include sch.reportingBusiness
             autolayout lr 600 320 220
         }
         
