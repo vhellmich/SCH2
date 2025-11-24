@@ -26,6 +26,12 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
                     !docs docs/subjects-business.md
                     
                 }
+                subjectsBusinessMock = container "Subjects Business Mock" "Mock subjects business for testing." "Node.js/Express" "Mock API" {
+                    mockSubjectData = component "Mock Subject Data" "In-memory static subject data."
+                }
+                subjectsHtmlMockBackend = container "Subjects HTML Mock Backend" "Mock backend with static data for development." "Node.js/Express" "Mock API" {
+                    mockDataStore = component "Mock Data Store" "In-memory static data for subjects."
+                }
             }
 
             group "Scheduling" {
@@ -39,6 +45,9 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
                     schedulePlanner = component "Schedule Planner" "Creates and adjusts plans."
                     scheduleValidator = component "Schedule Validator" "Validates scheduling constraints."
                     schedulingRepository = component "Scheduling Repository" "CRUD for planning data and prefs."
+                }
+                schedulingMockBackend = container "Scheduling Mock Backend" "Mock backend with static data for development." "Node.js/Express" "Mock API" {
+                    mockDataStore = component "Mock Data Store" "In-memory static data for scheduling."
                 }
             }
 
@@ -57,6 +66,9 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
                     scheduleUpdater = component "Schedule Updater" "Applies timetable and basket changes."
                     scheduleRepository = component "Schedule Repository" "CRUD for schedules, basket, and preferences."
                 }
+                scheduleHtmlMockBackend = container "Schedule HTML Mock Backend" "Mock backend with static data for development." "Node.js/Express" "Mock API" {
+                    mockDataStore = component "Mock Data Store" "In-memory static data for schedules."
+                }
             }
 
             group "Authentication" {
@@ -69,6 +81,9 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
                     userValidator = component "User Validator" "Validates user identity and tokens."
                     sessionManager = component "Session Manager" "Manages sessions and tokens."
                     userRepository = component "User Repository" "CRUD for users and credentials."
+                }
+                loginHtmlMockBackend = container "Login HTML Mock Backend" "Mock backend with static data for development." "Node.js/Express" "Mock API" {
+                    mockDataStore = component "Mock Data Store" "In-memory static data for authentication."
                 }
             }
 
@@ -83,6 +98,9 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
                     reportGenerator = component "Report Generator" "Computes statistics and analytics."
                     reportExporter = component "Report Exporter" "Generates downloadable report files."
                     reportRepository = component "Report Repository" "CRUD for reports and aggregates."
+                }
+                reportHtmlMockBackend = container "Report HTML Mock Backend" "Mock backend with static data for development." "Node.js/Express" "Mock API" {
+                    mockDataStore = component "Mock Data Store" "In-memory static data for reports."
                 }
             }
 
@@ -103,6 +121,15 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
 
             authorizer = container "Authorizer" {
                 !docs docs/authorizer.md
+            }
+            authorizerMock = container "Authorizer Mock" "Mock authorizer for testing." "Node.js/Express" "Mock API" {
+                mockAuthData = component "Mock Auth Data" "In-memory static auth data."
+            }
+            idpMockContainer = container "SSO Mock" "Mock OIDC provider for testing." "Node.js/Express" "Mock API" {
+                mockOidcData = component "Mock OIDC Data" "In-memory static OIDC data."
+            }
+            notifMockContainer = container "Notification Mock" "Mock notification service for testing." "Node.js/Express" "Mock API" {
+                mockNotifData = component "Mock Notification Data" "In-memory static notification data."
             }
 
             student -> user "Is a" {
@@ -141,28 +168,23 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
 
             subjectsHtml.subjectForm -> subjectsBusiness "Create/modify subjects"
             subjectsHtml.validationUI -> subjectsBusiness "Validate subjects"
+            subjectsHtml -> subjectsHtmlMockBackend "Uses (mock)"
             schedulingHtml.planningUI -> schedulingBusiness "Plan schedules"
             schedulingHtml.validationUI -> schedulingBusiness "Validate schedules"
+            schedulingHtml -> schedulingMockBackend "Uses (mock)"
             scheduleHtml.timetableView -> scheduleBusiness "Load timetable"
             scheduleHtml.basketManager -> scheduleBusiness "Modify basket"
             scheduleHtml.basketManager -> scheduleBusiness "Load basket"
             scheduleHtml.exportUI -> scheduleBusiness "Export (format param)"
+            scheduleHtml -> scheduleHtmlMockBackend "Uses (mock)"
             loginHtml.loginForm -> authBusiness "Authenticate"
+            loginHtml -> loginHtmlMockBackend "Uses (mock)"
             reportHtml.analyticsDashboard -> reportingBusiness "Request analytics"
             reportHtml.reportDownload -> reportingBusiness "Download reports"
-            
-            subjectsBusiness.subjectCreator -> subjectsHtml "Subject data response"
-            subjectsBusiness.subjectValidator -> subjectsHtml "Validation status"
-            schedulingBusiness.schedulePlanner -> schedulingHtml "Schedule plan response"
-            schedulingBusiness.scheduleValidator -> schedulingHtml "Validation results"
-            scheduleBusiness.scheduleViewer -> scheduleHtml "Timetable data"
-            scheduleBusiness.scheduleUpdater -> scheduleHtml "Update confirmation"
-            scheduleBusiness.scheduleExporter -> scheduleHtml "Export file"
-            authBusiness.userValidator -> loginHtml "Authentication result"
-            reportingBusiness.reportGenerator -> reportHtml "Analytics data"
-            reportingBusiness.reportExporter -> reportHtml "Report file"
+            reportHtml -> reportHtmlMockBackend "Uses (mock)"
             
             schedulingBusiness -> subjectsBusiness "Read subject catalog; evaluate subject policies"
+            schedulingBusiness -> subjectsBusinessMock "Read subject catalog (mock)"
 
             subjectsBusiness.subjectRepository -> dbSubjects "Read/Write"
             schedulingBusiness.schedulingRepository -> dbSchedules "Read/Write"
@@ -172,8 +194,12 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             reportingBusiness.reportGenerator -> dbSchedules "Read"
 
             subjectsBusiness -> authorizer "Authorize"
+            subjectsBusiness -> authorizerMock "Authorize (mock)"
+            subjectsBusiness -> notifMockContainer "Send notifications (mock)"
             schedulingBusiness -> authorizer "Authorize"
+            schedulingBusiness -> authorizerMock "Authorize (mock)"
             reportingBusiness -> authorizer "Authorize"
+            reportingBusiness -> authorizerMock "Authorize (mock)"
 
             authorizer -> sch.dbUsers "Read/Write"
 
@@ -183,6 +209,7 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             schedulingBusiness.schedulePlanner -> schedulingBusiness.schedulingRepository "Read/Write"
             schedulingBusiness.scheduleValidator -> schedulingBusiness.schedulingRepository "Read"
             schedulingBusiness.scheduleValidator -> subjectsBusiness.subjectValidator "Subject invariants"
+            schedulingBusiness.scheduleValidator -> subjectsBusinessMock "Subject invariants (mock)"
 
             scheduleBusiness.scheduleUpdater -> scheduleBusiness.scheduleRepository "Read/Write"
             scheduleBusiness.scheduleExporter -> scheduleBusiness.scheduleTransformer "Build snapshot"
@@ -201,56 +228,56 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
         idp = softwareSystem "University SSO" "OIDC provider for authentication." "External"
         notif = softwareSystem "Notification Service" "Email and workflow notifications." "External"
         calendars = softwareSystem "Calendar Clients" "External calendar apps consuming iCal feeds." "External"
+        
+        idpMock = softwareSystem "Mock SSO" "Mock OIDC provider for testing." "External"
+        notifMock = softwareSystem "Mock Notification Service" "Mock notification service for testing." "External"
 
         sch -> idp "SSO/JWT"
         sch -> notif "Notify"
 
         sch.authBusiness.userValidator -> idp "OIDC/JWT validation"
+        sch.authBusiness.userValidator -> sch.idpMockContainer "OIDC/JWT validation (mock)"
         sch.subjectsBusiness.subjectValidator -> notif "Send validation notifications"
+        sch.subjectsBusiness.subjectValidator -> sch.notifMockContainer "Send validation notifications (mock)"
         calendars -> sch.scheduleBusiness.scheduleExporter "Fetch iCal"
         
         // --- Deployment model: Development ---
         deploymentEnvironment "Development" {
         
-            deploymentNode "Dev Laptop" "Developer machine" "Windows/macOS/Linux" {
-                deploymentNode "Docker Desktop" "Local container runtime" "Docker" {
+            // Client-side
+            deploymentNode "Developer's Test Browser" "Developer's local web browser for testing" "Chrome/Firefox/Safari/Edge" {
+                containerInstance sch.subjectsHtml
+                containerInstance sch.schedulingHtml
+                containerInstance sch.scheduleHtml
+                containerInstance sch.loginHtml
+                containerInstance sch.reportHtml
+            }
         
-                    // UI containers
-                    deploymentNode "web" "Static/dev servers" "Node/Nginx" {
-                        containerInstance sch.subjectsHtml
-                        containerInstance sch.schedulingHtml
-                        containerInstance sch.scheduleHtml
-                        containerInstance sch.loginHtml
-                        containerInstance sch.reportHtml
-                    }
+            // Server-side
+            deploymentNode "Company Local Development Environment" "Internal development infrastructure running locally" "Local/Docker" {
+                deploymentNode "Development Application Server" "Backend services for testing" "Docker/.NET/Java/Python" {
+                    containerInstance sch.subjectsBusiness
+                    containerInstance sch.schedulingBusiness
+                    containerInstance sch.scheduleBusiness
+                    containerInstance sch.authBusiness
+                    containerInstance sch.reportingBusiness
+                    containerInstance sch.authorizer
+                }
         
-                    // Backend containers
-                    deploymentNode "app" "Backend services" ".NET/Java/Python" {
-                        containerInstance sch.subjectsBusiness
-                        containerInstance sch.schedulingBusiness
-                        containerInstance sch.scheduleBusiness
-                        containerInstance sch.authBusiness
-                        containerInstance sch.reportingBusiness
-                        containerInstance sch.authorizer
-                    }
-        
-                    // Databases (local Postgres schemas/instances)
-                    deploymentNode "db" "Local database" "PostgreSQL" {
-                        containerInstance sch.dbSubjects
-                        containerInstance sch.dbSchedules
-                        containerInstance sch.dbUsers
-                        containerInstance sch.dbReports
-                    }
+                deploymentNode "Development Test Database Server" "Local test databases with sample data" "PostgreSQL" {
+                    containerInstance sch.dbSubjects
+                    containerInstance sch.dbSchedules
+                    containerInstance sch.dbUsers
+                    containerInstance sch.dbReports
+                }
+                
+                deploymentNode "Development Mock Services" "Local mock services for external dependencies" "Node.js/Express" {
+                    containerInstance sch.idpMockContainer
+                    containerInstance sch.notifMockContainer
                 }
             }
         
-            // Externals (test/stub)
-            deploymentNode "External - University SSO (Test)" "Test IdP / sandbox" "OIDC Provider" {
-                softwareSystemInstance idp
-            }
-            deploymentNode "External - Notification Service (Stub)" "MailHog/mock" "SMTP/HTTP" {
-                softwareSystemInstance notif
-            }
+            // Externals (test/mock)
             deploymentNode "External - Calendar Client" "Apple/Outlook/Thunderbird" "iCal Client" {
                 softwareSystemInstance calendars
             }
@@ -259,35 +286,31 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
         // --- Deployment model: Production ---
         deploymentEnvironment "Production" {
         
-            deploymentNode "EU Region" "Primary production region" "Cloud" {
-                deploymentNode "Kubernetes Cluster" "Container orchestration" "Kubernetes" {
+            // Client-side
+            deploymentNode "Client's Web Browser" "User's web browser" "Chrome/Firefox/Safari/Edge" {
+                containerInstance sch.subjectsHtml
+                containerInstance sch.schedulingHtml
+                containerInstance sch.scheduleHtml
+                containerInstance sch.loginHtml
+                containerInstance sch.reportHtml
+            }
         
-                    // Static web front-ends
-                    deploymentNode "web" "Static front-ends" "Nginx/SPA" {
-                        containerInstance sch.subjectsHtml
-                        containerInstance sch.schedulingHtml
-                        containerInstance sch.scheduleHtml
-                        containerInstance sch.loginHtml
-                        containerInstance sch.reportHtml
-                    }
+            // Server-side
+            deploymentNode "Production Infrastructure" "Production hosting environment" "Cloud" {
+                deploymentNode "Production Application Server" "Backend services" "Kubernetes/.NET/Java/Python" {
+                    containerInstance sch.subjectsBusiness
+                    containerInstance sch.schedulingBusiness
+                    containerInstance sch.scheduleBusiness
+                    containerInstance sch.authBusiness
+                    containerInstance sch.reportingBusiness
+                    containerInstance sch.authorizer
+                }
         
-                    // Backend services
-                    deploymentNode "app" "Backend services" ".NET/Java/Python" {
-                        containerInstance sch.subjectsBusiness
-                        containerInstance sch.schedulingBusiness
-                        containerInstance sch.scheduleBusiness
-                        containerInstance sch.authBusiness
-                        containerInstance sch.reportingBusiness
-                        containerInstance sch.authorizer
-                    }
-        
-                    // Databases
-                    deploymentNode "db" "Managed database cluster" "PostgreSQL" {
-                        containerInstance sch.dbSubjects
-                        containerInstance sch.dbSchedules
-                        containerInstance sch.dbUsers
-                        containerInstance sch.dbReports
-                    }
+                deploymentNode "Production Database Server" "Managed database cluster" "PostgreSQL" {
+                    containerInstance sch.dbSubjects
+                    containerInstance sch.dbSchedules
+                    containerInstance sch.dbUsers
+                    containerInstance sch.dbReports
                 }
             }
         
@@ -302,11 +325,175 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
                 softwareSystemInstance calendars
             }
         }
+        
+        // --- Deployment model: Development - Mock Backend ---
+        deploymentEnvironment "Development - Mock" {
+        
+            deploymentNode "Dev Browser" "Developer's browser" "Chrome/Firefox/Safari" {
+                containerInstance sch.schedulingHtml
+            }
+            
+            deploymentNode "Dev Machine" "Developer machine" "Windows/macOS/Linux" {
+                deploymentNode "Local Server" "Local development server" "Node.js" {
+                    containerInstance sch.schedulingMockBackend
+                }
+            }
+        }
+        
+        // --- Deployment model: Development - Subjects HTML Mock ---
+        deploymentEnvironment "Development - Subjects HTML Mock" {
+        
+            deploymentNode "Dev Browser" "Developer's browser" "Chrome/Firefox/Safari" {
+                containerInstance sch.subjectsHtml
+            }
+            
+            deploymentNode "Dev Machine" "Developer machine" "Windows/macOS/Linux" {
+                deploymentNode "Local Server" "Local development server" "Node.js" {
+                    containerInstance sch.subjectsHtmlMockBackend
+                }
+            }
+        }
+        
+        // --- Deployment model: Development - Schedule HTML Mock ---
+        deploymentEnvironment "Development - Schedule HTML Mock" {
+        
+            deploymentNode "Dev Browser" "Developer's browser" "Chrome/Firefox/Safari" {
+                containerInstance sch.scheduleHtml
+            }
+            
+            deploymentNode "Dev Machine" "Developer machine" "Windows/macOS/Linux" {
+                deploymentNode "Local Server" "Local development server" "Node.js" {
+                    containerInstance sch.scheduleHtmlMockBackend
+                }
+            }
+        }
+        
+        // --- Deployment model: Development - Login HTML Mock ---
+        deploymentEnvironment "Development - Login HTML Mock" {
+        
+            deploymentNode "Dev Browser" "Developer's browser" "Chrome/Firefox/Safari" {
+                containerInstance sch.loginHtml
+            }
+            
+            deploymentNode "Dev Machine" "Developer machine" "Windows/macOS/Linux" {
+                deploymentNode "Local Server" "Local development server" "Node.js" {
+                    containerInstance sch.loginHtmlMockBackend
+                }
+            }
+        }
+        
+        // --- Deployment model: Development - Report HTML Mock ---
+        deploymentEnvironment "Development - Report HTML Mock" {
+        
+            deploymentNode "Dev Browser" "Developer's browser" "Chrome/Firefox/Safari" {
+                containerInstance sch.reportHtml
+            }
+            
+            deploymentNode "Dev Machine" "Developer machine" "Windows/macOS/Linux" {
+                deploymentNode "Local Server" "Local development server" "Node.js" {
+                    containerInstance sch.reportHtmlMockBackend
+                }
+            }
+        }
+        
+        // --- Deployment model: Development - Schedule Business Testing ---
+        deploymentEnvironment "Development - Schedule Business Test" {
+        
+            deploymentNode "Dev Machine" "Developer machine" "Windows/macOS/Linux" {
+                deploymentNode "Local Application Server" "Local test server" ".NET/Java/Python" {
+                    containerInstance sch.scheduleBusiness
+                }
+                
+                deploymentNode "Local Test Database" "Local test database" "PostgreSQL/SQLite" {
+                    containerInstance sch.dbSchedules
+                }
+            }
+        }
+        
+        // --- Deployment model: Development - Subjects Business Testing ---
+        deploymentEnvironment "Development - Subjects Business Test" {
+        
+            deploymentNode "Dev Machine" "Developer machine" "Windows/macOS/Linux" {
+                deploymentNode "Local Application Server" "Local test server" ".NET/Java/Python" {
+                    containerInstance sch.subjectsBusiness
+                    containerInstance sch.authorizerMock
+                }
+                
+                deploymentNode "Local Mock Services" "Local mock services" "Node.js/Express" {
+                    containerInstance sch.notifMockContainer
+                }
+                
+                deploymentNode "Local Test Database" "Local test database" "PostgreSQL/SQLite" {
+                    containerInstance sch.dbSubjects
+                }
+            }
+        }
+        
+        // --- Deployment model: Development - Scheduling Business Testing ---
+        deploymentEnvironment "Development - Scheduling Business Test" {
+        
+            deploymentNode "Dev Machine" "Developer machine" "Windows/macOS/Linux" {
+                deploymentNode "Local Application Server" "Local test server" ".NET/Java/Python" {
+                    containerInstance sch.schedulingBusiness
+                    containerInstance sch.subjectsBusinessMock
+                    containerInstance sch.authorizerMock
+                }
+                
+                deploymentNode "Local Test Database" "Local test database" "PostgreSQL/SQLite" {
+                    containerInstance sch.dbSchedules
+                }
+            }
+        }
+        
+        // --- Deployment model: Development - Auth Business Testing ---
+        deploymentEnvironment "Development - Auth Business Test" {
+        
+            deploymentNode "Dev Machine" "Developer machine" "Windows/macOS/Linux" {
+                deploymentNode "Local Application Server" "Local test server" ".NET/Java/Python" {
+                    containerInstance sch.authBusiness
+                }
+                
+                deploymentNode "Local Mock Services" "Local mock services" "Node.js/Express" {
+                    containerInstance sch.idpMockContainer
+                }
+                
+                deploymentNode "Local Test Database" "Local test database" "PostgreSQL/SQLite" {
+                    containerInstance sch.dbUsers
+                }
+            }
+        }
+        
+        // --- Deployment model: Development - Reporting Business Testing ---
+        deploymentEnvironment "Development - Reporting Business Test" {
+        
+            deploymentNode "Dev Machine" "Developer machine" "Windows/macOS/Linux" {
+                deploymentNode "Local Application Server" "Local test server" ".NET/Java/Python" {
+                    containerInstance sch.reportingBusiness
+                    containerInstance sch.authorizerMock
+                }
+                
+                deploymentNode "Local Test Database" "Local test database" "PostgreSQL/SQLite" {
+                    containerInstance sch.dbReports
+                    containerInstance sch.dbSchedules
+                }
+            }
+        }
     }
 
     views {
         systemContext sch "L1-SystemContext" {
             include *
+            exclude sch.subjectsBusinessMock
+            exclude sch.subjectsHtmlMockBackend
+            exclude sch.schedulingMockBackend
+            exclude sch.scheduleHtmlMockBackend
+            exclude sch.loginHtmlMockBackend
+            exclude sch.reportHtmlMockBackend
+            exclude sch.authorizerMock
+            exclude sch.idpMockContainer
+            exclude sch.notifMockContainer
+            exclude idpMock
+            exclude notifMock
             autolayout lr 520 320 240
         }
 
@@ -316,12 +503,28 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             include teacher
             include committee
             include manager
+            exclude sch.subjectsBusinessMock
+            exclude sch.subjectsHtmlMockBackend
+            exclude sch.schedulingMockBackend
+            exclude sch.scheduleHtmlMockBackend
+            exclude sch.loginHtmlMockBackend
+            exclude sch.reportHtmlMockBackend
+            exclude sch.authorizerMock
+            exclude sch.idpMockContainer
+            exclude sch.notifMockContainer
+            exclude idpMock
+            exclude notifMock
             autolayout lr 650 340 260
         }
 
         component sch.subjectsBusiness "L3-Subjects" {
             include *
             include sch.subjectsHtml
+            exclude sch.subjectsBusinessMock
+            exclude sch.subjectsHtmlMockBackend
+            exclude sch.authorizerMock
+            exclude sch.notifMockContainer
+            exclude notifMock
             autolayout lr 600 320 220
         }
 
@@ -329,24 +532,33 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             include *
             include sch.subjectsBusiness.subjectValidator
             include sch.schedulingHtml
+            exclude sch.schedulingMockBackend
+            exclude sch.subjectsBusinessMock
+            exclude sch.authorizerMock
             autolayout lr 600 320 220
         }
 
         component sch.scheduleBusiness "L3-Schedules" {
             include *
             include sch.scheduleHtml
+            exclude sch.scheduleHtmlMockBackend
             autolayout lr 600 320 220
         }
 
         component sch.authBusiness "L3-Authentication" {
             include *
             include sch.loginHtml
+            exclude sch.loginHtmlMockBackend
+            exclude sch.idpMockContainer
+            exclude idpMock
             autolayout lr 600 320 220
         }
 
         component sch.reportingBusiness "L3-Reporting" {
             include *
             include sch.reportHtml
+            exclude sch.reportHtmlMockBackend
+            exclude sch.authorizerMock
             autolayout lr 600 320 220
         }
         
@@ -356,6 +568,8 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             include sch.subjectsHtml.subjectForm
             include sch.subjectsHtml.validationUI
             include sch.subjectsBusiness
+            exclude sch.subjectsHtmlMockBackend
+            exclude sch.subjectsBusinessMock
             autolayout lr 600 320 220
         }
         
@@ -365,6 +579,7 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             include sch.schedulingHtml.planningUI
             include sch.schedulingHtml.validationUI
             include sch.schedulingBusiness
+            exclude sch.schedulingMockBackend
             autolayout lr 600 320 220
         }
         
@@ -375,6 +590,7 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             include sch.scheduleHtml.exportUI
             include sch.scheduleBusiness
             include calendars
+            exclude sch.scheduleHtmlMockBackend
             autolayout lr 600 320 220
         }
         
@@ -383,6 +599,9 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             include sch.loginHtml.loginForm
             include sch.authBusiness
             include idp
+            exclude sch.loginHtmlMockBackend
+            exclude sch.idpMockContainer
+            exclude idpMock
             autolayout lr 600 320 220
         }
         
@@ -391,6 +610,7 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             include sch.reportHtml.analyticsDashboard
             include sch.reportHtml.reportDownload
             include sch.reportingBusiness
+            exclude sch.reportHtmlMockBackend
             autolayout lr 600 320 220
         }
         
@@ -406,6 +626,66 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             autolayout lr 900 520 300
         }
         
+        deployment sch "Development - Mock" {
+            title "D3a-Dev-Mock-Scheduling"
+            include *
+            autolayout lr 600 400 200
+        }
+        
+        deployment sch "Development - Subjects HTML Mock" {
+            title "D3b-Dev-Mock-Subjects-HTML"
+            include *
+            autolayout lr 600 400 200
+        }
+        
+        deployment sch "Development - Schedule HTML Mock" {
+            title "D3c-Dev-Mock-Schedule-HTML"
+            include *
+            autolayout lr 600 400 200
+        }
+        
+        deployment sch "Development - Login HTML Mock" {
+            title "D3d-Dev-Mock-Login-HTML"
+            include *
+            autolayout lr 600 400 200
+        }
+        
+        deployment sch "Development - Report HTML Mock" {
+            title "D3e-Dev-Mock-Report-HTML"
+            include *
+            autolayout lr 600 400 200
+        }
+        
+        deployment sch "Development - Schedule Business Test" {
+            title "D4-Dev-Schedule-Business-Test"
+            include *
+            autolayout lr 600 400 200
+        }
+        
+        deployment sch "Development - Subjects Business Test" {
+            title "D5-Dev-Subjects-Business-Test"
+            include *
+            autolayout lr 600 400 200
+        }
+        
+        deployment sch "Development - Scheduling Business Test" {
+            title "D6-Dev-Scheduling-Business-Test"
+            include *
+            autolayout lr 600 400 200
+        }
+        
+        deployment sch "Development - Auth Business Test" {
+            title "D7-Dev-Auth-Business-Test"
+            include *
+            autolayout lr 600 400 200
+        }
+        
+        deployment sch "Development - Reporting Business Test" {
+            title "D8-Dev-Reporting-Business-Test"
+            include *
+            autolayout lr 600 400 200
+        }
+        
         dynamic sch "F1-Student-ViewSchedule" {
             title "Zobrazení rozvrhu (Student)"
             
@@ -418,7 +698,7 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             sch.scheduleHtml -> sch.scheduleBusiness "Load timetable"
             sch.scheduleBusiness -> sch.dbSchedules "Read"
             
-            sch.scheduleHtml -> sch.scheduleBusiness "Render/refresh UI"
+            sch.scheduleBusiness -> sch.scheduleHtml "Returns data"
             
             autolayout lr 700 360 240
         }
@@ -535,6 +815,12 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
                 background #93C5FD
                 color #1F2937
                 stroke #93C5FD
+            }
+            element "Mock API" {
+                shape roundedbox
+                background #FCD34D
+                color #1F2937
+                stroke #FCD34D
             }
             element "Container" {
                 shape roundedbox
