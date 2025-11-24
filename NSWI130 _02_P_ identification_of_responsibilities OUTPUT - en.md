@@ -114,7 +114,7 @@ As a teacher, I need to define the time and space requirements of a subject, so 
 ### Feature: Display graphical interface for scheduling subjects and save changes (Scheduling committee) — **CORE**
 
 **User story**  
-As a Scheduling committee, I need to display a graphical interface for scheduling subjects, so I can schedule a subject and users can view schedules.
+As a Scheduling committee, I need to view a graphical interface for scheduling subjects, so I can schedule a subject and users can view schedules.
 
 **Feature breakdown**
 
