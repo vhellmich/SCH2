@@ -183,6 +183,17 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             reportHtml.reportDownload -> reportingBusiness "Download reports"
             reportHtml -> reportHtmlMockBackend "Uses (mock)"
             
+            subjectsBusiness.subjectCreator -> subjectsHtml "Subject data response"
+            subjectsBusiness.subjectValidator -> subjectsHtml "Validation status"
+            schedulingBusiness.schedulePlanner -> schedulingHtml "Schedule plan response"
+            schedulingBusiness.scheduleValidator -> schedulingHtml "Validation results"
+            scheduleBusiness.scheduleViewer -> scheduleHtml "Timetable data"
+            scheduleBusiness.scheduleUpdater -> scheduleHtml "Update confirmation"
+            scheduleBusiness.scheduleExporter -> scheduleHtml "Export file"
+            authBusiness.userValidator -> loginHtml "Authentication result"
+            reportingBusiness.reportGenerator -> reportHtml "Analytics data"
+            reportingBusiness.reportExporter -> reportHtml "Report file"
+            
             schedulingBusiness -> subjectsBusiness "Read subject catalog; evaluate subject policies"
             schedulingBusiness -> subjectsBusinessMock "Read subject catalog (mock)"
 
