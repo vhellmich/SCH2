@@ -698,7 +698,7 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
         }
         
         dynamic sch "F1-Student-ViewSchedule" {
-            title "Zobrazení rozvrhu (Student)"
+            title "View Schedule (Student)"
             
             student -> user "Is a"
             user -> sch.scheduleHtml "Open Schedule"
@@ -714,33 +714,8 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             autolayout lr 700 360 240
         }
         
-        dynamic sch "F2-Student-Basket" {
-            title "Košík (Student)"
-            
-            student -> user "Is a"
-            user -> sch.scheduleHtml "Open Basket"
-            
-            user -> sch.loginHtml "If not signed in: Sign in"
-            sch.loginHtml -> sch.authBusiness "Authenticate / check session"
-            
-            sch.scheduleHtml -> sch.scheduleBusiness "Load page"
-            sch.scheduleBusiness -> sch.dbSchedules "Read subjects + slots (projection)"
-            
-            user -> sch.scheduleHtml "Select subjects"
-            sch.scheduleHtml -> sch.scheduleBusiness "Add to basket"
-            sch.scheduleBusiness -> sch.dbSchedules "Write basket"
-            
-            sch.scheduleBusiness -> sch.schedulingBusiness "Check collisions"
-            sch.schedulingBusiness -> sch.dbSchedules "Read"
-            sch.scheduleBusiness -> sch.schedulingBusiness "Request alternatives on conflict"
-            
-            sch.scheduleHtml -> sch.scheduleBusiness "Refresh timetable"
-            
-            autolayout lr 700 360 240
-        }
-        
-        dynamic sch "F3-Teacher-Subjects" {
-            title "Vypsání předmětu (Teacher)"
+        dynamic sch "F2-Create-Subjects" {
+            title "Create Subjects (Teacher)"
             
             teacher -> sch.subjectsHtml "Open Subject form"
             
@@ -758,25 +733,49 @@ workspace "Schedules (SCH)" "Scheduling software system by team SCH2" {
             autolayout lr 700 360 240
         }
         
-        dynamic sch "F4-Teacher-ViewSchedule" {
-            title "Zobrazení rozvrhu (Teacher)"
+        dynamic sch "F3-Approve-Subject" {
+            title "Approve Subject (Manager)"
             
-            teacher -> user "Is a"
-            user -> sch.scheduleHtml "Open Schedule"
+            manager -> sch.subjectsHtml "Open subject creation request detail"
             
+            manager -> user "Is a"
             user -> sch.loginHtml "If not signed in: Sign in"
             sch.loginHtml -> sch.authBusiness "Authenticate"
             
-            sch.scheduleHtml -> sch.scheduleBusiness "Load timetable"
-            sch.scheduleBusiness -> sch.dbSchedules "Read"
+            sch.subjectsHtml -> sch.subjectsBusiness "Load subject request"
+            sch.subjectsBusiness -> sch.dbSubjects "Read subjects"
             
-            sch.scheduleHtml -> sch.scheduleBusiness "Render/refresh UI"
+            manager -> sch.subjectsHtml "Approve or reject subject"
+            sch.subjectsHtml -> sch.subjectsBusiness "Approve/reject subject"
+            sch.subjectsBusiness -> sch.authorizer "Authorize"
+            sch.subjectsBusiness -> notif "Send notification to teacher"
+            
+            autolayout lr 700 360 240
+        }
+        
+        dynamic sch "F4-Display-Scheduling-Interface" {
+            title "Display Graphical Interface for Scheduling Subjects (Scheduling Committee)"
+            
+            committee -> sch.schedulingHtml "Open interface for scheduling subjects"
+            
+            committee -> user "Is a"
+            user -> sch.loginHtml "If not signed in: Sign in"
+            sch.loginHtml -> sch.authBusiness "Authenticate"
+            
+            sch.schedulingHtml -> sch.schedulingBusiness "Load subjects and requirements"
+            sch.schedulingBusiness -> sch.subjectsBusiness "Read subject catalog; evaluate subject policies"
+            sch.schedulingBusiness -> sch.dbSchedules "Read"
+            
+            committee -> sch.schedulingHtml "Schedule subject using graphical interface"
+            sch.schedulingHtml -> sch.schedulingBusiness "Plan schedules"
+            sch.schedulingBusiness -> sch.authorizer "Authorize"
+            sch.schedulingBusiness -> sch.dbSchedules "Read/Write"
             
             autolayout lr 700 360 240
         }
         
         dynamic sch "F5-Teacher-Reqs" {
-            title "Vypsání časových a prostorových požadavků (Teacher)"
+            title "Define Time and Space Requirements (Teacher)"
             
             teacher -> sch.schedulingHtml "Open requirements form"
             
