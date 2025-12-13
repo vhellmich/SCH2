@@ -1,0 +1,3517 @@
+{
+  "configuration" : { },
+  "description" : "This workspace documents the architecture of the enrollments module and its integration into the whole sis.",
+  "documentation" : { },
+  "id" : 1,
+  "lastModifiedDate" : "2025-11-24T11:18:48Z",
+  "model" : {
+    "deploymentNodes" : [ {
+      "containerInstances" : [ {
+        "containerId" : "5",
+        "deploymentGroups" : [ "Default" ],
+        "environment" : "Production",
+        "id" : "152",
+        "instanceId" : 1,
+        "properties" : {
+          "structurizr.dsl.identifier" : "7fd9e1ad-fd42-489a-ba5c-69f424483676.7e7ca780-a119-4751-a335-f6be908cf664.UIPresenterStudentInstance"
+        },
+        "relationships" : [ {
+          "description" : "Sends student enrollment requests",
+          "destinationId" : "159",
+          "id" : "161",
+          "linkedRelationshipId" : "91",
+          "sourceId" : "152"
+        } ],
+        "tags" : "Container Instance"
+      } ],
+      "environment" : "Production",
+      "id" : "151",
+      "instances" : "1",
+      "name" : "Student's web browser",
+      "properties" : {
+        "structurizr.dsl.identifier" : "7fd9e1ad-fd42-489a-ba5c-69f424483676.7e7ca780-a119-4751-a335-f6be908cf664"
+      },
+      "tags" : "Element,Deployment Node"
+    }, {
+      "containerInstances" : [ {
+        "containerId" : "5",
+        "deploymentGroups" : [ "Default" ],
+        "environment" : "Production",
+        "id" : "154",
+        "instanceId" : 1,
+        "properties" : {
+          "structurizr.dsl.identifier" : "7fd9e1ad-fd42-489a-ba5c-69f424483676.ae6110bd-3490-4a8a-9448-afd853763edd.UIPresenterTeacherInstance"
+        },
+        "relationships" : [ {
+          "description" : "Sends student enrollment requests",
+          "destinationId" : "159",
+          "id" : "163",
+          "linkedRelationshipId" : "91",
+          "sourceId" : "154"
+        } ],
+        "tags" : "Container Instance"
+      } ],
+      "environment" : "Production",
+      "id" : "153",
+      "instances" : "1",
+      "name" : "Teacher's web browser",
+      "properties" : {
+        "structurizr.dsl.identifier" : "7fd9e1ad-fd42-489a-ba5c-69f424483676.ae6110bd-3490-4a8a-9448-afd853763edd"
+      },
+      "tags" : "Element,Deployment Node"
+    }, {
+      "containerInstances" : [ {
+        "containerId" : "22",
+        "deploymentGroups" : [ "Default" ],
+        "environment" : "Production",
+        "id" : "156",
+        "instanceId" : 1,
+        "properties" : {
+          "structurizr.dsl.identifier" : "7fd9e1ad-fd42-489a-ba5c-69f424483676.0d7757de-d807-41ec-800c-ad7d9831a465.UIPresenterTeacherInstance"
+        },
+        "relationships" : [ {
+          "description" : "Sends statistical data requests",
+          "destinationId" : "167",
+          "id" : "169",
+          "linkedRelationshipId" : "55",
+          "sourceId" : "156"
+        } ],
+        "tags" : "Container Instance"
+      } ],
+      "environment" : "Production",
+      "id" : "155",
+      "instances" : "1",
+      "name" : "Admin's web browser",
+      "properties" : {
+        "structurizr.dsl.identifier" : "7fd9e1ad-fd42-489a-ba5c-69f424483676.0d7757de-d807-41ec-800c-ad7d9831a465"
+      },
+      "tags" : "Element,Deployment Node"
+    }, {
+      "children" : [ {
+        "containerInstances" : [ {
+          "containerId" : "8",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Production",
+          "id" : "159",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "7fd9e1ad-fd42-489a-ba5c-69f424483676.548b3ef3-b993-4a48-8c57-f3dee152ba2d.7171ddf3-c81f-449c-bf78-97535817e8f7.EnrolmentsModuleInstance"
+          },
+          "relationships" : [ {
+            "description" : "Responds to student enrollment requests",
+            "destinationId" : "152",
+            "id" : "160",
+            "linkedRelationshipId" : "95",
+            "sourceId" : "159"
+          }, {
+            "description" : "Responds to student enrollment requests",
+            "destinationId" : "154",
+            "id" : "162",
+            "linkedRelationshipId" : "95",
+            "sourceId" : "159"
+          }, {
+            "description" : "Requests a notification.",
+            "destinationId" : "164",
+            "id" : "165",
+            "linkedRelationshipId" : "141",
+            "sourceId" : "159"
+          }, {
+            "description" : "Reads data",
+            "destinationId" : "172",
+            "id" : "174",
+            "linkedRelationshipId" : "120",
+            "sourceId" : "159"
+          } ],
+          "tags" : "Container Instance"
+        }, {
+          "containerId" : "27",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Production",
+          "id" : "164",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "7fd9e1ad-fd42-489a-ba5c-69f424483676.548b3ef3-b993-4a48-8c57-f3dee152ba2d.7171ddf3-c81f-449c-bf78-97535817e8f7.NotifierInstance"
+          },
+          "tags" : "Container Instance"
+        } ],
+        "description" : "Main application server",
+        "environment" : "Production",
+        "id" : "158",
+        "instances" : "1",
+        "name" : "AWS EC2",
+        "properties" : {
+          "structurizr.dsl.identifier" : "7fd9e1ad-fd42-489a-ba5c-69f424483676.548b3ef3-b993-4a48-8c57-f3dee152ba2d.7171ddf3-c81f-449c-bf78-97535817e8f7"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Ubuntu"
+      }, {
+        "containerInstances" : [ {
+          "containerId" : "19",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Production",
+          "id" : "167",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "7fd9e1ad-fd42-489a-ba5c-69f424483676.548b3ef3-b993-4a48-8c57-f3dee152ba2d.d1d793a1-9581-4516-be8e-ab8dc6b88633.StatisticalModuleInstance"
+          },
+          "relationships" : [ {
+            "description" : "Sends data to be displayed",
+            "destinationId" : "156",
+            "id" : "168",
+            "linkedRelationshipId" : "85",
+            "sourceId" : "167"
+          }, {
+            "description" : "Reads enrollment data from data storage",
+            "destinationId" : "172",
+            "id" : "176",
+            "linkedRelationshipId" : "60",
+            "sourceId" : "167"
+          } ],
+          "tags" : "Container Instance"
+        } ],
+        "description" : "Statistical analysis server",
+        "environment" : "Production",
+        "id" : "166",
+        "instances" : "1",
+        "name" : "AWS lambda service",
+        "properties" : {
+          "structurizr.dsl.identifier" : "7fd9e1ad-fd42-489a-ba5c-69f424483676.548b3ef3-b993-4a48-8c57-f3dee152ba2d.d1d793a1-9581-4516-be8e-ab8dc6b88633"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Ubuntu; Docker Desktop; Python"
+      } ],
+      "description" : "AWS hosted virtual computer",
+      "environment" : "Production",
+      "id" : "157",
+      "instances" : "1",
+      "name" : "Application server",
+      "properties" : {
+        "structurizr.dsl.identifier" : "7fd9e1ad-fd42-489a-ba5c-69f424483676.548b3ef3-b993-4a48-8c57-f3dee152ba2d"
+      },
+      "tags" : "Element,Deployment Node,",
+      "technology" : "AWS"
+    }, {
+      "children" : [ {
+        "containerInstances" : [ {
+          "containerId" : "16",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Production",
+          "id" : "172",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "7fd9e1ad-fd42-489a-ba5c-69f424483676.ffd51870-d696-4acb-98a9-b38c531fb6cc.3c1fa9ce-8ac6-42ba-8aaf-315007801f11.EnrollmentDatabaseInstance"
+          },
+          "relationships" : [ {
+            "description" : "Returns data",
+            "destinationId" : "159",
+            "id" : "173",
+            "linkedRelationshipId" : "124",
+            "sourceId" : "172"
+          }, {
+            "description" : "Returns enrollment data from data storage",
+            "destinationId" : "167",
+            "id" : "175",
+            "linkedRelationshipId" : "64",
+            "sourceId" : "172"
+          } ],
+          "tags" : "Container Instance"
+        } ],
+        "description" : "Relational database",
+        "environment" : "Production",
+        "id" : "171",
+        "instances" : "1",
+        "name" : "AWS ERD",
+        "properties" : {
+          "structurizr.dsl.identifier" : "7fd9e1ad-fd42-489a-ba5c-69f424483676.ffd51870-d696-4acb-98a9-b38c531fb6cc.3c1fa9ce-8ac6-42ba-8aaf-315007801f11"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "MySQL"
+      } ],
+      "description" : "Cloud database instance",
+      "environment" : "Production",
+      "id" : "170",
+      "instances" : "1",
+      "name" : "Database server",
+      "properties" : {
+        "structurizr.dsl.identifier" : "7fd9e1ad-fd42-489a-ba5c-69f424483676.ffd51870-d696-4acb-98a9-b38c531fb6cc"
+      },
+      "tags" : "Element,Deployment Node",
+      "technology" : "AWS"
+    }, {
+      "children" : [ {
+        "containerInstances" : [ {
+          "containerId" : "5",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Front-end Development",
+          "id" : "179",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "f8ecc937-7244-4348-825b-608383400dad.918a6a5a-8ce8-4ba9-8eca-9f8fa7a75047.a7dc8737-ad5c-4620-b789-03a2fe370eae.UIPresenterStudentInstance"
+          },
+          "relationships" : [ {
+            "description" : "Sends student enrollment requests",
+            "destinationId" : "183",
+            "id" : "185",
+            "linkedRelationshipId" : "91",
+            "sourceId" : "179"
+          } ],
+          "tags" : "Container Instance"
+        }, {
+          "containerId" : "5",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Front-end Development",
+          "id" : "180",
+          "instanceId" : 2,
+          "properties" : {
+            "structurizr.dsl.identifier" : "f8ecc937-7244-4348-825b-608383400dad.918a6a5a-8ce8-4ba9-8eca-9f8fa7a75047.a7dc8737-ad5c-4620-b789-03a2fe370eae.UIPresenterTeacherInstance"
+          },
+          "relationships" : [ {
+            "description" : "Sends student enrollment requests",
+            "destinationId" : "183",
+            "id" : "187",
+            "linkedRelationshipId" : "91",
+            "sourceId" : "180"
+          } ],
+          "tags" : "Container Instance"
+        }, {
+          "containerId" : "22",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Front-end Development",
+          "id" : "181",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "f8ecc937-7244-4348-825b-608383400dad.918a6a5a-8ce8-4ba9-8eca-9f8fa7a75047.a7dc8737-ad5c-4620-b789-03a2fe370eae.StatisticsUIInstance"
+          },
+          "relationships" : [ {
+            "description" : "Sends statistical data requests",
+            "destinationId" : "190",
+            "id" : "192",
+            "linkedRelationshipId" : "55",
+            "sourceId" : "181"
+          } ],
+          "tags" : "Container Instance"
+        } ],
+        "description" : "Serves static web UI locally on different ports",
+        "environment" : "Front-end Development",
+        "id" : "178",
+        "instances" : "1",
+        "name" : "Frontend Node",
+        "properties" : {
+          "structurizr.dsl.identifier" : "f8ecc937-7244-4348-825b-608383400dad.918a6a5a-8ce8-4ba9-8eca-9f8fa7a75047.a7dc8737-ad5c-4620-b789-03a2fe370eae"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "localhost; Node.js"
+      }, {
+        "containerInstances" : [ {
+          "containerId" : "8",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Front-end Development",
+          "id" : "183",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "f8ecc937-7244-4348-825b-608383400dad.918a6a5a-8ce8-4ba9-8eca-9f8fa7a75047.5659011f-2533-41b1-819d-bcbcf69ccb6c.EnrolmentsModuleInstance"
+          },
+          "relationships" : [ {
+            "description" : "Responds to student enrollment requests",
+            "destinationId" : "179",
+            "id" : "184",
+            "linkedRelationshipId" : "95",
+            "sourceId" : "183"
+          }, {
+            "description" : "Responds to student enrollment requests",
+            "destinationId" : "180",
+            "id" : "186",
+            "linkedRelationshipId" : "95",
+            "sourceId" : "183"
+          }, {
+            "description" : "Requests a notification.",
+            "destinationId" : "188",
+            "id" : "189",
+            "linkedRelationshipId" : "141",
+            "sourceId" : "183"
+          }, {
+            "description" : "Reads data",
+            "destinationId" : "194",
+            "id" : "196",
+            "linkedRelationshipId" : "120",
+            "sourceId" : "183"
+          } ],
+          "tags" : "Container Instance"
+        }, {
+          "containerId" : "27",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Front-end Development",
+          "id" : "188",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "f8ecc937-7244-4348-825b-608383400dad.918a6a5a-8ce8-4ba9-8eca-9f8fa7a75047.5659011f-2533-41b1-819d-bcbcf69ccb6c.NotifierInstance"
+          },
+          "tags" : "Container Instance"
+        }, {
+          "containerId" : "19",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Front-end Development",
+          "id" : "190",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "f8ecc937-7244-4348-825b-608383400dad.918a6a5a-8ce8-4ba9-8eca-9f8fa7a75047.5659011f-2533-41b1-819d-bcbcf69ccb6c.StatisticalModuleInstance"
+          },
+          "relationships" : [ {
+            "description" : "Sends data to be displayed",
+            "destinationId" : "181",
+            "id" : "191",
+            "linkedRelationshipId" : "85",
+            "sourceId" : "190"
+          }, {
+            "description" : "Reads enrollment data from data storage",
+            "destinationId" : "194",
+            "id" : "198",
+            "linkedRelationshipId" : "60",
+            "sourceId" : "190"
+          } ],
+          "tags" : "Container Instance"
+        } ],
+        "description" : "Handles API requests locally",
+        "environment" : "Front-end Development",
+        "id" : "182",
+        "instances" : "1",
+        "name" : "Backend",
+        "properties" : {
+          "structurizr.dsl.identifier" : "f8ecc937-7244-4348-825b-608383400dad.918a6a5a-8ce8-4ba9-8eca-9f8fa7a75047.5659011f-2533-41b1-819d-bcbcf69ccb6c"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Docker Desktop; Python"
+      }, {
+        "containerInstances" : [ {
+          "containerId" : "16",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Front-end Development",
+          "id" : "194",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "f8ecc937-7244-4348-825b-608383400dad.918a6a5a-8ce8-4ba9-8eca-9f8fa7a75047.74580373-236c-4a19-b5d5-c7744e020806.EnrollmentDatabaseInstance"
+          },
+          "relationships" : [ {
+            "description" : "Returns data",
+            "destinationId" : "183",
+            "id" : "195",
+            "linkedRelationshipId" : "124",
+            "sourceId" : "194"
+          }, {
+            "description" : "Returns enrollment data from data storage",
+            "destinationId" : "190",
+            "id" : "197",
+            "linkedRelationshipId" : "64",
+            "sourceId" : "194"
+          } ],
+          "tags" : "Container Instance"
+        } ],
+        "description" : "Database instance",
+        "environment" : "Front-end Development",
+        "id" : "193",
+        "instances" : "1",
+        "name" : "Development Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "f8ecc937-7244-4348-825b-608383400dad.918a6a5a-8ce8-4ba9-8eca-9f8fa7a75047.74580373-236c-4a19-b5d5-c7744e020806"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Docker; MySQL"
+      } ],
+      "description" : "Local development environment",
+      "environment" : "Front-end Development",
+      "id" : "177",
+      "instances" : "1",
+      "name" : "Developer's Computer",
+      "properties" : {
+        "structurizr.dsl.identifier" : "f8ecc937-7244-4348-825b-608383400dad.918a6a5a-8ce8-4ba9-8eca-9f8fa7a75047"
+      },
+      "tags" : "Element,Deployment Node",
+      "technology" : "Windows 11, Docker Desktop, Visual Studio Code"
+    } ],
+    "people" : [ {
+      "description" : "Analyses enrollment trends",
+      "id" : "1",
+      "name" : "Administrative worker",
+      "properties" : {
+        "structurizr.dsl.identifier" : "admin"
+      },
+      "relationships" : [ {
+        "description" : "Queries statistical data about enrollments",
+        "destinationId" : "23",
+        "id" : "44",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Queries statistical data about enrollments",
+        "destinationId" : "22",
+        "id" : "45",
+        "linkedRelationshipId" : "44",
+        "sourceId" : "1"
+      }, {
+        "description" : "Queries statistical data about enrollments",
+        "destinationId" : "4",
+        "id" : "46",
+        "linkedRelationshipId" : "44",
+        "sourceId" : "1"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Uses the Enrollments application to manage their courses.",
+      "id" : "2",
+      "name" : "Student",
+      "properties" : {
+        "structurizr.dsl.identifier" : "student"
+      },
+      "relationships" : [ {
+        "description" : "Joins or leaves a course.",
+        "destinationId" : "6",
+        "id" : "32",
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Joins or leaves a course.",
+        "destinationId" : "5",
+        "id" : "33",
+        "linkedRelationshipId" : "32",
+        "sourceId" : "2"
+      }, {
+        "description" : "Joins or leaves a course.",
+        "destinationId" : "4",
+        "id" : "34",
+        "linkedRelationshipId" : "32",
+        "sourceId" : "2"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Uses the Enrollments application to manage the students enrolled or to be enrolled in their course.",
+      "id" : "3",
+      "name" : "Teacher",
+      "properties" : {
+        "structurizr.dsl.identifier" : "teacher"
+      },
+      "relationships" : [ {
+        "description" : "Access teacher enrollment management",
+        "destinationId" : "7",
+        "id" : "38",
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Access teacher enrollment management",
+        "destinationId" : "5",
+        "id" : "39",
+        "linkedRelationshipId" : "38",
+        "sourceId" : "3"
+      }, {
+        "description" : "Access teacher enrollment management",
+        "destinationId" : "4",
+        "id" : "40",
+        "linkedRelationshipId" : "38",
+        "sourceId" : "3"
+      } ],
+      "tags" : "Element,Person"
+    } ],
+    "softwareSystems" : [ {
+      "containers" : [ {
+        "components" : [ {
+          "description" : "Allows students to enroll in or leave courses",
+          "documentation" : { },
+          "id" : "6",
+          "name" : "StudentEnrollment",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollments.UI_presenter.student_enrollment"
+          },
+          "relationships" : [ {
+            "description" : "Returns enrollment interface",
+            "destinationId" : "2",
+            "id" : "35",
+            "sourceId" : "6",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Sends student enrollment requests",
+            "destinationId" : "9",
+            "id" : "88",
+            "sourceId" : "6",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Sends student enrollment requests",
+            "destinationId" : "8",
+            "id" : "89",
+            "linkedRelationshipId" : "88",
+            "sourceId" : "6"
+          } ],
+          "tags" : "Element,Component,Web Front-End"
+        }, {
+          "description" : "Allows teachers to manage student enrollments",
+          "documentation" : { },
+          "id" : "7",
+          "name" : "TeacherEnrollment",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollments.UI_presenter.teacher_enrollment"
+          },
+          "relationships" : [ {
+            "description" : "Returns teacher enrollment management interface",
+            "destinationId" : "3",
+            "id" : "41",
+            "sourceId" : "7",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Sends teacher enrollment requests",
+            "destinationId" : "9",
+            "id" : "96",
+            "sourceId" : "7",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Sends teacher enrollment requests",
+            "destinationId" : "8",
+            "id" : "97",
+            "linkedRelationshipId" : "96",
+            "sourceId" : "7"
+          }, {
+            "description" : "Sends enrollment requests in batch",
+            "destinationId" : "10",
+            "id" : "100",
+            "sourceId" : "7",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component,Web Front-End"
+        } ],
+        "description" : "Provides a web-based user interface",
+        "documentation" : { },
+        "id" : "5",
+        "name" : "UIPresenter",
+        "properties" : {
+          "structurizr.dsl.identifier" : "enrollments.UI_presenter"
+        },
+        "relationships" : [ {
+          "description" : "Returns enrollment interface",
+          "destinationId" : "2",
+          "id" : "36",
+          "linkedRelationshipId" : "35",
+          "sourceId" : "5"
+        }, {
+          "description" : "Returns teacher enrollment management interface",
+          "destinationId" : "3",
+          "id" : "42",
+          "linkedRelationshipId" : "41",
+          "sourceId" : "5"
+        }, {
+          "description" : "Sends student enrollment requests",
+          "destinationId" : "9",
+          "id" : "90",
+          "linkedRelationshipId" : "88",
+          "sourceId" : "5"
+        }, {
+          "description" : "Sends student enrollment requests",
+          "destinationId" : "8",
+          "id" : "91",
+          "linkedRelationshipId" : "88",
+          "sourceId" : "5"
+        }, {
+          "description" : "Sends enrollment requests in batch",
+          "destinationId" : "10",
+          "id" : "101",
+          "linkedRelationshipId" : "100",
+          "sourceId" : "5"
+        } ],
+        "tags" : "Element,Container,Web Front-End"
+      }, {
+        "components" : [ {
+          "description" : "Interface for communication with the UI presenter (bott requests and responses)",
+          "documentation" : { },
+          "id" : "9",
+          "name" : "RequestInterface",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollments.enrollments_logic.request_interface"
+          },
+          "relationships" : [ {
+            "description" : "Responds to student enrollment requests",
+            "destinationId" : "6",
+            "id" : "92",
+            "sourceId" : "9",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Responds to student enrollment requests",
+            "destinationId" : "5",
+            "id" : "93",
+            "linkedRelationshipId" : "92",
+            "sourceId" : "9"
+          }, {
+            "description" : "Responds to teacher enrollment requests",
+            "destinationId" : "7",
+            "id" : "98",
+            "sourceId" : "9",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Sends enrollment requests",
+            "destinationId" : "12",
+            "id" : "104",
+            "sourceId" : "9",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Requests subject data",
+            "destinationId" : "11",
+            "id" : "108",
+            "sourceId" : "9",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Processes enrollment requests in batch",
+          "documentation" : { },
+          "id" : "10",
+          "name" : "EnrollmentRequestBatchProcessor",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollments.enrollments_logic.batch"
+          },
+          "relationships" : [ {
+            "description" : "Responds to batch enrollment requests",
+            "destinationId" : "7",
+            "id" : "102",
+            "sourceId" : "10",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Responds to batch enrollment requests",
+            "destinationId" : "5",
+            "id" : "103",
+            "linkedRelationshipId" : "102",
+            "sourceId" : "10"
+          }, {
+            "description" : "Sends individaul enrollment requests",
+            "destinationId" : "12",
+            "id" : "110",
+            "sourceId" : "10",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Requests a notification.",
+            "destinationId" : "28",
+            "id" : "138",
+            "sourceId" : "10",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Requests a notification.",
+            "destinationId" : "27",
+            "id" : "139",
+            "linkedRelationshipId" : "138",
+            "sourceId" : "10"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Manages data about subjects",
+          "documentation" : { },
+          "id" : "11",
+          "name" : "Subjects",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollments.enrollments_logic.subjects"
+          },
+          "relationships" : [ {
+            "description" : "Returns subject data",
+            "destinationId" : "9",
+            "id" : "109",
+            "sourceId" : "11",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Requests subject data from data storage",
+            "destinationId" : "14",
+            "id" : "113",
+            "sourceId" : "11",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Manages logic of enrollment requests (enroll in/enroll out)",
+          "documentation" : { },
+          "id" : "12",
+          "name" : "Enrollments",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollments.enrollments_logic.enrollments"
+          },
+          "relationships" : [ {
+            "description" : "Sends enrollment responses",
+            "destinationId" : "9",
+            "id" : "105",
+            "sourceId" : "12",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Sends validation requests",
+            "destinationId" : "13",
+            "id" : "106",
+            "sourceId" : "12",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Sends responses for individual requests",
+            "destinationId" : "10",
+            "id" : "111",
+            "sourceId" : "12",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Reads from and writes to database using ...",
+            "destinationId" : "14",
+            "id" : "136",
+            "sourceId" : "12",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Requests a notification.",
+            "destinationId" : "28",
+            "id" : "142",
+            "sourceId" : "12",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Requests a notification.",
+            "destinationId" : "27",
+            "id" : "143",
+            "linkedRelationshipId" : "142",
+            "sourceId" : "12"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Manages validation of enrollment requests",
+          "documentation" : { },
+          "id" : "13",
+          "name" : "Validation",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollments.enrollments_logic.validation"
+          },
+          "relationships" : [ {
+            "description" : "Sends validation responses",
+            "destinationId" : "12",
+            "id" : "107",
+            "sourceId" : "13",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Requests validation data from data storage",
+            "destinationId" : "14",
+            "id" : "115",
+            "sourceId" : "13",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Manages communication with data storages",
+          "documentation" : { },
+          "id" : "14",
+          "name" : "DataManager",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollments.enrollments_logic.data_manager"
+          },
+          "relationships" : [ {
+            "description" : "Returns subject data from data storage",
+            "destinationId" : "11",
+            "id" : "112",
+            "sourceId" : "14",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Returns validation data from data storage",
+            "destinationId" : "13",
+            "id" : "114",
+            "sourceId" : "14",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Requests logging of operations",
+            "destinationId" : "15",
+            "id" : "116",
+            "sourceId" : "14",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Reads data",
+            "destinationId" : "17",
+            "id" : "117",
+            "sourceId" : "14",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Reads data",
+            "destinationId" : "16",
+            "id" : "118",
+            "linkedRelationshipId" : "117",
+            "sourceId" : "14"
+          }, {
+            "description" : "Reads data",
+            "destinationId" : "31",
+            "id" : "128",
+            "sourceId" : "14",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Reads data",
+            "destinationId" : "30",
+            "id" : "129",
+            "linkedRelationshipId" : "128",
+            "sourceId" : "14"
+          }, {
+            "description" : "Returns data and confirms data modification.",
+            "destinationId" : "12",
+            "id" : "137",
+            "sourceId" : "14",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Manages logging of operations",
+          "documentation" : { },
+          "id" : "15",
+          "name" : "Logger",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollments.enrollments_logic.logger"
+          },
+          "relationships" : [ {
+            "description" : "Logs permanently",
+            "destinationId" : "18",
+            "id" : "125",
+            "sourceId" : "15",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Logs permanently",
+            "destinationId" : "16",
+            "id" : "126",
+            "linkedRelationshipId" : "125",
+            "sourceId" : "15"
+          } ],
+          "tags" : "Element,Component"
+        } ],
+        "description" : "Oversees request to its completition",
+        "documentation" : { },
+        "id" : "8",
+        "name" : "EnrollmentsModule",
+        "properties" : {
+          "structurizr.dsl.identifier" : "enrollments.enrollments_logic"
+        },
+        "relationships" : [ {
+          "description" : "Responds to student enrollment requests",
+          "destinationId" : "6",
+          "id" : "94",
+          "linkedRelationshipId" : "92",
+          "sourceId" : "8"
+        }, {
+          "description" : "Responds to student enrollment requests",
+          "destinationId" : "5",
+          "id" : "95",
+          "linkedRelationshipId" : "92",
+          "sourceId" : "8"
+        }, {
+          "description" : "Responds to teacher enrollment requests",
+          "destinationId" : "7",
+          "id" : "99",
+          "linkedRelationshipId" : "98",
+          "sourceId" : "8"
+        }, {
+          "description" : "Reads data",
+          "destinationId" : "17",
+          "id" : "119",
+          "linkedRelationshipId" : "117",
+          "sourceId" : "8"
+        }, {
+          "description" : "Reads data",
+          "destinationId" : "16",
+          "id" : "120",
+          "linkedRelationshipId" : "117",
+          "sourceId" : "8"
+        }, {
+          "description" : "Logs permanently",
+          "destinationId" : "18",
+          "id" : "127",
+          "linkedRelationshipId" : "125",
+          "sourceId" : "8"
+        }, {
+          "description" : "Reads data",
+          "destinationId" : "31",
+          "id" : "130",
+          "linkedRelationshipId" : "128",
+          "sourceId" : "8"
+        }, {
+          "description" : "Reads data",
+          "destinationId" : "30",
+          "id" : "131",
+          "linkedRelationshipId" : "128",
+          "sourceId" : "8"
+        }, {
+          "description" : "Requests a notification.",
+          "destinationId" : "28",
+          "id" : "140",
+          "linkedRelationshipId" : "138",
+          "sourceId" : "8"
+        }, {
+          "description" : "Requests a notification.",
+          "destinationId" : "27",
+          "id" : "141",
+          "linkedRelationshipId" : "138",
+          "sourceId" : "8"
+        }, {
+          "description" : "Requests an alert",
+          "destinationId" : "28",
+          "id" : "144",
+          "sourceId" : "8",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "components" : [ {
+          "description" : "Stores data about which students are enrolled in which courses",
+          "documentation" : { },
+          "id" : "17",
+          "name" : "EnrollmentsTable",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollments.enrollment_database.enrollments_table"
+          },
+          "relationships" : [ {
+            "description" : "Returns enrollment data from data storage",
+            "destinationId" : "21",
+            "id" : "61",
+            "sourceId" : "17",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Returns enrollment data from data storage",
+            "destinationId" : "19",
+            "id" : "62",
+            "linkedRelationshipId" : "61",
+            "sourceId" : "17"
+          }, {
+            "description" : "Returns data",
+            "destinationId" : "14",
+            "id" : "121",
+            "sourceId" : "17",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Returns data",
+            "destinationId" : "8",
+            "id" : "122",
+            "linkedRelationshipId" : "121",
+            "sourceId" : "17"
+          } ],
+          "tags" : "Element,Component,Database"
+        }, {
+          "description" : "Stores logs of operations permanently for future reference",
+          "documentation" : { },
+          "id" : "18",
+          "name" : "Archive",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollments.enrollment_database.archive"
+          },
+          "relationships" : [ {
+            "description" : "Returns enrollment data from data archive",
+            "destinationId" : "21",
+            "id" : "79",
+            "sourceId" : "18",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Returns enrollment data from data archive",
+            "destinationId" : "19",
+            "id" : "80",
+            "linkedRelationshipId" : "79",
+            "sourceId" : "18"
+          } ],
+          "tags" : "Element,Component,Database"
+        } ],
+        "description" : "Maintains data about student enrollment",
+        "documentation" : { },
+        "id" : "16",
+        "name" : "EnrollmentDatabase",
+        "properties" : {
+          "structurizr.dsl.identifier" : "enrollments.enrollment_database"
+        },
+        "relationships" : [ {
+          "description" : "Returns enrollment data from data storage",
+          "destinationId" : "21",
+          "id" : "63",
+          "linkedRelationshipId" : "61",
+          "sourceId" : "16"
+        }, {
+          "description" : "Returns enrollment data from data storage",
+          "destinationId" : "19",
+          "id" : "64",
+          "linkedRelationshipId" : "61",
+          "sourceId" : "16"
+        }, {
+          "description" : "Returns data",
+          "destinationId" : "14",
+          "id" : "123",
+          "linkedRelationshipId" : "121",
+          "sourceId" : "16"
+        }, {
+          "description" : "Returns data",
+          "destinationId" : "8",
+          "id" : "124",
+          "linkedRelationshipId" : "121",
+          "sourceId" : "16"
+        } ],
+        "tags" : "Element,Container,Database"
+      }, {
+        "components" : [ {
+          "description" : "Module for statistical data processing",
+          "documentation" : { },
+          "id" : "20",
+          "name" : "StatisticalEngine",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollments.data_analysis.statistical_engine"
+          },
+          "relationships" : [ {
+            "description" : "Requests data",
+            "destinationId" : "21",
+            "id" : "56",
+            "sourceId" : "20",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Sends data to be displayed",
+            "destinationId" : "24",
+            "id" : "82",
+            "sourceId" : "20",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Sends data to be displayed",
+            "destinationId" : "22",
+            "id" : "83",
+            "linkedRelationshipId" : "82",
+            "sourceId" : "20"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Manages communication with data storages",
+          "documentation" : { },
+          "id" : "21",
+          "name" : "DataManager",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollments.data_analysis.data_manager"
+          },
+          "relationships" : [ {
+            "description" : "Reads enrollment data from data storage",
+            "destinationId" : "17",
+            "id" : "57",
+            "sourceId" : "21",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Reads enrollment data from data storage",
+            "destinationId" : "16",
+            "id" : "58",
+            "linkedRelationshipId" : "57",
+            "sourceId" : "21"
+          }, {
+            "description" : "Reads data from SIS data storage",
+            "destinationId" : "31",
+            "id" : "65",
+            "sourceId" : "21",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Reads data from SIS data storage",
+            "destinationId" : "30",
+            "id" : "66",
+            "linkedRelationshipId" : "65",
+            "sourceId" : "21"
+          }, {
+            "description" : "Reads enrollment data from data archive",
+            "destinationId" : "18",
+            "id" : "77",
+            "sourceId" : "21",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Returns data for statistical processing",
+            "destinationId" : "20",
+            "id" : "81",
+            "sourceId" : "21",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
+        "description" : "Data analysis module",
+        "documentation" : { },
+        "id" : "19",
+        "name" : "StatisticalModule",
+        "properties" : {
+          "structurizr.dsl.identifier" : "enrollments.data_analysis"
+        },
+        "relationships" : [ {
+          "description" : "Reads enrollment data from data storage",
+          "destinationId" : "17",
+          "id" : "59",
+          "linkedRelationshipId" : "57",
+          "sourceId" : "19"
+        }, {
+          "description" : "Reads enrollment data from data storage",
+          "destinationId" : "16",
+          "id" : "60",
+          "linkedRelationshipId" : "57",
+          "sourceId" : "19"
+        }, {
+          "description" : "Reads data from SIS data storage",
+          "destinationId" : "31",
+          "id" : "67",
+          "linkedRelationshipId" : "65",
+          "sourceId" : "19"
+        }, {
+          "description" : "Reads data from SIS data storage",
+          "destinationId" : "30",
+          "id" : "68",
+          "linkedRelationshipId" : "65",
+          "sourceId" : "19"
+        }, {
+          "description" : "Reads enrollment data from data archive",
+          "destinationId" : "18",
+          "id" : "78",
+          "linkedRelationshipId" : "77",
+          "sourceId" : "19"
+        }, {
+          "description" : "Sends data to be displayed",
+          "destinationId" : "24",
+          "id" : "84",
+          "linkedRelationshipId" : "82",
+          "sourceId" : "19"
+        }, {
+          "description" : "Sends data to be displayed",
+          "destinationId" : "22",
+          "id" : "85",
+          "linkedRelationshipId" : "82",
+          "sourceId" : "19"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "components" : [ {
+          "description" : "Supplies UI for data queries",
+          "documentation" : { },
+          "id" : "23",
+          "name" : "QueryUI",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollments.statistics_ui.query_ui"
+          },
+          "relationships" : [ {
+            "description" : "Sends filter data",
+            "destinationId" : "25",
+            "id" : "50",
+            "sourceId" : "23",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Sends statistical data requests",
+            "destinationId" : "20",
+            "id" : "52",
+            "sourceId" : "23",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Sends statistical data requests",
+            "destinationId" : "19",
+            "id" : "53",
+            "linkedRelationshipId" : "52",
+            "sourceId" : "23"
+          } ],
+          "tags" : "Element,Component,Web Front-End"
+        }, {
+          "description" : "Supplies UI for analyzing queried data",
+          "documentation" : { },
+          "id" : "24",
+          "name" : "AnalysisUI",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollments.statistics_ui.analysis_ui"
+          },
+          "relationships" : [ {
+            "description" : "Presents reports on selected data",
+            "destinationId" : "1",
+            "id" : "47",
+            "sourceId" : "24",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Requests graphs generation",
+            "destinationId" : "26",
+            "id" : "86",
+            "sourceId" : "24",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component,Web Front-End"
+        }, {
+          "description" : "Module for filter management",
+          "documentation" : { },
+          "id" : "25",
+          "name" : "Filters",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollments.statistics_ui.filters"
+          },
+          "relationships" : [ {
+            "description" : "Returns filter data",
+            "destinationId" : "23",
+            "id" : "51",
+            "sourceId" : "25",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Module for interactive graph generation",
+          "documentation" : { },
+          "id" : "26",
+          "name" : "VisualizationEngine",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollments.statistics_ui.graphs"
+          },
+          "relationships" : [ {
+            "description" : "Returns graphs for presentation",
+            "destinationId" : "24",
+            "id" : "87",
+            "sourceId" : "26",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
+        "documentation" : { },
+        "id" : "22",
+        "name" : "StatisticsUI",
+        "properties" : {
+          "structurizr.dsl.identifier" : "enrollments.statistics_ui"
+        },
+        "relationships" : [ {
+          "description" : "Presents reports on selected data",
+          "destinationId" : "1",
+          "id" : "48",
+          "linkedRelationshipId" : "47",
+          "sourceId" : "22"
+        }, {
+          "description" : "Sends statistical data requests",
+          "destinationId" : "20",
+          "id" : "54",
+          "linkedRelationshipId" : "52",
+          "sourceId" : "22"
+        }, {
+          "description" : "Sends statistical data requests",
+          "destinationId" : "19",
+          "id" : "55",
+          "linkedRelationshipId" : "52",
+          "sourceId" : "22"
+        } ],
+        "tags" : "Element,Container,Web Front-End"
+      }, {
+        "components" : [ {
+          "description" : "Alerts the appropriate user",
+          "documentation" : { },
+          "id" : "28",
+          "name" : "Alert dispatcher",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollments.notifier.alert_dispatcher"
+          },
+          "relationships" : [ {
+            "description" : "Request an email notification",
+            "destinationId" : "29",
+            "id" : "145",
+            "sourceId" : "28",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Sends an email",
+          "documentation" : { },
+          "id" : "29",
+          "name" : "Email sender",
+          "properties" : {
+            "structurizr.dsl.identifier" : "enrollments.notifier.email_sender"
+          },
+          "relationships" : [ {
+            "description" : "Emails the student",
+            "destinationId" : "2",
+            "id" : "146",
+            "sourceId" : "29",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Emails the teacher",
+            "destinationId" : "3",
+            "id" : "148",
+            "sourceId" : "29",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
+        "description" : "Provides users with notifications",
+        "documentation" : { },
+        "id" : "27",
+        "name" : "NotificationModule",
+        "properties" : {
+          "structurizr.dsl.identifier" : "enrollments.notifier"
+        },
+        "relationships" : [ {
+          "description" : "Emails the student",
+          "destinationId" : "2",
+          "id" : "147",
+          "linkedRelationshipId" : "146",
+          "sourceId" : "27"
+        }, {
+          "description" : "Emails the teacher",
+          "destinationId" : "3",
+          "id" : "149",
+          "linkedRelationshipId" : "148",
+          "sourceId" : "27"
+        } ],
+        "tags" : "Element,Container"
+      } ],
+      "documentation" : {
+        "sections" : [ {
+          "content" : "> -----------------------------------------\r\n> **Team: ENR2**\r\n>\r\n> **Members:**\r\n> - Anna Kmentová (C4, presentation, core features)\r\n> - Hynek Mach (C4, responsibilities, core features)\r\n> - Zuzana Černohousová (C4, dynamic diagrams, core features)\r\n> - Patrícia Sotáková (deployment diagrams, documentation, core features)\r\n> -----------------------------------------\r\n\r\n\r\n\r\nThe **Enrollments** system is a core module of the Student Information System (SIS).  \r\nIts primary purpose is to support:\r\n\r\n- Student course enrollment\r\n- Teacher management of enrollment lists\r\n- Recording enrollment data\r\n- Statistical analysis and visualization\r\n- Notifications for enrollment-related events\r\n\r\n\r\n\r\nThe system consists of the following high-level containers:\r\n\r\n- **UIPresenter** – Web-based front-end for enrollment operations  \r\n    *RESPONSIBILITIES:*\r\n    1. Present currently enrolled courses\r\n    2. Present available courses\r\n    3. Present the current state of the courses\r\n    4. User inputs that they want to leave a course\r\n    5. User inputs what course they want to enroll in\r\n    6. Teacher user inputs that they want to make an action over multiple students\r\n    7. Present message confirming the course has been left\r\n    8. Present message confirming the students have been handled\r\n    9. Present message confirming the course has been joined\r\n    10. Simple front-end validation for all requests\r\n\r\n- **StatisticsUI** – User interface for analytics and visualization  \r\n    *RESPONSIBILITIES:*\r\n    1. Provide query interface\r\n    2. Load input from the user\r\n    3. Validate the input\r\n    4. Send request for statistical processing\r\n    5. Present the results\r\n    6. Show graphs\r\n\r\n- **StatisticalModule** – Performs statistical calculations on stored data  \r\n    *RESPONSIBILITIES:*\r\n    1. Communicate with StatisticsUI\r\n    2. Communicate with the database\r\n    3. Run statistical analysis\r\n    4. Send results back to StatisticsUI\r\n\r\n- **EnrollmentsModule** – Core request handling and business logic  \r\n    *RESPONSIBILITIES:*\r\n    1. Forward subject-related data\r\n    2. Handle status-change requests\r\n    3. Handle batch requests\r\n    4. Validate requests\r\n    5. Write results into the database\r\n    6. Log the request taking action\r\n    7. Notify users about status changes using the NotificationModule\r\n\r\n- **EnrollmentDatabase** – Storage for enrollments and archival logs  \r\n    *RESPONSIBILITIES:*\r\n    1. Store current enrolment data\r\n    2. Store historical data changes in enrollment\r\n    3. Provide data manipulation interface\r\n\r\n- **NotificationModule** – Dispatches notifications to users (emails)\r\n    *RESPONSIBILITIES:*\r\n    1. Notify students about status changes\r\n\r\nAn external system, **SIS**, provides additional functional modules and a shared database.\r\n\r\n![](embed:systemContextDiagram)\r\n\r\n<!-- This is too detailed for overview\r\n![](embed:ContaintersDiagram)     -->",
+          "filename" : "01-overview.md",
+          "format" : "Markdown",
+          "order" : 1,
+          "title" : ""
+        }, {
+          "content" : "# UI Layer Documentation\r\n\r\nThe UI layer includes user-facing interface for course enrollment and analytics. The views are provided for students, teachers and administrative workers.\r\n\r\n## UI Presenter\r\n\r\nThe **UIPresenter** module provides the web-based front-end for enrollment functionality.\r\nIt offers screens and interaction flows for students to enroll in or drop courses and enables teachers to review and manage student enrollment lists for their courses.\r\nNotifications about the result of operations are also displayed.\r\n\r\n![](embed:UIPresenter)\r\n\r\n## Statistics UI\r\n\r\nThe **StatisticsUI** module provides user interfaces for querying enrollment data and visualizes analytics on request from administrative workers.\r\nThe UI enables the staff to specify data query parameters according to their requirements.\r\nThe UI displays results from statistical analyses and generates interactive graphs.\r\n \r\n![](embed:StatisticsUI)",
+          "filename" : "02-ui.md",
+          "format" : "Markdown",
+          "order" : 2,
+          "title" : ""
+        }, {
+          "content" : "\r\n## Statistical module\r\n\r\nThe **StatisticalModule** module handles requests to fetch data and run data analysis.\r\nSubsequently, it returns the final statistical reports back to the UI. \r\nThis module interacts with the database storing current active information about enrollemnts, the archive containing historical information about enrollment changes, as well as the rest of the SIS database.\r\n\r\n![](embed:StatisticalModule)",
+          "filename" : "03-statistics.md",
+          "format" : "Markdown",
+          "order" : 3,
+          "title" : ""
+        }, {
+          "content" : "## Enrollments module\r\n\r\nThe **Enrollments** module coordinates request processing and implements the business logic for enrolling into or withdrawing from courses.\r\nIt manages the full life cycle of an enrollment request, from UI input though verification to database updates.\r\n\r\nA privileged user (the teacher) is provided with a batch processing functionality that allows handling multiple students at once.\r\nThe module also handles the validation of enrollemnt requirements and ensures complete communication with system databases.\r\n\r\nAny changes in enrollments status are logged for traceability and for future statistical analysis.\r\n\r\n![](embed:EnrollmentsModule)",
+          "filename" : "04-enrollment_logic.md",
+          "format" : "Markdown",
+          "order" : 4,
+          "title" : ""
+        }, {
+          "content" : "## Enrollment Database module\r\n\r\nThe **EnrollmentDatabase** module stores both persistent information about current enrollments and archival logs.\r\nIt enables the user to retrieve enrollment data for both operational use and long-term reference.\r\n\r\nThe broader SIS system contains an additional database that stores other SIS-related data.\r\n\r\n![](embed:EnrollmentDatabase)\r\n",
+          "filename" : "05-data.md",
+          "format" : "Markdown",
+          "order" : 5,
+          "title" : ""
+        }, {
+          "content" : "## Notification module\r\n\r\nThe **Notification** module is designed to inform and alert users about the results of enrollment-related events.\r\nIt determines which users need to be informed and sends email notifications based on events triggered in the system.\r\nIn case of manipulation of students by teachers, this ensures that the students will be informed about relevant updates.\r\n\r\n![](embed:NotificationModule)\r\n\r\n",
+          "filename" : "06-notifications.md",
+          "format" : "Markdown",
+          "order" : 6,
+          "title" : ""
+        } ]
+      },
+      "id" : "4",
+      "name" : "Enrollments",
+      "properties" : {
+        "structurizr.dsl.identifier" : "enrollments"
+      },
+      "relationships" : [ {
+        "description" : "Returns enrollment interface",
+        "destinationId" : "2",
+        "id" : "37",
+        "linkedRelationshipId" : "35",
+        "sourceId" : "4"
+      }, {
+        "description" : "Returns teacher enrollment management interface",
+        "destinationId" : "3",
+        "id" : "43",
+        "linkedRelationshipId" : "41",
+        "sourceId" : "4"
+      }, {
+        "description" : "Presents reports on selected data",
+        "destinationId" : "1",
+        "id" : "49",
+        "linkedRelationshipId" : "47",
+        "sourceId" : "4"
+      }, {
+        "description" : "Reads data from SIS data storage",
+        "destinationId" : "31",
+        "id" : "69",
+        "linkedRelationshipId" : "65",
+        "sourceId" : "4"
+      }, {
+        "description" : "Reads data from SIS data storage",
+        "destinationId" : "30",
+        "id" : "70",
+        "linkedRelationshipId" : "65",
+        "sourceId" : "4"
+      }, {
+        "description" : "Integrates into",
+        "destinationId" : "30",
+        "id" : "150",
+        "sourceId" : "4",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System"
+    }, {
+      "containers" : [ {
+        "documentation" : { },
+        "id" : "31",
+        "name" : "Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "sis.db"
+        },
+        "relationships" : [ {
+          "description" : "Returns data from SIS data storage",
+          "destinationId" : "21",
+          "id" : "71",
+          "sourceId" : "31",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Returns data from SIS data storage",
+          "destinationId" : "19",
+          "id" : "72",
+          "linkedRelationshipId" : "71",
+          "sourceId" : "31"
+        }, {
+          "description" : "Returns data from SIS data storage",
+          "destinationId" : "4",
+          "id" : "73",
+          "linkedRelationshipId" : "71",
+          "sourceId" : "31"
+        }, {
+          "description" : "Returns data",
+          "destinationId" : "14",
+          "id" : "132",
+          "sourceId" : "31",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Returns data",
+          "destinationId" : "8",
+          "id" : "133",
+          "linkedRelationshipId" : "132",
+          "sourceId" : "31"
+        } ],
+        "tags" : "Element,Container,Database"
+      } ],
+      "description" : "The rest of the student information system containing other functional modules and databases",
+      "documentation" : { },
+      "id" : "30",
+      "name" : "SIS",
+      "properties" : {
+        "structurizr.dsl.identifier" : "sis"
+      },
+      "relationships" : [ {
+        "description" : "Returns data from SIS data storage",
+        "destinationId" : "21",
+        "id" : "74",
+        "linkedRelationshipId" : "71",
+        "sourceId" : "30"
+      }, {
+        "description" : "Returns data from SIS data storage",
+        "destinationId" : "19",
+        "id" : "75",
+        "linkedRelationshipId" : "71",
+        "sourceId" : "30"
+      }, {
+        "description" : "Returns data from SIS data storage",
+        "destinationId" : "4",
+        "id" : "76",
+        "linkedRelationshipId" : "71",
+        "sourceId" : "30"
+      }, {
+        "description" : "Returns data",
+        "destinationId" : "14",
+        "id" : "134",
+        "linkedRelationshipId" : "132",
+        "sourceId" : "30"
+      }, {
+        "description" : "Returns data",
+        "destinationId" : "8",
+        "id" : "135",
+        "linkedRelationshipId" : "132",
+        "sourceId" : "30"
+      } ],
+      "tags" : "Element,Software System,Existing System"
+    } ]
+  },
+  "name" : "Enrollments Workspace",
+  "properties" : {
+    "structurizr.inspection.error" : "163",
+    "structurizr.inspection.info" : "0",
+    "structurizr.inspection.ignore" : "0",
+    "structurizr.inspection.warning" : "0"
+  },
+  "views" : {
+    "componentViews" : [ {
+      "containerId" : "5",
+      "dimensions" : {
+        "height" : 2020,
+        "width" : 2712
+      },
+      "elements" : [ {
+        "id" : "2",
+        "x" : 1933,
+        "y" : 99
+      }, {
+        "id" : "3",
+        "x" : 1213,
+        "y" : 109
+      }, {
+        "id" : "6",
+        "x" : 1937,
+        "y" : 877
+      }, {
+        "id" : "7",
+        "x" : 1187,
+        "y" : 877
+      }, {
+        "id" : "8",
+        "x" : 1560,
+        "y" : 1580
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "UIPresenter",
+      "name" : "Component View: Enrollments - UIPresenter",
+      "order" : 4,
+      "paperSize" : "A4_Landscape",
+      "relationships" : [ {
+        "id" : "32",
+        "vertices" : [ {
+          "x" : 2015,
+          "y" : 670
+        } ]
+      }, {
+        "id" : "35",
+        "vertices" : [ {
+          "x" : 2297,
+          "y" : 657
+        } ]
+      }, {
+        "id" : "38",
+        "vertices" : [ {
+          "x" : 1335,
+          "y" : 600
+        } ]
+      }, {
+        "id" : "41",
+        "vertices" : [ {
+          "x" : 1562,
+          "y" : 668
+        } ]
+      }, {
+        "id" : "89",
+        "vertices" : [ {
+          "x" : 1920,
+          "y" : 1270
+        } ]
+      }, {
+        "id" : "94",
+        "vertices" : [ {
+          "x" : 2070,
+          "y" : 1394
+        } ]
+      }, {
+        "id" : "97",
+        "vertices" : [ {
+          "x" : 1446,
+          "y" : 1380
+        } ]
+      }, {
+        "id" : "99",
+        "vertices" : [ {
+          "x" : 1705,
+          "y" : 1226
+        } ]
+      } ]
+    }, {
+      "containerId" : "8",
+      "dimensions" : {
+        "height" : 2866,
+        "width" : 2983
+      },
+      "elements" : [ {
+        "id" : "5",
+        "x" : 646,
+        "y" : 23
+      }, {
+        "id" : "9",
+        "x" : 671,
+        "y" : 468
+      }, {
+        "id" : "10",
+        "x" : 1656,
+        "y" : 468
+      }, {
+        "id" : "11",
+        "x" : 251,
+        "y" : 983
+      }, {
+        "id" : "12",
+        "x" : 1191,
+        "y" : 988
+      }, {
+        "id" : "13",
+        "x" : 2205,
+        "y" : 1275
+      }, {
+        "id" : "14",
+        "x" : 1431,
+        "y" : 1923
+      }, {
+        "id" : "15",
+        "x" : 655,
+        "y" : 1930
+      }, {
+        "id" : "16",
+        "x" : 1156,
+        "y" : 2383
+      }, {
+        "id" : "27",
+        "x" : 2430,
+        "y" : 730
+      }, {
+        "id" : "30",
+        "x" : 2165,
+        "y" : 2375
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "EnrollmentsModule",
+      "name" : "Component View: Enrollments - EnrollmentsModule",
+      "order" : 5,
+      "relationships" : [ {
+        "id" : "101",
+        "vertices" : [ {
+          "x" : 1315,
+          "y" : 532
+        } ]
+      }, {
+        "id" : "103",
+        "vertices" : [ {
+          "x" : 1436,
+          "y" : 258
+        } ]
+      }, {
+        "id" : "104",
+        "vertices" : [ {
+          "x" : 1054,
+          "y" : 1008
+        } ]
+      }, {
+        "id" : "105",
+        "vertices" : [ {
+          "x" : 1257,
+          "y" : 787
+        } ]
+      }, {
+        "id" : "106",
+        "vertices" : [ {
+          "x" : 1845,
+          "y" : 1485
+        } ]
+      }, {
+        "id" : "107",
+        "vertices" : [ {
+          "x" : 1960,
+          "y" : 1205
+        } ]
+      }, {
+        "id" : "108",
+        "vertices" : [ {
+          "x" : 573,
+          "y" : 796
+        } ]
+      }, {
+        "id" : "109",
+        "vertices" : [ {
+          "x" : 798,
+          "y" : 994
+        } ]
+      }, {
+        "id" : "110",
+        "vertices" : [ {
+          "x" : 1536,
+          "y" : 778
+        } ]
+      }, {
+        "id" : "111",
+        "vertices" : [ {
+          "x" : 1760,
+          "y" : 977
+        } ]
+      }, {
+        "id" : "112",
+        "vertices" : [ {
+          "x" : 1159,
+          "y" : 1485
+        } ]
+      }, {
+        "id" : "113",
+        "vertices" : [ {
+          "x" : 972,
+          "y" : 1720
+        } ]
+      }, {
+        "id" : "114",
+        "vertices" : [ {
+          "x" : 2155,
+          "y" : 1755
+        } ]
+      }, {
+        "id" : "115",
+        "vertices" : [ {
+          "x" : 1860,
+          "y" : 1660
+        } ]
+      }, {
+        "id" : "116"
+      }, {
+        "id" : "118",
+        "vertices" : [ {
+          "x" : 1389,
+          "y" : 2226
+        } ]
+      }, {
+        "id" : "123",
+        "vertices" : [ {
+          "x" : 1647,
+          "y" : 2379
+        } ]
+      }, {
+        "id" : "126"
+      }, {
+        "id" : "129",
+        "vertices" : [ {
+          "x" : 1935,
+          "y" : 2400
+        } ]
+      }, {
+        "id" : "134",
+        "vertices" : [ {
+          "x" : 2070,
+          "y" : 2225
+        } ]
+      }, {
+        "id" : "136",
+        "vertices" : [ {
+          "x" : 1390,
+          "y" : 1642
+        } ]
+      }, {
+        "id" : "137",
+        "vertices" : [ {
+          "x" : 1681,
+          "y" : 1568
+        } ]
+      }, {
+        "id" : "139"
+      }, {
+        "id" : "143"
+      }, {
+        "id" : "90",
+        "vertices" : [ {
+          "x" : 733,
+          "y" : 423
+        } ]
+      }, {
+        "id" : "93",
+        "vertices" : [ {
+          "x" : 1033,
+          "y" : 407
+        } ]
+      } ]
+    }, {
+      "containerId" : "19",
+      "dimensions" : {
+        "height" : 1748,
+        "width" : 2480
+      },
+      "elements" : [ {
+        "id" : "16",
+        "x" : 300,
+        "y" : 815
+      }, {
+        "id" : "20",
+        "x" : 1135,
+        "y" : 190
+      }, {
+        "id" : "21",
+        "x" : 1130,
+        "y" : 795
+      }, {
+        "id" : "22",
+        "x" : 200,
+        "y" : 180
+      }, {
+        "id" : "30",
+        "x" : 1890,
+        "y" : 800
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "StatisticalModule",
+      "name" : "Component View: Enrollments - StatisticalModule",
+      "order" : 6,
+      "paperSize" : "A5_Landscape",
+      "relationships" : [ {
+        "id" : "54",
+        "vertices" : [ {
+          "x" : 880,
+          "y" : 440
+        } ]
+      }, {
+        "id" : "56",
+        "vertices" : [ {
+          "x" : 1207,
+          "y" : 641
+        } ]
+      }, {
+        "id" : "58",
+        "vertices" : [ {
+          "x" : 930,
+          "y" : 855
+        } ]
+      }, {
+        "id" : "63",
+        "vertices" : [ {
+          "x" : 935,
+          "y" : 1070
+        } ]
+      }, {
+        "id" : "66",
+        "vertices" : [ {
+          "x" : 1734,
+          "y" : 1097
+        } ]
+      }, {
+        "id" : "74",
+        "vertices" : [ {
+          "x" : 1735,
+          "y" : 797
+        } ]
+      }, {
+        "id" : "81",
+        "vertices" : [ {
+          "x" : 1507,
+          "y" : 643
+        } ]
+      }, {
+        "id" : "83",
+        "vertices" : [ {
+          "x" : 880,
+          "y" : 285
+        } ]
+      } ]
+    }, {
+      "containerId" : "22",
+      "dimensions" : {
+        "height" : 2480,
+        "width" : 1748
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 810,
+        "y" : 70
+      }, {
+        "id" : "19",
+        "x" : 405,
+        "y" : 1780
+      }, {
+        "id" : "23",
+        "x" : 410,
+        "y" : 1205
+      }, {
+        "id" : "24",
+        "x" : 1110,
+        "y" : 745
+      }, {
+        "id" : "25",
+        "x" : 170,
+        "y" : 645
+      }, {
+        "id" : "26",
+        "x" : 1160,
+        "y" : 1335
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "StatisticsUI",
+      "name" : "Component View: Enrollments - StatisticsUI",
+      "order" : 7,
+      "paperSize" : "A5_Portrait",
+      "relationships" : [ {
+        "id" : "44"
+      }, {
+        "id" : "47"
+      }, {
+        "id" : "50",
+        "vertices" : [ {
+          "x" : 652,
+          "y" : 1015
+        } ]
+      }, {
+        "id" : "51",
+        "vertices" : [ {
+          "x" : 377,
+          "y" : 1134
+        } ]
+      }, {
+        "id" : "53"
+      }, {
+        "id" : "84"
+      }, {
+        "id" : "86",
+        "vertices" : [ {
+          "x" : 1210,
+          "y" : 1202
+        } ]
+      }, {
+        "id" : "87",
+        "vertices" : [ {
+          "x" : 1509,
+          "y" : 1177
+        } ]
+      } ]
+    }, {
+      "containerId" : "27",
+      "dimensions" : {
+        "height" : 1859,
+        "width" : 1825
+      },
+      "elements" : [ {
+        "id" : "2",
+        "x" : 643,
+        "y" : 159
+      }, {
+        "id" : "3",
+        "x" : 1158,
+        "y" : 164
+      }, {
+        "id" : "8",
+        "x" : 723,
+        "y" : 1219
+      }, {
+        "id" : "28",
+        "x" : 240,
+        "y" : 720
+      }, {
+        "id" : "29",
+        "x" : 1134,
+        "y" : 709
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "NotificationModule",
+      "name" : "Component View: Enrollments - NotificationModule",
+      "order" : 8,
+      "relationships" : [ {
+        "id" : "140",
+        "vertices" : [ {
+          "x" : 814,
+          "y" : 1015
+        } ]
+      }, {
+        "id" : "144",
+        "vertices" : [ {
+          "x" : 598,
+          "y" : 1223
+        } ]
+      }, {
+        "id" : "145"
+      }, {
+        "id" : "146"
+      }, {
+        "id" : "148"
+      } ]
+    }, {
+      "containerId" : "16",
+      "dimensions" : {
+        "height" : 1748,
+        "width" : 2480
+      },
+      "elements" : [ {
+        "id" : "8",
+        "x" : 1050,
+        "y" : 135
+      }, {
+        "id" : "17",
+        "x" : 175,
+        "y" : 600
+      }, {
+        "id" : "18",
+        "x" : 1780,
+        "y" : 595
+      }, {
+        "id" : "19",
+        "x" : 1010,
+        "y" : 1185
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "EnrollmentDatabase",
+      "name" : "Component View: Enrollments - EnrollmentDatabase",
+      "order" : 9,
+      "paperSize" : "A5_Landscape",
+      "relationships" : [ {
+        "id" : "119",
+        "vertices" : [ {
+          "x" : 755,
+          "y" : 420
+        } ]
+      }, {
+        "id" : "122",
+        "vertices" : [ {
+          "x" : 1020,
+          "y" : 630
+        } ]
+      }, {
+        "id" : "127"
+      }, {
+        "id" : "59",
+        "vertices" : [ {
+          "x" : 1045,
+          "y" : 920
+        } ]
+      }, {
+        "id" : "62",
+        "vertices" : [ {
+          "x" : 665,
+          "y" : 1175
+        } ]
+      }, {
+        "id" : "78",
+        "vertices" : [ {
+          "x" : 1685,
+          "y" : 1175
+        } ]
+      }, {
+        "id" : "80",
+        "vertices" : [ {
+          "x" : 1465,
+          "y" : 1020
+        } ]
+      } ]
+    } ],
+    "configuration" : {
+      "branding" : { },
+      "lastSavedView" : "Development_deployment",
+      "styles" : {
+        "elements" : [ {
+          "background" : "#8fbde0",
+          "tag" : "*"
+        }, {
+          "background" : "#8fbde0",
+          "stroke" : "#3e7dad",
+          "tag" : "Container"
+        }, {
+          "background" : "#87c6c0",
+          "shape" : "Cylinder",
+          "stroke" : "#3e7e77",
+          "tag" : "Database"
+        }, {
+          "background" : "#888888",
+          "color" : "#ffffff",
+          "stroke" : "#555555",
+          "tag" : "Existing System"
+        }, {
+          "background" : "#ae2e7b",
+          "stroke" : "#62053d",
+          "tag" : "Person"
+        }, {
+          "background" : "#3e7dad",
+          "stroke" : "#8fbde0",
+          "tag" : "Software System"
+        }, {
+          "background" : "#d38ab6",
+          "color" : "#ffffff",
+          "shape" : "WebBrowser",
+          "stroke" : "#ae2e7b",
+          "tag" : "Web Front-End"
+        } ],
+        "relationships" : [ {
+          "color" : "#e48ab1",
+          "fontSize" : 24,
+          "routing" : "Orthogonal",
+          "tag" : "*",
+          "thickness" : 2
+        } ]
+      },
+      "terminology" : { },
+      "themes" : [ "https://static.structurizr.com/themes/default/theme.json" ]
+    },
+    "containerViews" : [ {
+      "dimensions" : {
+        "height" : 2654,
+        "width" : 3254
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 1005,
+        "y" : 55
+      }, {
+        "id" : "2",
+        "x" : 1740,
+        "y" : 15
+      }, {
+        "id" : "3",
+        "x" : 2345,
+        "y" : 285
+      }, {
+        "id" : "5",
+        "x" : 1805,
+        "y" : 1145
+      }, {
+        "id" : "8",
+        "x" : 2295,
+        "y" : 2115
+      }, {
+        "id" : "16",
+        "x" : 1450,
+        "y" : 1790
+      }, {
+        "id" : "19",
+        "x" : 830,
+        "y" : 1390
+      }, {
+        "id" : "22",
+        "x" : 815,
+        "y" : 775
+      }, {
+        "id" : "27",
+        "x" : 2610,
+        "y" : 1285
+      }, {
+        "id" : "30",
+        "x" : 175,
+        "y" : 1980
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "ContaintersDiagram",
+      "name" : "Container View: Enrollments",
+      "order" : 2,
+      "paperSize" : "A3_Landscape",
+      "relationships" : [ {
+        "id" : "120",
+        "vertices" : [ {
+          "x" : 2151,
+          "y" : 1962
+        } ]
+      }, {
+        "id" : "124",
+        "vertices" : [ {
+          "x" : 2050,
+          "y" : 2150
+        } ]
+      }, {
+        "id" : "131",
+        "vertices" : [ {
+          "x" : 1485,
+          "y" : 2210
+        } ]
+      }, {
+        "id" : "135",
+        "vertices" : [ {
+          "x" : 1450,
+          "y" : 2325
+        } ]
+      }, {
+        "id" : "141"
+      }, {
+        "id" : "147",
+        "vertices" : [ {
+          "x" : 2915,
+          "y" : 425
+        }, {
+          "x" : 2685,
+          "y" : 190
+        } ]
+      }, {
+        "id" : "149"
+      }, {
+        "id" : "33",
+        "vertices" : [ {
+          "x" : 1780,
+          "y" : 699
+        } ]
+      }, {
+        "id" : "36",
+        "vertices" : [ {
+          "x" : 2079,
+          "y" : 695
+        } ]
+      }, {
+        "id" : "39",
+        "vertices" : [ {
+          "x" : 2190,
+          "y" : 875
+        } ]
+      }, {
+        "id" : "42",
+        "vertices" : [ {
+          "x" : 2405,
+          "y" : 940
+        } ]
+      }, {
+        "id" : "45",
+        "vertices" : [ {
+          "x" : 976,
+          "y" : 554
+        } ]
+      }, {
+        "id" : "48",
+        "vertices" : [ {
+          "x" : 1268,
+          "y" : 625
+        } ]
+      }, {
+        "id" : "55",
+        "vertices" : [ {
+          "x" : 897,
+          "y" : 1236
+        } ]
+      }, {
+        "id" : "60",
+        "vertices" : [ {
+          "x" : 1283,
+          "y" : 1866
+        } ]
+      }, {
+        "id" : "64",
+        "vertices" : [ {
+          "x" : 1446,
+          "y" : 1613
+        } ]
+      }, {
+        "id" : "68",
+        "vertices" : [ {
+          "x" : 627,
+          "y" : 1723
+        } ]
+      }, {
+        "id" : "75",
+        "vertices" : [ {
+          "x" : 827,
+          "y" : 1946
+        } ]
+      }, {
+        "id" : "85",
+        "vertices" : [ {
+          "x" : 1197,
+          "y" : 1228
+        } ]
+      }, {
+        "id" : "91",
+        "vertices" : [ {
+          "x" : 2085,
+          "y" : 1790
+        } ]
+      }, {
+        "id" : "95",
+        "vertices" : [ {
+          "x" : 2214,
+          "y" : 1591
+        } ]
+      } ],
+      "softwareSystemId" : "4"
+    }, {
+      "dimensions" : {
+        "height" : 1420,
+        "width" : 1108
+      },
+      "elements" : [ {
+        "id" : "4",
+        "x" : 329,
+        "y" : 208
+      }, {
+        "id" : "31",
+        "x" : 329,
+        "y" : 808
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "SisDiagram",
+      "name" : "Container View: SIS",
+      "order" : 3,
+      "paperSize" : "A6_Portrait",
+      "relationships" : [ {
+        "id" : "69",
+        "vertices" : [ {
+          "x" : 404,
+          "y" : 658
+        } ]
+      }, {
+        "id" : "73",
+        "vertices" : [ {
+          "x" : 704,
+          "y" : 658
+        } ]
+      } ],
+      "softwareSystemId" : "30"
+    } ],
+    "deploymentViews" : [ {
+      "dimensions" : {
+        "height" : 2354,
+        "width" : 3087
+      },
+      "elements" : [ {
+        "id" : "151",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "152",
+        "x" : 329,
+        "y" : 329
+      }, {
+        "id" : "153",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "154",
+        "x" : 329,
+        "y" : 329
+      }, {
+        "id" : "155",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "156",
+        "x" : 1880,
+        "y" : 375
+      }, {
+        "id" : "157",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "158",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "159",
+        "x" : 541,
+        "y" : 975
+      }, {
+        "id" : "164",
+        "x" : 541,
+        "y" : 1620
+      }, {
+        "id" : "166",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "167",
+        "x" : 1305,
+        "y" : 975
+      }, {
+        "id" : "170",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "171",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "172",
+        "x" : 2204,
+        "y" : 1620
+      } ],
+      "environment" : "Production",
+      "key" : "Production_deployment",
+      "name" : "Deployment View: Enrollments - Production",
+      "order" : 10,
+      "paperSize" : "A4_Landscape",
+      "relationships" : [ {
+        "id" : "160",
+        "vertices" : [ {
+          "x" : 802,
+          "y" : 755
+        } ]
+      }, {
+        "id" : "161",
+        "vertices" : [ {
+          "x" : 517,
+          "y" : 848
+        } ]
+      }, {
+        "id" : "162",
+        "vertices" : [ {
+          "x" : 802,
+          "y" : 755
+        } ]
+      }, {
+        "id" : "163",
+        "vertices" : [ {
+          "x" : 517,
+          "y" : 848
+        } ]
+      }, {
+        "id" : "165"
+      }, {
+        "id" : "168",
+        "vertices" : [ {
+          "x" : 1925,
+          "y" : 928
+        } ]
+      }, {
+        "id" : "169",
+        "vertices" : [ {
+          "x" : 1709,
+          "y" : 721
+        } ]
+      }, {
+        "id" : "173",
+        "vertices" : [ {
+          "x" : 975,
+          "y" : 1379
+        } ]
+      }, {
+        "id" : "174",
+        "vertices" : [ {
+          "x" : 1275,
+          "y" : 1379
+        } ]
+      }, {
+        "id" : "175",
+        "vertices" : [ {
+          "x" : 2066,
+          "y" : 1325
+        } ]
+      }, {
+        "id" : "176",
+        "vertices" : [ {
+          "x" : 1891,
+          "y" : 1569
+        } ]
+      } ],
+      "softwareSystemId" : "4"
+    }, {
+      "dimensions" : {
+        "height" : 2366,
+        "width" : 2829
+      },
+      "elements" : [ {
+        "id" : "177",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "178",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "179",
+        "x" : 1200,
+        "y" : 285
+      }, {
+        "id" : "180",
+        "x" : 1200,
+        "y" : 285
+      }, {
+        "id" : "181",
+        "x" : 1902,
+        "y" : 292
+      }, {
+        "id" : "182",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "183",
+        "x" : 622,
+        "y" : 1007
+      }, {
+        "id" : "188",
+        "x" : 630,
+        "y" : 1470
+      }, {
+        "id" : "190",
+        "x" : 1625,
+        "y" : 950
+      }, {
+        "id" : "193",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "194",
+        "x" : 1815,
+        "y" : 1690
+      } ],
+      "environment" : "Front-end Development",
+      "key" : "Development_deployment",
+      "name" : "Deployment View: Enrollments - Front-end Development",
+      "order" : 11,
+      "paperSize" : "A4_Landscape",
+      "relationships" : [ {
+        "id" : "184",
+        "vertices" : [ {
+          "x" : 1253,
+          "y" : 889
+        } ]
+      }, {
+        "id" : "185",
+        "vertices" : [ {
+          "x" : 1140,
+          "y" : 725
+        } ]
+      }, {
+        "id" : "186",
+        "vertices" : [ {
+          "x" : 1253,
+          "y" : 889
+        } ]
+      }, {
+        "id" : "187",
+        "vertices" : [ {
+          "x" : 1140,
+          "y" : 725
+        } ]
+      }, {
+        "id" : "189"
+      }, {
+        "id" : "191",
+        "vertices" : [ {
+          "x" : 2126,
+          "y" : 829
+        } ]
+      }, {
+        "id" : "192",
+        "vertices" : [ {
+          "x" : 1850,
+          "y" : 712
+        } ]
+      }, {
+        "id" : "195",
+        "vertices" : [ {
+          "x" : 1518,
+          "y" : 1368
+        } ]
+      }, {
+        "id" : "196",
+        "vertices" : [ {
+          "x" : 1368,
+          "y" : 1628
+        } ]
+      }, {
+        "id" : "197",
+        "vertices" : [ {
+          "x" : 2114,
+          "y" : 1417
+        } ]
+      }, {
+        "id" : "198",
+        "vertices" : [ {
+          "x" : 1875,
+          "y" : 1480
+        } ]
+      } ],
+      "softwareSystemId" : "4"
+    } ],
+    "dynamicViews" : [ {
+      "description" : "Student enrolls into a course",
+      "dimensions" : {
+        "height" : 3508,
+        "width" : 4961
+      },
+      "elementId" : "8",
+      "elements" : [ {
+        "id" : "2",
+        "x" : 500,
+        "y" : 1170
+      }, {
+        "id" : "5",
+        "x" : 1095,
+        "y" : 865
+      }, {
+        "id" : "9",
+        "x" : 1810,
+        "y" : 685
+      }, {
+        "id" : "12",
+        "x" : 1970,
+        "y" : 1175
+      }, {
+        "id" : "13",
+        "x" : 2615,
+        "y" : 705
+      }, {
+        "id" : "14",
+        "x" : 2895,
+        "y" : 1295
+      }, {
+        "id" : "15",
+        "x" : 3420,
+        "y" : 1765
+      }, {
+        "id" : "17",
+        "x" : 2740,
+        "y" : 2380
+      }, {
+        "id" : "18",
+        "x" : 3420,
+        "y" : 2370
+      }, {
+        "id" : "28",
+        "x" : 1980,
+        "y" : 2350
+      }, {
+        "id" : "29",
+        "x" : 1315,
+        "y" : 2350
+      }, {
+        "id" : "31",
+        "x" : 4025,
+        "y" : 990
+      } ],
+      "externalBoundariesVisible" : false,
+      "key" : "Feature1",
+      "name" : "Dynamic View: Enrollments - EnrollmentsModule",
+      "order" : 12,
+      "paperSize" : "A3_Landscape",
+      "relationships" : [ {
+        "description" : "Selects a course and enrolls",
+        "id" : "33",
+        "order" : "1",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1084,
+          "y" : 1322
+        } ]
+      }, {
+        "description" : "Sends enrollment request",
+        "id" : "90",
+        "order" : "2",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1714,
+          "y" : 1070
+        } ]
+      }, {
+        "description" : "Forwards enrollment request",
+        "id" : "104",
+        "order" : "3",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1972,
+          "y" : 1126
+        } ]
+      }, {
+        "description" : "Sends validation request",
+        "id" : "106",
+        "order" : "4",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2605,
+          "y" : 1211
+        } ]
+      }, {
+        "description" : "Requests validation data",
+        "id" : "115",
+        "order" : "5",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3190,
+          "y" : 1140
+        } ]
+      }, {
+        "description" : "Requests data",
+        "id" : "117",
+        "order" : "6",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3275,
+          "y" : 2025
+        } ]
+      }, {
+        "description" : "Supplies data",
+        "id" : "121",
+        "order" : "7",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3060,
+          "y" : 1995
+        } ]
+      }, {
+        "description" : "Requests data",
+        "id" : "128",
+        "order" : "8",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3685,
+          "y" : 1325
+        } ]
+      }, {
+        "description" : "Supplies data",
+        "id" : "132",
+        "order" : "9",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3645,
+          "y" : 1147
+        } ]
+      }, {
+        "description" : "Returns validation data",
+        "id" : "114",
+        "order" : "10",
+        "response" : false
+      }, {
+        "description" : "Answers validation request",
+        "id" : "107",
+        "order" : "11",
+        "response" : false
+      }, {
+        "description" : "Sends data update request",
+        "id" : "136",
+        "order" : "12",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2638,
+          "y" : 1533
+        } ]
+      }, {
+        "description" : "Writes data",
+        "id" : "117",
+        "order" : "13",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2825,
+          "y" : 1970
+        } ]
+      }, {
+        "description" : "Confirms writing new data",
+        "id" : "121",
+        "order" : "14",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2605,
+          "y" : 1970
+        } ]
+      }, {
+        "description" : "Logs writing new data",
+        "id" : "116",
+        "order" : "15",
+        "response" : false
+      }, {
+        "description" : "Logs writing new data",
+        "id" : "125",
+        "order" : "16",
+        "response" : false
+      }, {
+        "description" : "Forwards confirmation",
+        "id" : "137",
+        "order" : "17",
+        "response" : false
+      }, {
+        "description" : "Sends notification request",
+        "id" : "142",
+        "order" : "18",
+        "response" : false
+      }, {
+        "description" : "Requests an e-mail notification",
+        "id" : "145",
+        "order" : "19",
+        "response" : false
+      }, {
+        "description" : "Confirms/denies enrollment via e-mail",
+        "id" : "146",
+        "order" : "20",
+        "response" : false
+      }, {
+        "description" : "Answers enrollment request",
+        "id" : "105",
+        "order" : "21",
+        "response" : false
+      }, {
+        "description" : "Forwards request answer",
+        "id" : "93",
+        "order" : "22",
+        "response" : false
+      }, {
+        "description" : "Displays status change to the student.",
+        "id" : "36",
+        "order" : "23",
+        "response" : false
+      } ],
+      "title" : "Dynamic diagram: Student enrolls themselves"
+    }, {
+      "description" : "Teacher enrolls a group of students into a course.",
+      "dimensions" : {
+        "height" : 3508,
+        "width" : 4961
+      },
+      "elementId" : "8",
+      "elements" : [ {
+        "id" : "2",
+        "x" : 465,
+        "y" : 2210
+      }, {
+        "id" : "3",
+        "x" : 450,
+        "y" : 1180
+      }, {
+        "id" : "5",
+        "x" : 1055,
+        "y" : 620
+      }, {
+        "id" : "10",
+        "x" : 1610,
+        "y" : 1300
+      }, {
+        "id" : "12",
+        "x" : 2560,
+        "y" : 1460
+      }, {
+        "id" : "13",
+        "x" : 3275,
+        "y" : 775
+      }, {
+        "id" : "14",
+        "x" : 3310,
+        "y" : 1445
+      }, {
+        "id" : "16",
+        "x" : 3095,
+        "y" : 2290
+      }, {
+        "id" : "28",
+        "x" : 2165,
+        "y" : 2175
+      }, {
+        "id" : "29",
+        "x" : 1300,
+        "y" : 2260
+      }, {
+        "id" : "31",
+        "x" : 4190,
+        "y" : 1440
+      } ],
+      "externalBoundariesVisible" : false,
+      "key" : "Feature2",
+      "name" : "Dynamic View: Enrollments - EnrollmentsModule",
+      "order" : 13,
+      "paperSize" : "A3_Landscape",
+      "relationships" : [ {
+        "description" : "Selects a course and students to enroll",
+        "id" : "39",
+        "order" : "1",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1069,
+          "y" : 1182
+        } ]
+      }, {
+        "description" : "Sends batch enrollment request",
+        "id" : "101",
+        "order" : "2",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1380,
+          "y" : 1235
+        } ]
+      }, {
+        "description" : "Begin transaction: forwards each enrollment request",
+        "id" : "110",
+        "order" : "3",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2305,
+          "y" : 1610
+        } ]
+      }, {
+        "description" : "Sends validation for each request",
+        "id" : "106",
+        "order" : "4",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2890,
+          "y" : 1155
+        } ]
+      }, {
+        "description" : "Requests validation data",
+        "id" : "115",
+        "order" : "5",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3367,
+          "y" : 1267
+        } ]
+      }, {
+        "description" : "Requests data",
+        "id" : "118",
+        "order" : "6",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3665,
+          "y" : 2060
+        } ]
+      }, {
+        "description" : "Supplies data",
+        "id" : "123",
+        "order" : "7",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3420,
+          "y" : 2055
+        } ]
+      }, {
+        "description" : "Requests data",
+        "id" : "128",
+        "order" : "8",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3975,
+          "y" : 1705
+        } ]
+      }, {
+        "description" : "Supplies data",
+        "id" : "132",
+        "order" : "9",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3990,
+          "y" : 1505
+        } ]
+      }, {
+        "description" : "Returns validation data",
+        "id" : "114",
+        "order" : "10",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3640,
+          "y" : 1275
+        } ]
+      }, {
+        "description" : "Answers validation request",
+        "id" : "107",
+        "order" : "11",
+        "response" : false
+      }, {
+        "description" : "Forwards each validation",
+        "id" : "111",
+        "order" : "12",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2334,
+          "y" : 1382
+        } ]
+      }, {
+        "description" : "Finalize tranaction: write data and notify",
+        "id" : "110",
+        "order" : "13",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2265,
+          "y" : 1770
+        } ]
+      }, {
+        "description" : "Sends data update request",
+        "id" : "136",
+        "order" : "14",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3162,
+          "y" : 1752
+        } ]
+      }, {
+        "description" : "Writes data",
+        "id" : "118",
+        "order" : "15",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2945,
+          "y" : 2000
+        } ]
+      }, {
+        "description" : "Confirms writing new data",
+        "id" : "123",
+        "order" : "16",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3160,
+          "y" : 2055
+        } ]
+      }, {
+        "description" : "Forwards confirmation",
+        "id" : "137",
+        "order" : "17",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3157,
+          "y" : 1452
+        } ]
+      }, {
+        "description" : "Sends notification request",
+        "id" : "142",
+        "order" : "18",
+        "response" : false
+      }, {
+        "description" : "Requests an e-mail notification",
+        "id" : "145",
+        "order" : "19",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1941,
+          "y" : 2242
+        } ]
+      }, {
+        "description" : "Alerts about the enrollment via e-mail",
+        "id" : "146",
+        "order" : "20",
+        "response" : false
+      }, {
+        "description" : "Confirms transaction completion",
+        "id" : "111",
+        "order" : "21",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2359,
+          "y" : 1234
+        } ]
+      }, {
+        "description" : "Sends notification request",
+        "id" : "138",
+        "order" : "22",
+        "response" : false
+      }, {
+        "description" : "Requests an e-mail notification",
+        "id" : "145",
+        "order" : "23",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1953,
+          "y" : 2542
+        } ]
+      }, {
+        "description" : "Alerts about the enrollments via e-mail",
+        "id" : "148",
+        "order" : "24",
+        "response" : false
+      }, {
+        "description" : "Answers request",
+        "id" : "103",
+        "order" : "25",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1630,
+          "y" : 1100
+        } ]
+      }, {
+        "description" : "Displays status change to the teacher",
+        "id" : "42",
+        "order" : "26",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 825,
+          "y" : 1045
+        } ]
+      } ],
+      "title" : "Dynamic diagram: Teacher enrolls multiple students"
+    }, {
+      "description" : "Student quits a course",
+      "dimensions" : {
+        "height" : 3508,
+        "width" : 4961
+      },
+      "elementId" : "8",
+      "elements" : [ {
+        "id" : "2",
+        "x" : 680,
+        "y" : 1195
+      }, {
+        "id" : "3",
+        "x" : 630,
+        "y" : 2210
+      }, {
+        "id" : "5",
+        "x" : 1395,
+        "y" : 1090
+      }, {
+        "id" : "9",
+        "x" : 2120,
+        "y" : 1095
+      }, {
+        "id" : "12",
+        "x" : 2550,
+        "y" : 1590
+      }, {
+        "id" : "13",
+        "x" : 3225,
+        "y" : 820
+      }, {
+        "id" : "14",
+        "x" : 3290,
+        "y" : 1620
+      }, {
+        "id" : "16",
+        "x" : 3305,
+        "y" : 2335
+      }, {
+        "id" : "28",
+        "x" : 2350,
+        "y" : 2260
+      }, {
+        "id" : "29",
+        "x" : 1445,
+        "y" : 2260
+      }, {
+        "id" : "31",
+        "x" : 4155,
+        "y" : 1600
+      } ],
+      "externalBoundariesVisible" : false,
+      "key" : "Feature3",
+      "name" : "Dynamic View: Enrollments - EnrollmentsModule",
+      "order" : 14,
+      "paperSize" : "A3_Landscape",
+      "relationships" : [ {
+        "description" : "Quits a course",
+        "id" : "33",
+        "order" : "1",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1280,
+          "y" : 1464
+        } ]
+      }, {
+        "description" : "Sends withdrawal request",
+        "id" : "90",
+        "order" : "2",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1981,
+          "y" : 1392
+        } ]
+      }, {
+        "description" : "Forwards request",
+        "id" : "104",
+        "order" : "3",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2446,
+          "y" : 1590
+        } ]
+      }, {
+        "description" : "Sends validation request",
+        "id" : "106",
+        "order" : "4",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2910,
+          "y" : 1325
+        } ]
+      }, {
+        "description" : "Requests validation data",
+        "id" : "115",
+        "order" : "5",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3332,
+          "y" : 1382
+        } ]
+      }, {
+        "description" : "Requests data",
+        "id" : "118",
+        "order" : "6",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3855,
+          "y" : 2135
+        } ]
+      }, {
+        "description" : "Supplies data",
+        "id" : "123",
+        "order" : "7",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3635,
+          "y" : 2135
+        } ]
+      }, {
+        "description" : "Requests data",
+        "id" : "128",
+        "order" : "8",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3950,
+          "y" : 1909
+        } ]
+      }, {
+        "description" : "Supplies data",
+        "id" : "132",
+        "order" : "9",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3944,
+          "y" : 1610
+        } ]
+      }, {
+        "description" : "Returns validation data",
+        "id" : "114",
+        "order" : "10",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3605,
+          "y" : 1380
+        } ]
+      }, {
+        "description" : "Answers validation request",
+        "id" : "107",
+        "order" : "11",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3080,
+          "y" : 1400
+        } ]
+      }, {
+        "description" : "Sends data update request",
+        "id" : "136",
+        "order" : "12",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3138,
+          "y" : 1904
+        } ]
+      }, {
+        "description" : "Writes data",
+        "id" : "118",
+        "order" : "13",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3375,
+          "y" : 2160
+        } ]
+      }, {
+        "description" : "Confirms writing new data",
+        "id" : "123",
+        "order" : "14",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3165,
+          "y" : 2135
+        } ]
+      }, {
+        "description" : "Forwards confirmation",
+        "id" : "137",
+        "order" : "15",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3151,
+          "y" : 1605
+        } ]
+      }, {
+        "description" : "Sends notification request",
+        "id" : "142",
+        "order" : "16",
+        "response" : false
+      }, {
+        "description" : "Requests an e-mail notification",
+        "id" : "145",
+        "order" : "17",
+        "response" : false
+      }, {
+        "description" : "Confirms/denies withdrawal via e-mail",
+        "id" : "146",
+        "order" : "18",
+        "response" : false
+      }, {
+        "description" : "Informs about student withdrawal via e-mail if in a certain time period",
+        "id" : "148",
+        "order" : "19",
+        "response" : false
+      }, {
+        "description" : "Answers withdrawal request",
+        "id" : "105",
+        "order" : "20",
+        "response" : false
+      }, {
+        "description" : "Forwards request answer",
+        "id" : "93",
+        "order" : "21",
+        "response" : false
+      }, {
+        "description" : "Displays status change to the student.",
+        "id" : "36",
+        "order" : "22",
+        "response" : false
+      } ],
+      "title" : "Dynamic diagram: Student quits a course"
+    }, {
+      "description" : "Admin analyzes enrollment data",
+      "dimensions" : {
+        "height" : 2480,
+        "width" : 3508
+      },
+      "elementId" : "19",
+      "elements" : [ {
+        "id" : "1",
+        "x" : 155,
+        "y" : 750
+      }, {
+        "id" : "16",
+        "x" : 2160,
+        "y" : 1670
+      }, {
+        "id" : "20",
+        "x" : 1875,
+        "y" : 395
+      }, {
+        "id" : "21",
+        "x" : 2175,
+        "y" : 990
+      }, {
+        "id" : "23",
+        "x" : 815,
+        "y" : 385
+      }, {
+        "id" : "24",
+        "x" : 950,
+        "y" : 940
+      }, {
+        "id" : "26",
+        "x" : 1340,
+        "y" : 1430
+      }, {
+        "id" : "31",
+        "x" : 2995,
+        "y" : 960
+      } ],
+      "externalBoundariesVisible" : false,
+      "key" : "Feature4",
+      "name" : "Dynamic View: Enrollments - StatisticalModule",
+      "order" : 15,
+      "paperSize" : "A4_Landscape",
+      "relationships" : [ {
+        "description" : "Query data to be analyzed",
+        "id" : "44",
+        "order" : "1",
+        "response" : false
+      }, {
+        "description" : "Request data analysis",
+        "id" : "52",
+        "order" : "2",
+        "response" : false
+      }, {
+        "description" : "Retrieve the queired data from database",
+        "id" : "56",
+        "order" : "3",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2120,
+          "y" : 886
+        } ]
+      }, {
+        "description" : "Request data",
+        "id" : "58",
+        "order" : "4",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2242,
+          "y" : 1476
+        } ]
+      }, {
+        "description" : "Supply data",
+        "id" : "63",
+        "order" : "5",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2542,
+          "y" : 1483
+        } ]
+      }, {
+        "description" : "Request data",
+        "id" : "65",
+        "order" : "6",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2856,
+          "y" : 1292
+        } ]
+      }, {
+        "description" : "Supply data",
+        "id" : "71",
+        "order" : "7",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2853,
+          "y" : 992
+        } ]
+      }, {
+        "description" : "Return data to be processed",
+        "id" : "81",
+        "order" : "8",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2330,
+          "y" : 850
+        } ]
+      }, {
+        "description" : "Return processed data",
+        "id" : "82",
+        "order" : "9",
+        "response" : false
+      }, {
+        "description" : "Request graph generation",
+        "id" : "86",
+        "order" : "10",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1252,
+          "y" : 1428
+        } ]
+      }, {
+        "description" : "Supply graphs",
+        "id" : "87",
+        "order" : "11",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1487,
+          "y" : 1241
+        } ]
+      }, {
+        "description" : "Present the data overview to the user",
+        "id" : "47",
+        "order" : "12",
+        "response" : false
+      } ],
+      "title" : "Dynamic diagram: Admin analyzes enrollment data"
+    } ],
+    "systemContextViews" : [ {
+      "dimensions" : {
+        "height" : 1900,
+        "width" : 2350
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 130,
+        "y" : 730
+      }, {
+        "id" : "2",
+        "x" : 900,
+        "y" : -20
+      }, {
+        "id" : "3",
+        "x" : 1860,
+        "y" : 750
+      }, {
+        "id" : "4",
+        "x" : 895,
+        "y" : 800
+      }, {
+        "id" : "30",
+        "x" : 945,
+        "y" : 1510
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "systemContextDiagram",
+      "name" : "System Context View: Enrollments",
+      "order" : 1,
+      "relationships" : [ {
+        "id" : "150",
+        "vertices" : [ {
+          "x" : 1170,
+          "y" : 1310
+        } ]
+      }, {
+        "id" : "34",
+        "vertices" : [ {
+          "x" : 960,
+          "y" : 568
+        } ]
+      }, {
+        "id" : "37",
+        "vertices" : [ {
+          "x" : 1259,
+          "y" : 561
+        } ]
+      }, {
+        "id" : "40",
+        "vertices" : [ {
+          "x" : 1590,
+          "y" : 800
+        } ]
+      }, {
+        "id" : "43",
+        "vertices" : [ {
+          "x" : 1590,
+          "y" : 1100
+        } ]
+      }, {
+        "id" : "46",
+        "vertices" : [ {
+          "x" : 796,
+          "y" : 1083
+        } ]
+      }, {
+        "id" : "49",
+        "vertices" : [ {
+          "x" : 776,
+          "y" : 784
+        } ]
+      }, {
+        "id" : "70",
+        "vertices" : [ {
+          "x" : 1390,
+          "y" : 1290
+        } ]
+      }, {
+        "id" : "76",
+        "vertices" : [ {
+          "x" : 995,
+          "y" : 1315
+        } ]
+      } ],
+      "softwareSystemId" : "4"
+    } ]
+  }
+}
