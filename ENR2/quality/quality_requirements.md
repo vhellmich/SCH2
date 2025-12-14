@@ -20,3 +20,27 @@ Data Center Failure (AWS Availability Zone goes down) -> Database Server.
 * **Proposed Solution:** Deploy the MySQL database in **Multi-AZ** (Availability Zone) mode. If the primary instance fails, AWS automatically fails over to the standby instance.
 
 ---
+
+## QR3 - Availability (Application Server Failure)
+**Scenario:**
+EC2 Instance Failure -> EnrollmentsModule & NotificationModule -> Student/Teacher requests.
+
+* **Target dependency:** `UIPresenter` (client-side) -> `EnrollmentsModuleInstance` (on AWS EC2)
+* **Premise:** The deployment diagram shows a single EC2 instance hosting both `EnrollmentsModuleInstance` and `NotifierInstance`. The client-side UIPresenter (running in browsers) depends on the server-side EnrollmentsModule for all enrollment operations. If this EC2 instance crashes, experiences hardware failure, or needs maintenance, the entire enrollment system becomes unavailable to all users, and notifications cannot be sent.
+* **Requirement:** The system must remain available for enrollment operations even if the primary application server fails.
+* **Verdict:** **Fails.** A single EC2 instance represents a single point of failure. If it goes down, manual intervention is required to restart or replace it, causing significant downtime for both enrollment operations and notifications.
+* **Proposed Solution:** Deploy multiple EC2 instances behind a load balancer with auto-scaling. If one instance fails, traffic is automatically routed to healthy instances.
+
+---
+
+## QR4 - Performance (Enrollment Request Response Time)
+**Scenario:**
+Student requests to Enroll -> EnrollmentsModule -> Multiple database queries -> Response.
+
+* **Target dependency:** `EnrollmentsModule` -> `EnrollmentDatabase` & `SIS`
+* **Premise:** When a student enrolls in a course, the system must perform validation by querying both the `EnrollmentDatabase` (to check existing enrollments) and the external `SIS` database (to verify student eligibility and course prerequisites). These sequential database queries, combined with validation logic and logging operations, can result in slow response times, especially during peak enrollment periods when the database is under load.
+* **Requirement:** Enrollment requests must complete and return a response to the user within 2 seconds under normal load conditions.
+* **Verdict:** **Fails.** The current design performs sequential database queries to both `EnrollmentDatabase` and `SIS`, followed by write operations and logging. Under load, these operations can exceed the 2-second target, leading to poor user experience and potential timeouts.
+* **Proposed Solution:** Use parallel database queries instead of sequential ones, implement connection pooling, and cache frequently accessed SIS data.
+
+---
