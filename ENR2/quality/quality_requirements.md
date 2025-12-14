@@ -38,9 +38,9 @@ EC2 Instance Failure -> EnrollmentsModule & NotificationModule -> Student/Teache
 Student requests to Enroll -> EnrollmentsModule -> Multiple database queries -> Response.
 
 * **Target dependency:** `EnrollmentsModule` -> `EnrollmentDatabase` & `SIS`
-* **Premise:** When a student enrolls in a course, the system must perform validation by querying both the `EnrollmentDatabase` (to check existing enrollments) and the external `SIS` database (to verify student eligibility and course prerequisites). These sequential database queries, combined with validation logic and logging operations, can result in slow response times, especially during peak enrollment periods when the database is under load.
+* **Premise:** When a student enrolls in a course, the system must perform validation by querying both the `EnrollmentDatabase` (to check existing enrollments) and the external `SIS` database (to verify student eligibility and course prerequisites). These multiple database queries, combined with validation logic and logging operations, can result in slow response times, especially during peak enrollment periods when the database is under load.
 * **Requirement:** Enrollment requests must complete and return a response to the user within 2 seconds under normal load conditions.
-* **Verdict:** **Fails.** The current design performs sequential database queries to both `EnrollmentDatabase` and `SIS`, followed by write operations and logging. Under load, these operations can exceed the 2-second target, leading to poor user experience and potential timeouts.
-* **Proposed Solution:** Use parallel database queries instead of sequential ones, implement connection pooling, and cache frequently accessed SIS data.
+* **Verdict:** **May fail.** The current design performs multiple database queries to both `EnrollmentDatabase` and `SIS`, followed by write operations and logging. Under load, these operations may exceed the 2-second target, leading to poor user experience and potential timeouts. Performance should be monitored and optimized if response times exceed the target.
+* **Proposed Solution:** Use parallel database queries where possible, add indexes on key fields (student ID, course ID), implement connection pooling, and cache frequently accessed SIS data. Use asynchronous logging to avoid blocking responses.
 
 ---
