@@ -44,3 +44,30 @@ Student requests to Enroll -> EnrollmentsModule -> Multiple database queries -> 
 * **Proposed Solution:** Use parallel database queries where possible, add indexes on key fields (student ID, course ID), implement connection pooling, and cache frequently accessed SIS data. Use asynchronous logging to avoid blocking responses.
 
 ---
+
+## QR5 - Availability (Archive System Failure)
+**Scenario:**
+Student enrolls -> EnrollmentsModule -> Logger -> Archive -> Logs operation.
+
+* **Target dependency:** `EnrollmentsModule.logger` -> `EnrollmentDatabase.archive`
+* **Premise:** The `Logger` component writes operation logs to the `Archive` component for permanent storage.
+* **Requirement:** Enrollment operations must complete successfully even if the Archive system is temporarily unavailable. Logging failures should not prevent enrollments.
+* **Verdict:** **May fail.** If logging to the Archive is synchronous and required, enrollment operations will fail when the Archive is unavailable.
+* **Proposed Solution:** Make logging to the Archive asynchronous and non-blocking. Use a local log buffer to store logs temporarily. If the Archive is unavailable, keep logs in the buffer and retry writing to the Archive periodically until it recovers.
+
+---
+
+## QR6 - Performance (Statistical Query Response Time)
+**Scenario:**
+Admin queries enrollment statistics for multiple semesters -> StatisticsUI -> StatisticalModule -> Queries EnrollmentDatabase, Archive, and SIS -> Processes large datasets -> Generates graphs -> Response.
+
+* **Target dependency:** `StatisticalModule` -> `EnrollmentDatabase`, `Archive`, and `SIS` (querying and processing large datasets)
+* **Premise:** Statistical analysis queries large volumes of data from `EnrollmentDatabase`, `Archive`, and `SIS`, then processes the results and generates graphs. For multi-year datasets with thousands of enrollments, these operations can be slow if queries are not optimized or processed synchronously.
+* **Requirement:** Statistical queries must return results within 10 seconds for datasets covering up to 2 years of enrollment data under normal load conditions.
+* **Verdict:** **May fail.** Querying multiple large data sources (EnrollmentDatabase, Archive, SIS) synchronously, processing the results, and generating visualizations may exceed the 10-second target for multi-year datasets. The current design appears to perform these operations sequentially, which compounds latency.
+* **Proposed Solution:**
+  * Pre-compute common statistics in materialized views or analytics tables, updated as enrollments occur
+  * Add database indexes on date ranges, student IDs, course IDs, and other frequently queried fields
+  * Use parallel database queries for raw data requests
+
+---
