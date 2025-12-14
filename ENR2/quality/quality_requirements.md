@@ -71,3 +71,70 @@ Admin queries enrollment statistics for multiple semesters -> StatisticsUI -> St
   * Use parallel database queries for raw data requests
 
 ---
+
+## QR7 - Security (Unauthorized Enrollment Access)
+**Scenario:** Malicious user attempts to enroll in courses on behalf of another student -> `EnrollmentsModule` -> `EnrollmentsTable`.
+
+
+* **Target dependency:** `UIPresenter` -> `EnrollmentsModule` (`RequestInterface`)
+* **Premise:** The `EnrollmentsModule` exposes enrollment API (`RequestInterface`) that presumably accept student identifiers. If authorization checks are weak or missing, a user could manipulate request parameters to enroll or drop courses for another student.
+* **Requirement:** Only authenticated users may perform enrollment actions, and users may only enroll or modify enrollments for their own student account unless explicitly authorized (e.g., admin role).
+* **Verdict:** **May fail.** The design shows no authentication at all. Not on the UI level, nor is there an explicit mention of server-side authorization checks within the `EnrollmentsModule`.
+* **Proposed Solution:**
+  *   Enforce role-based access control (RBAC) in the `EnrollmentsModule`
+  *   Validate that the authenticated user’s identity matches the target student ID
+  *   Reject any enrollment requests that violate authorization rules
+
+---
+## QR8 - Security (Data Confidentiality in Transit)
+**Scenario:** Student or Admin accesses enrollment functionality over the network -> `UIPresenter` -> `EnrollmentsModule` -> `SIS`.
+
+
+* **Target dependency:** `UIPresenter` -> `EnrollmentsModule` -> `SIS`
+* **Premise:** Enrollment data includes sensitive information such as student IDs, course history, and eligibility data. If communication between components is unencrypted, data could be intercepted.
+* **Requirement:** All enrollment-related communication must be encrypted in transit.
+* **Verdict:** **May fail.** The architecture does not explicitly specify encrypted communication between modules or with the external SIS system.
+* **Proposed Solution:**
+  * Enforce HTTPS/TLS for all client-to-server communication and for communitaction between `SIS` and `EnrolmentsModule` if those happen over the internet.
+  * Use encrypted connections (TLS) for communication between `EnrollmentsModule`, `UIPresenter`, and `SIS`
+  * Periodically rotate certificates and enforce secure cipher suites
+
+---
+## QR9 – Security (Protection Against SQL Injection)
+
+**Scenario:** 
+Malicious user submits crafted enrollment input -> `EnrollmentsModule` -> `EnrollmentDatabase`.
+
+* **Target dependency:** `EnrollmentsModule` -> `EnrollmentDatabase`
+
+* **Premise:** Enrollment requests include user-provided data such as course IDs, student IDs, and semester identifiers. If these inputs are not properly validated or sanitized, they could be used to perform SQL injection attacks.
+
+* **Requirement:** The system must prevent SQL injection and similar injection-based attacks.
+
+* **Verdict:** **May fail.** The current design does not specify how database queries are constructed or whether prepared statements are used.
+
+* **Proposed Solution:**
+  * Validate and sanitize all user inputs before processing
+  * Restrict database user permissions to the minimum required
+
+---
+## QR10 – Security (Availability Under Denial-of-Service Conditions)
+
+**Scenario:**
+High volume of malicious requests -> `EnrollmentsModule` -> `EnrollmentTable`.
+
+* **Target dependency:** `UIPresenter` -> `EnrollmentsModule`
+
+* **Premise:** During peak enrollment periods, the system is already under heavy load. A denial-of-service (DoS) or accidental request flood could exhaust application or database resources.
+
+* **Requirement:** The system must continue to provide basic enrollment functionality under moderate request flooding.
+
+* **Verdict: Fails.** The current design shows no rate limiting, throttling, or request filtering mechanisms.
+
+* **Proposed Solution:**
+
+  * Implement API rate limiting per user and per IP
+
+  * Use load balancer–level request throttling
+
+  * Apply circuit breakers to protect the `EnrollmentDatabase` and `SIS` from overload
