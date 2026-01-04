@@ -5,7 +5,7 @@
 Student requests to Enroll -> Enrollments Module -> SIS Database.
 * **Target dependency:** `Enrollments` -> `SIS` (External System Database)
 * **Premise:** The `Enrollments` module reads directly from the external `SIS` database. If the main `SIS` goes down for maintenance or fails, the `Enrollments` module becomes unusable.
-* **Requirement:** The Enrollments module must remain available for read-operations even if the core SIS is down.
+* **Requirement:** The Enrollments module must remain available for read-only operations even if the core SIS is down for up to 24 hours. Read-only requests must be served using cached data with a response time of ≤ 500 ms for 95% of requests, and the system must switch to cached data within 100 ms after SIS unavailability is detected. Cached data must not be older than 24 hours.
 * **Proposed Solution:** Implement simple module to cache necessary SIS data locally within the `EnrollmentDatabase`. If SIS is down, serve cached data to allow read-only access.
 ---
 
